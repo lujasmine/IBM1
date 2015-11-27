@@ -17,6 +17,8 @@
     <!-- Custom CSS -->
     <link href="../css/clean-blog.css" rel="stylesheet">
 
+    <link href="../css/stylesheet.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -87,8 +89,8 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
                         <h1>Project Management</h1>
-                        <hr class="small">
-                        <span class="subheading">Subheading</span>
+                        <!-- <hr class="small">
+                        <span class="subheading">Subheading</span> -->
                     </div>
                 </div>
             </div>
@@ -96,14 +98,24 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="col-md-2" id="side">
+        <li>
+            <a href="#plan"><h4>> Project Plan</h4></a>
+        </li>
+        <li>
+           <a href="#biweekly"><h4>> Bi-Weekly Reports</h4></a>
+        </li>
+    </div>
+    <div class="col-md-8">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1>Bi-Weekly Reports</h1><br>
-                <a href="../bi-weekly/1.pdf" target="_blank">Bi-Weekly Report 1</a><br>
-                <a href="../bi-weekly/2.pdf" target="_blank">Bi-Weekly Report 2</a><br>
-                <a href="../bi-weekly/3.pdf" target="_blank">Bi-Weekly Report 3</a><br>
-            </div>
+            <a name="plan"><h1>Project Plan (Term 1)</h1><br></a>
+            <img src="../img/plan.png" class="plan">
+        </div>
+        <div class="row">
+            <a name="biweekly"><h1>Bi-Weekly Reports</h1><br></a>
+            <a href="../bi-weekly/1.pdf" target="_blank">Bi-Weekly Report 1</a><br>
+            <a href="../bi-weekly/2.pdf" target="_blank">Bi-Weekly Report 2</a><br>
+            <a href="../bi-weekly/3.pdf" target="_blank">Bi-Weekly Report 3</a><br>
         </div>
     </div>
 
@@ -116,7 +128,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/lujasmine/IBM1" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>

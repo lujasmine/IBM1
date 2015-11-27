@@ -1,0 +1,31 @@
+#side {
+	margin-left: 2%;
+	margin-top: 2%;
+	list-style-type: none;
+}
+
+.team {
+	text-align: center;
+}
+
+#client {
+	padding-left: 0px;
+}
+
+.logo {
+	margin-left: auto;
+}
+
+footer .container ul{
+	margin-top: 5%;
+}
+
+table {
+	border: 1px solid black;
+	width: 100%;
+}
+
+.plan {
+	width: 78%;
+	margin-left: 11%;
+}
