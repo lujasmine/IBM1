@@ -66,6 +66,7 @@
                           <li><a href="requirements.html">Requirements</a></li>
                           <li><a href="research.html">Research</a></li>
                           <li><a href="ui.html">Prototype</a></li>
+                          <li><a href="testing.html">Testing</a></li>
                         </ul>
                       </li>
 
@@ -111,10 +112,17 @@
             <h1>Technologies to be used</h1>
             <p> The entire system may be divised in 4 broad subsystems: </p>
             <h2>The web app</h2>
-            <p> We plan to use the Django framework for deloping the web interface, because it widely documented on the web and because it provides us with the functionality we need, such as the Object-Relational Mapping (ORM) layer which abstracts relational database read, write, query, and delete operations. Also, the use of templates will facilitate development and enable us to finish this part of the project faster.</p>
+                <img id="logo-large" src="../img/django.png">
+                <p> We plan to use the Django framework for deloping the web interface, because it widely documented on the web and because it provides us with the functionality we need, such as the Object-Relational Mapping (ORM) layer which abstracts relational database read, write, query, and delete operations. We have limited experience programming in Python, but learning it this should be a considerable challenge. Also, the use of templates will facilitate development and enable us to finish this part of the project faster.</p>
             <h2>The mobile app</h2>
+                <img id="logo-large" style="width: 12%;" src="../img/xcode.png">
+                <p>The iOS app will be developed using Xcode and Swift. Although our team has experience in Objective-C, we want to use the latest standards to ensure maximum compatibility and also learn new and useful things on the way.</p>
             <h2>The database</h2>
+                <img id="logo-large" src="../img/postgres.jpg">
+                <p>PostgreSQL is faster and easier to debug than other relational databases. It is capable of handling many tasks more efficiently. Support for concurrency is achieved without read locks thanks to the implementation of Multiversion Concurrency Control (MVCC). It is also a better choice when data integrity and reliability come first. We plan to use this for the user table, and extend it if other functionality is implemented. </p>
             <h2>The prediction engine</h2>
+                <img id="logo-large" style="width: 40%;" src="../img/predictionio.png">
+                <p>PredictionIO is an open-source Machine Learning server that allows building and deploying predictive applications in a fraction of the time. It is built on top of Apache Spark, and is written in Scala. It uses Hbase as its data storage system and provides APIs (including Python) to connect to external applications. We are very keen on using this because it also provides engine templates for us to use and tweak as we find suitable. We will first install this on our local machines, and will request access to a departmental server at a later stage.</p>
             </p>
         </div>
         <div class="row">
@@ -125,18 +133,20 @@
         <div class="row">
             <h1>Supporting software</h1>
             <div class="row">
-                <img id="logo" src="../img/slack.png">
-                <p> Team communication </p>
+                <img id="logo-small" src="../img/slack.png">
+                <p> We use Slack as our main way of communication. It is integrated with all other services that we use, and provides channels to separate the topics and tasks what we are working on.</p>
             </div>
             <div class="row">
-                <img id="logo" src="../img/github.png">
-                <p> Version control </p>
+                <img id="logo-small" src="../img/github.png">
+                <p> We use Git for version control. The development itself with take place on a separate branch, that has its own sub-branches for different parts of the project.  </p>
             </div>
             <div class="row">
-                <img id="logo" src="../img/asana.png">
+                <img id="logo-small" src="../img/asana.png">
+                <p> In addition to the Gantt chart, Asana helps us keep on track with development by assigning and completing various 'atomic' tasks. It also makes it easier to visualize the timescale of what we have to do.
             </div>
             <div class="row">
-                <img id="logo" src="../img/drive.png">
+                <img id="logo-small" src="../img/drive.png">
+                <p> Google Drive is the repository for various files and resources that our team uses to document our progress or to aid us in development.
             </div>
         </div>
     </div>

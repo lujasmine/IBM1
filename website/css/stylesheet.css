@@ -76,10 +76,16 @@ video#bgvid {
 	margin-left: 10%;
 }
 
-#logo {
+#logo-small {
 	position: relative;
 	width: 10%;
 	margin-left: 10%;
+	margin-top: 2%; 
+}
+
+#logo-large {
+	position: relative;
+	width: 30%;
 	margin-top: 2%; 
 }
 

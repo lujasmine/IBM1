@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Requirements and Scope</title>
+    <title>Testing</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -82,14 +82,16 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/about-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Requirements and Scope</h1>
-                        <!-- <hr class="small">
-                        <span class="subheading">Subheading</span> -->
+    <header class="intro-header" style="background-image: url('../img/testing.jpg')">
+        <div id="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="page-heading">
+                            <h1>Testing</h1>
+                            <!-- <hr class="small">
+                            <span class="subheading">Subheading</span> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,14 +101,10 @@
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="row">
-            <h1>Requirements</h1>
-        </div>
-        <div class="row">
-            <h1>Use cases</h1>
-        </div>
-        <div class="row">
-            <h1>Opening presentation</h1>
-            <iframe src="https://docs.google.com/presentation/d/1Kl5JoR_nrNhUwGdEPe8Gai2Xs_u2JUQYOC5Augi-pSw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <h1> It's not what it seems. </h1>
+            <p> Because our first target is the authentication system, which is more or less straighforward in terms of complexity, we do not consider that Unit, Integration, Functional or User Acceptance testing are a must. Also, the nature of our system, the combination of mobile and web, makes the strategy even more difficult to tackle. However, because we intend to follow the V model software development process, we will make sure that every part of our code is functional before we integrate it in the bigger repository.</p>
+
+            <p>However, we plan to use <a target="_blank" href="http://www.loadsterperformance.com">Loadster</a> and <a target="_blank" href="www.netsparker.com">Netsparker</a> to test our web application for loading times and possible security vulnerabilities. Furthermore, PredictionIO's evaluation module allows to streamline the process of testing the engine parameters and deploy only what is acceptably accurate using statisically sound cross-validation methods.</p>
         </div>
     </div>
 
