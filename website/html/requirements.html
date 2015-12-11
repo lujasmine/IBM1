@@ -104,7 +104,7 @@
 		<hr>
             <table allign = "center" cellspacing="0" border=1>
                 <tr>
-				    <td style=min-width:50px>Requirements</td>
+				    <td style=min-width:50px>Description</td>
                     <td style=min-width:50px>Type</td>
                     <td style=min-width:50px>Category</td>
                     <td style=min-width:50px>Priority</td>
@@ -215,6 +215,652 @@ behaviour by analysing geolocation and time</td>
         </div>
         <div class="row">
             <h1>Use cases</h1>
+			<table width="100" border = 1 border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>LoginAttempt</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM1</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>A login attempt from unusual location</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients ; Third party</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User must be using the mobile app</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; System receives a login attempt from a location different to the mobile phone&rsquo;s current geolocation</p>
+<p>2.&nbsp;&nbsp;&nbsp; User gets notified about the third party authentication attempt on his mobile app</p>
+<p>3.&nbsp;&nbsp;&nbsp; User then receives an option to temporary block transactions</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>Temporary transaction block is set up to prevent fraud</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>TransactionDisplay</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM2</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Displaying the recent transaction on the map</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User must be using the mobile app</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User makes a transaction</p>
+<p>2.&nbsp;&nbsp;&nbsp; System identifies the spending and records the geolocation</p>
+<p>3.&nbsp;&nbsp;&nbsp; System uploads the location on the map</p>
+<p>4.&nbsp;&nbsp;&nbsp; User opens the &lsquo;Map&rsquo; tab</p>
+<p>5.&nbsp;&nbsp;&nbsp; System displays the transactions geolocation on the map</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>A transaction map is updated with a recent spending</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>TransactionMapBackup</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>LimitTransaction</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM3</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Setting up a transaction limit</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User must be logged into the banking system</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User taps on the transaction limit link</p>
+<p>2.&nbsp;&nbsp;&nbsp; System displays an input tab</p>
+<p>3.&nbsp;&nbsp;&nbsp; User chooses desirable limit of daily spending</p>
+<p>4.&nbsp;&nbsp;&nbsp; System sets the limit on the amount of money that can be spent daily</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>A limit for daily spending is set up</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>RemoveLimit</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>RemoveLimit</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM4</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Removal of the daily spending limit that has been previously set</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>Daily spending limit must be set up</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User opens the limit tab</p>
+<p>2.&nbsp;&nbsp;&nbsp; System prompts an option to remove or change the limit</p>
+<p>3.&nbsp;&nbsp;&nbsp; User selects limit removal and confirms the selection</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>Clients status has been updated and limit is no longer present</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>WebAuthenticationError</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM5</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>An error which occurs when user logs via SMS method</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User inputs his phone number</p>
+<p>2.&nbsp;&nbsp;&nbsp; System sends out a pin code to the phone</p>
+<p>3.&nbsp;&nbsp;&nbsp; User enters the code incorrectly</p>
+<p>4.&nbsp;&nbsp;&nbsp; System denies login attempt and makes SMS method no longer available</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>Next login attempt cannot be done via SMS</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>TransactionMapBackup</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM6</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Transaction map update when phone was not connected to the internet</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User must be logged into the mobile app</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User performs a transaction</p>
+<p>2.&nbsp;&nbsp;&nbsp; The app cannot extract information due to no internet connection</p>
+<p>3.&nbsp;&nbsp;&nbsp; User gets access to internet connection later on</p>
+<p>4.&nbsp;&nbsp;&nbsp; System updates the map accordingly by extracting transaction details from the bank account</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>The map is updated</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>MobileAuthentication</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM7</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>User logs into the system with the aid of machine learning algorithms</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User has to access the system at specific time and from a specific network</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User runs mobile app at a certain time period</p>
+<p>2.&nbsp;&nbsp;&nbsp; System compares current login time with frequent login times</p>
+<p>3.&nbsp;&nbsp;&nbsp; System requests access confirmation</p>
+<p>4.&nbsp;&nbsp;&nbsp; User confirms instant access</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>User is logged in to the bank account</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>WebAuthenticationOption1 ; WebAuthenticationOption2 ; FailsafeOption</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>WebAuthenticationOption1</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM8</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Login to bank via mobile app</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>User has to have a banking app installed on the phone</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User accesses the website and inputs login</p>
+<p>2.&nbsp;&nbsp;&nbsp; System requests confirmation from a mobile app</p>
+<p>3.&nbsp;&nbsp;&nbsp; User opens the mobile application and confirms login attempt</p>
+<p>4.&nbsp;&nbsp;&nbsp; System recognizes login attempt</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>User gets logged into the bank</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>WebAuthenticationOption2 ; FailsafeOption</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table width="100" border = 1>
+<tbody>
+<tr>
+<td width="133">
+<p>Use Case</p>
+</td>
+<td width="416">
+<p>WebAuthenticationOption2</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>ID</p>
+</td>
+<td width="416">
+<p>IBM9</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Brief Description</p>
+</td>
+<td width="416">
+<p>Login to bank without mobile app</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Actors</p>
+</td>
+<td width="416">
+<p>Clients</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Preconditions</p>
+</td>
+<td width="416">
+<p>None</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Main Flow</p>
+</td>
+<td width="416">
+<p>1.&nbsp;&nbsp;&nbsp; User provides phone number to the system</p>
+<p>2.&nbsp;&nbsp;&nbsp; Systems sends out a text message with a code</p>
+<p>3.&nbsp;&nbsp;&nbsp; User inputs the code</p>
+<p>4.&nbsp;&nbsp;&nbsp; System verifies the code</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Post Conditions</p>
+</td>
+<td width="416">
+<p>User gets logged in to the bank</p>
+</td>
+</tr>
+<tr>
+<td width="133">
+<p>Alternative flows</p>
+</td>
+<td width="416">
+<p>FailsafeOption</p>
+</td>
+</tr>
+</tbody>
+</table>
         </div>
         <div class="row">
             <h1>Opening presentation</h1>
