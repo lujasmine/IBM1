@@ -34,3 +34,55 @@ table {
 	width: 90%;
 	margin-left: 5%;
 }
+
+#gantt {
+	margin-bottom: 5%;
+}
+
+video#bgvid { 						
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../img/start.jpg) no-repeat;
+    background-size: cover;
+    background-color: rgba(64,64,64,0.6); 
+}
+
+#background {						
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -99;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    background-color: rgba(64,64,64,0.6); 
+}
+
+#architecture {
+	position: relative;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#logo {
+	position: relative;
+	width: 10%;
+	margin-left: 10%;
+	margin-top: 2%; 
+}
+
+#overlay {
+	background-color: rgba(64,64,64,0.6); 
+}

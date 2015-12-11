@@ -34,6 +34,12 @@
 </head>
 
 <body>
+    <video autoplay loop poster="img/start.jpg" id="bgvid">
+        <source src="img/video.webm" type="video/webm">
+        <source src="img/video.mp4" type="video/mp4">
+    </video>
+
+    <div id="background"> </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -64,15 +70,14 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Project
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="html/requirements.html">Requirements and Scope</a></li>
+                          <li><a href="html/requirements.html">Requirements</a></li>
                           <li><a href="html/research.html">Research</a></li>
-                          <li><a href="html/ui.html">UI</a></li>
-                          <li><a href="html/testing.html">Testing</a></li> 
+                          <li><a href="html/ui.html">Prototype</a></li>
                         </ul>
                       </li>
 
                     <li>
-                        <a href="html/project_management.html">Project Management</a>
+                        <a href="html/project_management.html">Management</a>
                     </li>
                 </ul>
             </div>
@@ -83,15 +88,17 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/Canary_Wharf_and_Gherkin.jpg')">
+    <header class="intro-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
+                    <div class="site-heading" id="header">
                         <img class="logo" src="img/logo.png" alt width="220px" height="220px">
-                        <h1>Effortless and Secure Banking</h1>
-                        <hr class="small">
-                        <span class="subheading">Systems Engineering Project</span>
+                        <div>
+                            <h1>Effortless and Secure Banking</h1>
+                            <hr class="small">
+                            <span class="subheading">Systems Engineering Project</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +107,7 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 team">
-        <div class="row">
+        <div style="margin-top: 5%" class="row">
             <a name="overview"><h1>Overview</h1></a>
             <p>This website will document the "Effortless and Secure Banking" project for IBM as part of the UCL Computer Science Systems Engineering Module for 2nd year students.</p> 
             <p>The aim of the project is to create an innovative and new banking solution that is effortless but does not compromise security for the consumer.</p>
@@ -123,7 +130,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background-color: rgb(255,255,255)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

@@ -63,15 +63,14 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Project
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="requirements.html">Requirements and Scope</a></li>
+                          <li><a href="requirements.html">Requirements</a></li>
                           <li><a href="research.html">Research</a></li>
-                          <li><a href="ui.html">UI</a></li>
-                          <li><a href="testing.html">Testing</a></li> 
+                          <li><a href="ui.html">Prototype</a></li>
                         </ul>
                       </li>
 
                     <li>
-                        <a href="project_management.html">Project Management</a>
+                        <a href="project_management.html">Management</a>
                     </li>
                 </ul>
             </div>
@@ -82,14 +81,16 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/about-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Research</h1>
-                        <!-- <hr class="small">
-                        <span class="subheading">Subheading</span> -->
+    <header class="intro-header" style="background-image: url('../img/research.jpg')">
+        <div id="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="page-heading">
+                            <h1>Research</h1>
+                            <!-- <hr class="small">
+                            <span class="subheading">Subheading</span> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,9 +100,44 @@
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
+            <h1>Our solution</h1>
+            <p> In a few words, we came up with a way to integrate the web and mobile interfaces in a way that, in the majority of the cases, will allow the user to skip entering a password. To reinforce this, the solution also integrates a prediction engine that, using historical data based on date, time and location, will learn to predict when the legitimate user is attempting to log in the system. </p>
+        </div>
+        <div class="row">
+            <h1>Targeted platforms</h1>
+            <p> The project aims to develop a fully functional Django web application and a native iOS application, in addition to the supporting subsystems. The reason why we have chosen this is because in order to implement fingerprint authentication it is necessary to use native support, which cannot be interfaced with a hybrid web app (i.e. Cordova). If the time will allow, we will attempt to port the iOS app to Android. </p>
+        </div>
+        <div class="row">
+            <h1>Technologies to be used</h1>
+            <p> The entire system may be divised in 4 broad subsystems: </p>
+            <h2>The web app</h2>
+            <p> We plan to use the Django framework for deloping the web interface, because it widely documented on the web and because it provides us with the functionality we need, such as the Object-Relational Mapping (ORM) layer which abstracts relational database read, write, query, and delete operations. Also, the use of templates will facilitate development and enable us to finish this part of the project faster.</p>
+            <h2>The mobile app</h2>
+            <h2>The database</h2>
+            <h2>The prediction engine</h2>
+            </p>
+        </div>
+        <div class="row">
+            <h1>System architecture</h1>
+            <img id="architecture" src="../img/architecture.png">
+            <p> This architecture schema encompasses our approach to developing this system. We will first start by developing the web and mobile backends that run on basic frontends. After we manage to get both interfaces to talk to the database, we will then split the work in refining the UI and implementing the prediction engine. Initially, this will be isolated from the rest of the system, and will be tested with hand-written historical data. Selecting and tweaking the learning algorithm might take a considerate amount of time, but we plan to seek help if this proves to be too big a challenge, considering that we are not familiar with advanced statistical methods. After we achieve good results from the learning mechanism, we will link this to the application server in order to retrieve data and deliver the login token. Also, we will need to register the app with Apple's push notification server in order to notify the user about ongoing web login attempts.
+        </div>
+        <div class="row">
+            <h1>Supporting software</h1>
+            <div class="row">
+                <img id="logo" src="../img/slack.png">
+                <p> Team communication </p>
+            </div>
+            <div class="row">
+                <img id="logo" src="../img/github.png">
+                <p> Version control </p>
+            </div>
+            <div class="row">
+                <img id="logo" src="../img/asana.png">
+            </div>
+            <div class="row">
+                <img id="logo" src="../img/drive.png">
+            </div>
         </div>
     </div>
 
