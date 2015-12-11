@@ -92,3 +92,27 @@ video#bgvid {
 #overlay {
 	background-color: rgba(64,64,64,0.6); 
 }
+
+table .titles{
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #5C5C5C;
+    color: white;
+}
+
+.requirements th, .requirements td{
+	text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+}
+
+iframe {
+	border: 0px;
+	width: 100%;
+	height: 1000px;
+}
+
+
