@@ -17,25 +17,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-        if firstLaunch  {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            print(defaults.stringForKey("phoneNumber"))
-            let rootView: PasswordViewController = PasswordViewController()
-            
-            if let window = self.window{
-                window.rootViewController = rootView
-            }
-        }
-        else {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+        if defaults.stringForKey("phoneNumber") == nil {
             let rootView: HomeViewController = HomeViewController()
             
             if let window = self.window{
                 window.rootViewController = rootView
             }
         }
+        else {
+            let rootView: PasswordViewController = PasswordViewController()
+            
+            if let window = self.window{
+                window.rootViewController = rootView
+            }
+        }
+        
+//        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+//        
+//        if firstLaunch  {
+//            let defaults = NSUserDefaults.standardUserDefaults()
+//            print(defaults.stringForKey("phoneNumber"))
+//            let rootView: PasswordViewController = PasswordViewController()
+//            
+//            if let window = self.window{
+//                window.rootViewController = rootView
+//            }
+//        }
+//        else {
+//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+//            
+//        }
     
         
         return true

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var phoneNumber: UITextField!
+    var phoneNumberString:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,16 +58,36 @@ class HomeViewController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         else {
+            phoneNumberString = phoneNumber.text
+            checkPhoneNumberExists()
+        }
+        
+    }
+    
+    func checkPhoneNumberExists() {
+        Alamofire.request(.GET, "http://localhost/~jasminelu/checkPhone.php?phone=\(phoneNumberString)").response { (req, res, data, error) -> Void in
+            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
+            print(outputString)
+            if outputString == "Incorrect Phone Number " {
+                let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+                    self.resignFirstResponder()
+                }
+                
+                alertController.addAction(ok)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+            else {
+                print(outputString)
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
+                
+                let vc = PasswordViewController(nibName: nil, bundle: nil)
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                vc.phoneNumberString = self.phoneNumber.text
+            }
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setValue(phoneNumber.text, forKey: "phoneNumber")
-//            print("save number")
-//            print(defaults.stringForKey("phoneNumber"))
-            
-            let vc = PasswordViewController(nibName: nil, bundle: nil)
-            self.presentViewController(vc, animated: true, completion: nil)
-            
-            vc.phoneNumberString = phoneNumber.text
         }
         
     }

@@ -1,4 +1,3 @@
-//
 //  PasswordViewController.swift
 //  EffortlessAndSecureBanking
 //
@@ -119,6 +118,7 @@ class PasswordViewController: UIViewController {
                 self.loginResponse.text = "Login Failed"
             }
             else {
+                print(outputString)
                 self.loginResponse.text = "Welcome, " + (outputString?.capitalizedString)!
             }
             
