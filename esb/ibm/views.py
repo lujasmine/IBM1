@@ -14,11 +14,15 @@ def index(request):
 
     
 def pass_input(request):
-    context = {
-    "object_list" : queryset,
-    "title": "Welcome to Effortless and Secure Banking",
-    }
-    return HttpResponse("<h1>pass_input</h1>")
+    if request.method == 'POST':
+        pass_entry = request.POST.get('passfield', None)
+        try:
+            nextuser = Log_in.objects.get(password = pass_entry)
+            return TemplateResponse(request, 'pass_input.html')
+        except Log_in.DoesNotExist:
+           return HttpResponse()
+    else:
+        return HttpResponse()
     
       
     
@@ -26,8 +30,8 @@ def final(request):
     if request.method == 'POST':
         phone_entry = request.POST.get('textfield', None)
         try:
-            user = Log_in.objects.get(phoneNumber = phone_entry)
-            name = user.userName
+            user = Log_in.objects.get(phonenumber = phone_entry)
+            name = user.username
             context = {
             "user" : user,
             "name" : name,
@@ -36,7 +40,7 @@ def final(request):
         except Log_in.DoesNotExist:
            return TemplateResponse(request, 'index.html') 
     else:
-        return render(request, 'final.html', context)
+        return render(request, 'index.html', context)
         
   
        

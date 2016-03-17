@@ -6,7 +6,10 @@
 <br/n>
 <p> Hello, {{name}} </p>
 <p>Please enter the confirmation code from your phone </p>
-<form><input type = "text"></form>
-<button>Confirm</button>
+<form method="POST" action="/ibm/pass_input/">
+{% csrf_token %}
+<input type="password" name="passfield">
+
+<button type="submit">Confirm</button>
 </body>
 </html>
