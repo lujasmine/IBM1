@@ -20,4 +20,5 @@ from ibm import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ibm/', include("ibm.urls")),
+    url(r'^', include('ibm.urls')),
 ]
