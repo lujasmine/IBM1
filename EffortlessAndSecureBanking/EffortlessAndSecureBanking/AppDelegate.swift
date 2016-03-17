@@ -17,11 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let rootView: HomeViewController = HomeViewController()
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
         
-        if let window = self.window{
-            window.rootViewController = rootView
+        if firstLaunch  {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            print(defaults.stringForKey("phoneNumber"))
+            let rootView: PasswordViewController = PasswordViewController()
+            
+            if let window = self.window{
+                window.rootViewController = rootView
+            }
         }
+        else {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            let rootView: HomeViewController = HomeViewController()
+            
+            if let window = self.window{
+                window.rootViewController = rootView
+            }
+        }
+    
         
         return true
     }

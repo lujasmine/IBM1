@@ -1,0 +1,5 @@
+version: "Apple Swift version 3.0-dev (LLVM b361b0fc05, Clang 11493b0f62, Swift 24a0c3de75)"
+options: "c6117fde7c8771b677601eb8e026f770"
+build_time: [511446876, 943324000]
+inputs:
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBankingTests/EffortlessAndSecureBankingTests.swift": !dirty [508347669, 0]

@@ -1,0 +1,41 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/master.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/AppDelegate.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/AppDelegate.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/AppDelegate.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/Extenstion.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/Extenstion.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/Extenstion.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/Extenstion~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/Extenstion.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/HomeViewController.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/HomeViewController.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/HomeViewController.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/HomeViewController~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/HomeViewController.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/main.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/main.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/main.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/main.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/PasswordViewController.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/PasswordViewController.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/PasswordViewController.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/PasswordViewController~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/PasswordViewController.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBanking/ViewController.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/ViewController.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/ViewController.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/ViewController~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBanking.build/ViewController.swiftdeps"
+  }
+}

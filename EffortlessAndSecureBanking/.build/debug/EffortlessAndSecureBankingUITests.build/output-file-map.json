@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBankingUITests.build/master.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/EffortlessAndSecureBankingUITests/EffortlessAndSecureBankingUITests.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBankingUITests.build/EffortlessAndSecureBankingUITests.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBankingUITests.build/EffortlessAndSecureBankingUITests.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBankingUITests.build/EffortlessAndSecureBankingUITests~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/EffortlessAndSecureBankingUITests.build/EffortlessAndSecureBankingUITests.swiftdeps"
+  }
+}

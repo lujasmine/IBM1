@@ -1,0 +1,53 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/master.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/Byteswap.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Byteswap.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Byteswap.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Byteswap~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Byteswap.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/ColumnType.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ColumnType.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ColumnType.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ColumnType~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ColumnType.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/ConnectionParameters.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ConnectionParameters.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ConnectionParameters.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ConnectionParameters~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/ConnectionParameters.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/Database.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Database.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Database.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Database~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Database.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/OpenConnection.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/OpenConnection.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/OpenConnection.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/OpenConnection~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/OpenConnection.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/Parameter.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Parameter.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Parameter.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Parameter~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/Parameter.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/QueryResult.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResult.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResult.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResult~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResult.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/PostgreSQL-0.0.7/Sources/QueryResultRow.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResultRow.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResultRow.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResultRow~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/PostgreSQL.build/QueryResultRow.swiftdeps"
+  }
+}

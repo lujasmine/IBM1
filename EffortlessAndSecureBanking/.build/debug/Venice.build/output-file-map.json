@@ -1,0 +1,101 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/master.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Channel/Channel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel/Channel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Channel/Receivable.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Receivable.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel/Receivable.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Receivable~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Receivable.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Channel/ReceivingChannel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/ReceivingChannel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel/ReceivingChannel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/ReceivingChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/ReceivingChannel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Channel/Sendable.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Sendable.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel/Sendable.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Sendable~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Sendable.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Channel/SendingChannel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/SendingChannel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Channel/SendingChannel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/SendingChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/SendingChannel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Coroutine/Coroutine.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Coroutine.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Coroutine/Coroutine.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Coroutine~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Coroutine.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/FallibleChannel/FallibleChannel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel/FallibleChannel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/FallibleChannel/FallibleReceivable.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivable.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel/FallibleReceivable.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivable~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivable.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/FallibleChannel/FallibleReceivingChannel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivingChannel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel/FallibleReceivingChannel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivingChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleReceivingChannel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/FallibleChannel/FallibleSendable.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendable.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel/FallibleSendable.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendable~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendable.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/FallibleChannel/FallibleSendingChannel.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendingChannel.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleChannel/FallibleSendingChannel.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendingChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/FallibleSendingChannel.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Once/Once.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Once.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Once/Once.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Once~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Once.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Poll/Poll.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Poll.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Poll/Poll.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Poll~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Poll.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Select/Select.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Select.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Select/Select.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Select~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Select.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/Ticker/Ticker.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Ticker.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Ticker/Ticker.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Ticker~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Ticker.swiftdeps"
+  },
+  "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/Packages/Venice-0.2.2/Source/Venice/TImer/Timer.swift": {
+    "dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Timer.d",
+    "object": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/TImer/Timer.swift.o",
+    "swiftmodule": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Timer~partial.swiftmodule",
+    "swift-dependencies": "/Users/jasminelu/Desktop/IBM1/EffortlessAndSecureBanking/.build/debug/Venice.build/Timer.swiftdeps"
+  }
+}

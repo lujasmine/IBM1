@@ -1,0 +1,180 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "FallibleReceivingChannel"
+provides-nominal:
+- "C6Venice24FallibleReceivingChannel"
+provides-member:
+- ["C6Venice24FallibleReceivingChannel", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "FallibleReceivingChannel"
+- "SequenceType"
+- "FallibleReceivable"
+- "UnsafeMutablePointer"
+- "Void"
+- "FallibleChannelGenerator"
+- "Int"
+- "ChannelResult"
+- "Bool"
+- "FallibleChannel"
+depends-member:
+- ["Vs12AnyGenerator", "Element"]
+- ["Ps9AnyObject", "Element"]
+- !private ["Ps9AnyObject", "FallibleChannelGenerator"]
+- ["Ps9AnyObject", "Generator"]
+- ["Ps9AnyObject", "SubSequence"]
+- ["Ps9AnyObject", "T"]
+- ["Ps9AnyObject", "_copyToNativeArrayBuffer"]
+- ["Ps9AnyObject", "_customContainsEquatableElement"]
+- ["Ps9AnyObject", "_initializeTo"]
+- ["Ps9AnyObject", "_preprocessingPass"]
+- !private ["Ps9AnyObject", "channel"]
+- ["Ps9AnyObject", "close"]
+- ["Ps9AnyObject", "dropFirst"]
+- ["Ps9AnyObject", "dropLast"]
+- ["Ps9AnyObject", "filter"]
+- ["Ps9AnyObject", "forEach"]
+- ["Ps9AnyObject", "generate"]
+- !private ["Ps9AnyObject", "getResultFromBuffer"]
+- ["Ps9AnyObject", "map"]
+- ["Ps9AnyObject", "prefix"]
+- ["Ps9AnyObject", "receive"]
+- !private ["Ps9AnyObject", "receiveResult"]
+- !private ["Ps9AnyObject", "registerReceive"]
+- ["Ps9AnyObject", "split"]
+- ["Ps9AnyObject", "suffix"]
+- ["Ps9AnyObject", "underestimateCount"]
+- ["Ps9AnyObject", ""]
+- ["Vs11AnySequence", "Generator"]
+- ["Vs11AnySequence", "SubSequence"]
+- !private ["C6Venice15FallibleChannel", "close"]
+- !private ["C6Venice15FallibleChannel", "deinit"]
+- !private ["C6Venice15FallibleChannel", "getResultFromBuffer"]
+- !private ["C6Venice15FallibleChannel", "receive"]
+- !private ["C6Venice15FallibleChannel", "receiveResult"]
+- !private ["C6Venice15FallibleChannel", "registerReceive"]
+- ["V6Venice24FallibleChannelGenerator", "Element"]
+- ["V6Venice24FallibleChannelGenerator", "deinit"]
+- !private ["V6Venice24FallibleChannelGenerator", "init"]
+- ["P6Venice18FallibleReceivable", "Element"]
+- !private ["P6Venice18FallibleReceivable", "FallibleChannelGenerator"]
+- ["P6Venice18FallibleReceivable", "Generator"]
+- ["P6Venice18FallibleReceivable", "SubSequence"]
+- ["P6Venice18FallibleReceivable", "T"]
+- ["P6Venice18FallibleReceivable", "_copyToNativeArrayBuffer"]
+- ["P6Venice18FallibleReceivable", "_customContainsEquatableElement"]
+- ["P6Venice18FallibleReceivable", "_initializeTo"]
+- ["P6Venice18FallibleReceivable", "_preprocessingPass"]
+- !private ["P6Venice18FallibleReceivable", "channel"]
+- ["P6Venice18FallibleReceivable", "close"]
+- ["P6Venice18FallibleReceivable", "dropFirst"]
+- ["P6Venice18FallibleReceivable", "dropLast"]
+- ["P6Venice18FallibleReceivable", "filter"]
+- ["P6Venice18FallibleReceivable", "forEach"]
+- ["P6Venice18FallibleReceivable", "generate"]
+- !private ["P6Venice18FallibleReceivable", "getResultFromBuffer"]
+- ["P6Venice18FallibleReceivable", "map"]
+- ["P6Venice18FallibleReceivable", "prefix"]
+- ["P6Venice18FallibleReceivable", "receive"]
+- !private ["P6Venice18FallibleReceivable", "receiveResult"]
+- !private ["P6Venice18FallibleReceivable", "registerReceive"]
+- ["P6Venice18FallibleReceivable", "split"]
+- ["P6Venice18FallibleReceivable", "suffix"]
+- ["P6Venice18FallibleReceivable", "underestimateCount"]
+- ["P6Venice18FallibleReceivable", ""]
+- ["C6Venice24FallibleReceivingChannel", "Bool"]
+- ["C6Venice24FallibleReceivingChannel", "ChannelResult"]
+- ["C6Venice24FallibleReceivingChannel", "Element"]
+- ["C6Venice24FallibleReceivingChannel", "FallibleChannel"]
+- ["C6Venice24FallibleReceivingChannel", "FallibleChannelGenerator"]
+- ["C6Venice24FallibleReceivingChannel", "Generator"]
+- ["C6Venice24FallibleReceivingChannel", "Int"]
+- ["C6Venice24FallibleReceivingChannel", "SubSequence"]
+- ["C6Venice24FallibleReceivingChannel", "T"]
+- ["C6Venice24FallibleReceivingChannel", "UnsafeMutablePointer"]
+- ["C6Venice24FallibleReceivingChannel", "Void"]
+- ["C6Venice24FallibleReceivingChannel", "_copyToNativeArrayBuffer"]
+- ["C6Venice24FallibleReceivingChannel", "_customContainsEquatableElement"]
+- ["C6Venice24FallibleReceivingChannel", "_initializeTo"]
+- ["C6Venice24FallibleReceivingChannel", "_preprocessingPass"]
+- !private ["C6Venice24FallibleReceivingChannel", "channel"]
+- ["C6Venice24FallibleReceivingChannel", "close"]
+- ["C6Venice24FallibleReceivingChannel", "deinit"]
+- ["C6Venice24FallibleReceivingChannel", "dropFirst"]
+- ["C6Venice24FallibleReceivingChannel", "dropLast"]
+- ["C6Venice24FallibleReceivingChannel", "filter"]
+- ["C6Venice24FallibleReceivingChannel", "forEach"]
+- ["C6Venice24FallibleReceivingChannel", "generate"]
+- ["C6Venice24FallibleReceivingChannel", "getResultFromBuffer"]
+- ["C6Venice24FallibleReceivingChannel", "init"]
+- ["C6Venice24FallibleReceivingChannel", "map"]
+- ["C6Venice24FallibleReceivingChannel", "prefix"]
+- ["C6Venice24FallibleReceivingChannel", "receive"]
+- ["C6Venice24FallibleReceivingChannel", "receiveResult"]
+- ["C6Venice24FallibleReceivingChannel", "registerReceive"]
+- ["C6Venice24FallibleReceivingChannel", "split"]
+- ["C6Venice24FallibleReceivingChannel", "suffix"]
+- ["C6Venice24FallibleReceivingChannel", "underestimateCount"]
+- !private ["P6Venice16FallibleSendable", "close"]
+- !private ["P6Venice16FallibleSendable", "getResultFromBuffer"]
+- !private ["P6Venice16FallibleSendable", "receive"]
+- !private ["P6Venice16FallibleSendable", "receiveResult"]
+- !private ["P6Venice16FallibleSendable", "registerReceive"]
+- ["Ps13GeneratorType", "Element"]
+- !private ["Ps13GeneratorType", "init"]
+- ["Ps12SequenceType", "Element"]
+- !private ["Ps12SequenceType", "FallibleChannelGenerator"]
+- ["Ps12SequenceType", "Generator"]
+- ["Ps12SequenceType", "SubSequence"]
+- ["Ps12SequenceType", "T"]
+- ["Ps12SequenceType", "_copyToNativeArrayBuffer"]
+- ["Ps12SequenceType", "_customContainsEquatableElement"]
+- ["Ps12SequenceType", "_initializeTo"]
+- ["Ps12SequenceType", "_preprocessingPass"]
+- !private ["Ps12SequenceType", "channel"]
+- ["Ps12SequenceType", "close"]
+- ["Ps12SequenceType", "dropFirst"]
+- ["Ps12SequenceType", "dropLast"]
+- ["Ps12SequenceType", "filter"]
+- ["Ps12SequenceType", "forEach"]
+- ["Ps12SequenceType", "generate"]
+- !private ["Ps12SequenceType", "getResultFromBuffer"]
+- ["Ps12SequenceType", "map"]
+- ["Ps12SequenceType", "prefix"]
+- ["Ps12SequenceType", "receive"]
+- !private ["Ps12SequenceType", "receiveResult"]
+- !private ["Ps12SequenceType", "registerReceive"]
+- ["Ps12SequenceType", "split"]
+- ["Ps12SequenceType", "suffix"]
+- ["Ps12SequenceType", "underestimateCount"]
+- ["Ps12SequenceType", ""]
+depends-nominal:
+- "Vs12AnyGenerator"
+- "Ps9AnyObject"
+- "Vs11AnySequence"
+- !private "C6Venice15FallibleChannel"
+- "V6Venice24FallibleChannelGenerator"
+- "P6Venice18FallibleReceivable"
+- "C6Venice24FallibleReceivingChannel"
+- !private "P6Venice16FallibleSendable"
+- "Ps13GeneratorType"
+- "Ps12SequenceType"
+depends-dynamic-lookup:
+depends-external:
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/Visibility.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/UnicodeShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/RuntimeStubs.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/SwiftStdint.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/SwiftStddef.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/RuntimeShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/LibcShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/RefCount.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/HeapObject.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/GlobalObjects.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/FoundationShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/CoreFoundationShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/shims/module.map"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+interface-hash: "ffb09cc97c84c4f7eeac688b726348dd"

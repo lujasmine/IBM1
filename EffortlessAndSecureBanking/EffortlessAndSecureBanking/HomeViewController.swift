@@ -44,10 +44,29 @@ class HomeViewController: UIViewController {
     func textFieldDidEndEditing(textField: UITextField) {
         self.resignFirstResponder()
         
-        //TODO phone verification with database
+        let phone = phoneNumber.text
         
-        let vc = PasswordViewController(nibName: nil, bundle: nil)
-        self.presentViewController(vc, animated: true, completion: nil)
+        if phone!.isEmpty {
+            let alertController = UIAlertController(title: "Error", message: "Enter Phone Number", preferredStyle: .Alert)
+            let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+                self.resignFirstResponder()
+            }
+            
+            alertController.addAction(ok)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        else {
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(phoneNumber.text, forKey: "phoneNumber")
+//            print("save number")
+//            print(defaults.stringForKey("phoneNumber"))
+            
+            let vc = PasswordViewController(nibName: nil, bundle: nil)
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+            vc.phoneNumberString = phoneNumber.text
+        }
         
     }
     

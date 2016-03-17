@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8C71DCF0768F7666B8D28CC6B6CD842C1F15445D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8C71DCF0768F7666B8D28CC6B6CD842C1F15445D" : 0,
+    "ACC0BBC3068744D5BA8D7E6DD78A488C7C670908" : 0,
+    "1D5E3FB3EB19F2DAF5FDEE97CBD5C55259A1CEC1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "91E4BEEF-F17C-4C5D-B382-14DA3CF5BF07",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8C71DCF0768F7666B8D28CC6B6CD842C1F15445D" : "IBM1\/",
+    "ACC0BBC3068744D5BA8D7E6DD78A488C7C670908" : "IBM1\/EffortlessAndSecureBanking\/Packages\/libpq-9.0.1\/",
+    "1D5E3FB3EB19F2DAF5FDEE97CBD5C55259A1CEC1" : "IBM1\/EffortlessAndSecureBanking\/Packages\/CLibvenice-0.2.0\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EffortlessAndSecureBanking",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EffortlessAndSecureBanking\/EffortlessAndSecureBanking.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/CLibvenice.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D5E3FB3EB19F2DAF5FDEE97CBD5C55259A1CEC1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lujasmine\/IBM1",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8C71DCF0768F7666B8D28CC6B6CD842C1F15445D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/stepanhruda\/libpq-darwin.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ACC0BBC3068744D5BA8D7E6DD78A488C7C670908"
+    }
+  ]
+}
