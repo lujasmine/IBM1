@@ -5,10 +5,12 @@ from .views import (
     index,
     pass_input,
     final,
+    reg_pass,
     )
 
 urlpatterns = [
     url(r'^index/$', index),
     url(r'^pass_input/$', pass_input),
     url(r'^final/$', final),
+    url(r'^reg_pass/$', reg_pass),
 ]

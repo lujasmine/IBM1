@@ -42,9 +42,9 @@ def final(request):
     else:
         return render(request, 'index.html', context)
         
-  
-       
         
+def reg_pass(request):
+        return render(request, 'reg_pass.html')
     
     
     
