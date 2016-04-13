@@ -47,6 +47,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -127,9 +128,4 @@ STATIC_URL = '/static/'
 
 PWD = os.path.dirname(os.path.realpath(__file__ ))
 
-TEMPLATE_DIRS = (
 
-'/esb/ibm/templates/',
-os.path.join(PWD, "Templates")
-
-)

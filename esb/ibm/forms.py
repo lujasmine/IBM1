@@ -4,13 +4,17 @@ from django.core.exceptions import ValidationError
 
 class LoginForm(forms.ModelForm):
     
+    confirm_password = forms.CharField(widget=forms.PasswordInput())
+    
     class Meta:
         model = Log_in
         fields = [
-        "id",
-        
+        "testcasePass",
         ]
+        widgets = {
+        
+         'testcasePass': forms.PasswordInput(),
+        
+        }
 
 
-class Log_inForm(forms.Form):
-    content = forms.CharField(max_length=256)
