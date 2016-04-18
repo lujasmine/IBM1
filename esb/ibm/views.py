@@ -17,7 +17,7 @@ def final(request):
     phone_entry = request.POST.get('textfield', None)
     value = phone_entry
     request.session['value'] = value
-    print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~") #Testing
     try:
         user = Log_in.objects.get(phonenumber = phone_entry)
         name = user.username
@@ -40,7 +40,7 @@ def pass_input(request):
             value = request.session['value']
             print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~") #Testing
         x = Log_in.objects.get(phonenumber = value)
-        auth = x.testcasePass
+        auth = x.testcasepass
         print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~") #Testing
         if auth == pass_entry:
             return TemplateResponse(request, 'pass_input.html')

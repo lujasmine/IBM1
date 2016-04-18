@@ -9,7 +9,7 @@ class LoginForm(forms.ModelForm):
     class Meta:
         model = Log_in
         fields = [
-        "testcasePass",
+        "testcasepass",
         ]
         widgets = {
         

@@ -15,12 +15,20 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+FERNET_USE_HKDF = False
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'uqz=fx&k0ga*wu)1fc2&(bn$!_=2$d2l+fyqqcy2qz$5uw=5+='
+SECRET_KEY = 'LNmPe5294xisNqRnN0NB9ZhtUKHZaeiV8uihi0cHiLE='
+
+FERNET_KEYS = [
+    'LNmPe5294xisNqRnN0NB9ZhtUKHZaeiV8uihi0cHiLE='
+]
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

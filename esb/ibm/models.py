@@ -11,7 +11,7 @@ class Log_in(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=120)
     timeaccess = models.DateTimeField(auto_now=False,auto_now_add=False)
-    testcasePass = EncryptedCharField(max_length=32, null=True)
+    testcasepass = EncryptedCharField(max_length=32, null=True)
     
     
     def __str__(self):
