@@ -6,6 +6,7 @@ from django.forms.models import model_to_dict
 from django.views.generic.edit import FormView
 from django.template.response import TemplateResponse
 from .forms import LoginForm
+from django.core import serializers
 
 
 def index(request):
@@ -52,7 +53,10 @@ def reg_pass(request):
     return render(request, 'reg_pass.html')
     
     
-    
+def list(request):
+    queryset = Log_in.objects.all()
+    queryset = serializers.serialize('json', queryset)
+    return HttpResponse(queryset, content_type="application/json")
     
     
     
