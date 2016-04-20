@@ -7,6 +7,10 @@ from django.views.generic.edit import FormView
 from django.template.response import TemplateResponse
 from .forms import LoginForm
 from django.core import serializers
+from django.core import signing
+from django.core.signing import *
+
+
 
 
 def index(request):
@@ -56,6 +60,10 @@ def reg_pass(request):
 def list(request):
     queryset = Log_in.objects.all()
     queryset = serializers.serialize('json', queryset)
+    value = signing.dumps(queryset)
+    print(value)
+    check = signing.loads(value)
+    print(check)
     return HttpResponse(queryset, content_type="application/json")
     
     
