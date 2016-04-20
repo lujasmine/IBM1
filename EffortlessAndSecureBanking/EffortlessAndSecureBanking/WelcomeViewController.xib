@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="EffortlessAndSecureBanking" customModuleProvider="target">
+            <connections>
+                <outlet property="name" destination="Lqs-oT-vgr" id="Blk-6c-sse"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhA-Dq-FnS">
+                    <rect key="frame" x="32" y="125" width="330" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqs-oT-vgr">
+                    <rect key="frame" x="32" y="183" width="330" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="lB1-Pb-TfE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zc-yP-8nS">
+                    <rect key="frame" x="110" y="319" width="174" height="30"/>
+                    <state key="normal" title="Sign in as a different user"/>
+                    <connections>
+                        <action selector="signOut:" destination="-1" eventType="touchUpInside" id="3vm-oV-zMr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nhA-Dq-FnS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="EzR-ML-koi"/>
+                <constraint firstItem="Lqs-oT-vgr" firstAttribute="centerX" secondItem="7zc-yP-8nS" secondAttribute="centerX" id="PVJ-ls-DsD"/>
+                <constraint firstItem="nhA-Dq-FnS" firstAttribute="leading" secondItem="Lqs-oT-vgr" secondAttribute="leading" id="cLl-8B-Nnb"/>
+                <constraint firstItem="nhA-Dq-FnS" firstAttribute="trailing" secondItem="Lqs-oT-vgr" secondAttribute="trailing" id="czu-Ls-pvZ"/>
+                <constraint firstAttribute="trailing" secondItem="nhA-Dq-FnS" secondAttribute="trailing" constant="13" id="ifl-if-kYe"/>
+                <constraint firstItem="nhA-Dq-FnS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="125" id="iza-Ef-8Ul"/>
+                <constraint firstItem="7zc-yP-8nS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jMl-NA-UgI"/>
+                <constraint firstItem="Lqs-oT-vgr" firstAttribute="top" secondItem="nhA-Dq-FnS" secondAttribute="bottom" constant="24" id="s7d-Tx-DP0"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+</document>

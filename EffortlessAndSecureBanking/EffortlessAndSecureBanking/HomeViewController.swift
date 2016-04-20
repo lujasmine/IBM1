@@ -7,17 +7,21 @@
 //
 
 import UIKit
-import Alamofire
+import SwiftyJSON
+import CoreLocation
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var phoneNumber: UITextField!
     var phoneNumberString:String!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,7 @@ class HomeViewController: UIViewController {
         let doneButton = UIToolbar()
         doneButton.sizeToFit()
         
-        let item = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("endEditingNow") )
+        let item = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(HomeViewController.endEditingNow) )
         let toolbarButtons = [item]
         
         doneButton.setItems(toolbarButtons, animated: false)
@@ -59,38 +63,73 @@ class HomeViewController: UIViewController {
         }
         else {
             phoneNumberString = phoneNumber.text
-            checkPhoneNumberExists()
+            checkPhone(phoneNumberString)
+//            checkPhoneNumberExists()
         }
         
     }
     
-    func checkPhoneNumberExists() {
-        Alamofire.request(.GET, "http://localhost/~jasminelu/checkPhone.php?phone=\(phoneNumberString)").response { (req, res, data, error) -> Void in
-            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
-            print(outputString)
-            if outputString == "Incorrect Phone Number " {
-                let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
-                let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
-                    self.resignFirstResponder()
+    func checkPhone(phone: String) {
+        
+        let urlString = "http://esb.eu-gb.mybluemix.net/ibm/5ZVO0gX7Vy845sKhHwg0/"
+        
+        if let url = NSURL(string: urlString) {
+            if let data = try? NSData(contentsOfURL: url, options: []) {
+                let json = JSON(data: data)
+                //TODO get ivan to assign an array name
+                if json[0]["fields"]["phonenumber"].string == phone {
+                    
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
+                    defaults.setValue(json[0]["fields"]["username"].string, forKey: "name")
+                    
+                    let vc = PasswordViewController(nibName: nil, bundle: nil)
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    
+                    vc.phoneNumberString = self.phoneNumber.text
                 }
-                
-                alertController.addAction(ok)
-                self.presentViewController(alertController, animated: true, completion: nil)
-            }
-            else {
-                print(outputString)
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
-                
-                let vc = PasswordViewController(nibName: nil, bundle: nil)
-                self.presentViewController(vc, animated: true, completion: nil)
-                
-                vc.phoneNumberString = self.phoneNumber.text
+                else {
+                    let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
+                    let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+                        self.resignFirstResponder()
+                    }
+                    
+                    alertController.addAction(ok)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+//                print(json)
             }
             
         }
-        
     }
+    
+//    func checkPhoneNumberExists() {
+//        Alamofire.request(.GET, "http://esb-php.eu-gb.mybluemix.net/checkPhone.php?phone=\(phoneNumberString)").response { (req, res, data, error) -> Void in
+//            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
+//            print(outputString)
+//            if (outputString == "Incorrect Phone Number " || outputString == "") {
+//                let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
+//                let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+//                    self.resignFirstResponder()
+//                }
+//                
+//                alertController.addAction(ok)
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//            }
+//            else {
+//                print(outputString)
+//                let defaults = NSUserDefaults.standardUserDefaults()
+//                defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
+//                
+//                let vc = PasswordViewController(nibName: nil, bundle: nil)
+//                self.presentViewController(vc, animated: true, completion: nil)
+//                
+//                vc.phoneNumberString = self.phoneNumber.text
+//            }
+//            
+//        }
+//        
+//    }
     
 
     /*

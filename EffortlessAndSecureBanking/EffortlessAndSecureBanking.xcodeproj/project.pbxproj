@@ -20,6 +20,9 @@
 		900107141C6A4506009A5D2B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900107121C6A4506009A5D2B /* PasswordViewController.swift */; };
 		900107151C6A4506009A5D2B /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900107131C6A4506009A5D2B /* PasswordViewController.xib */; };
 		900107171C6BD41D009A5D2B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900107161C6BD41D009A5D2B /* LocalAuthentication.framework */; };
+		901137B91CC847D20083C9D1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901137B71CC847D20083C9D1 /* WelcomeViewController.swift */; };
+		901137BA1CC847D20083C9D1 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901137B81CC847D20083C9D1 /* WelcomeViewController.xib */; };
+		906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		900107121C6A4506009A5D2B /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		900107131C6A4506009A5D2B /* PasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
 		900107161C6BD41D009A5D2B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		901137B71CC847D20083C9D1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		901137B81CC847D20083C9D1 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AEA0DFFBEF16C7E107FEF1FD /* Pods-EffortlessAndSecureBanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortlessAndSecureBanking.release.xcconfig"; path = "Pods/Target Support Files/Pods-EffortlessAndSecureBanking/Pods-EffortlessAndSecureBanking.release.xcconfig"; sourceTree = "<group>"; };
 		D544648B39177E9F77EFFF44 /* Pods-EffortlessAndSecureBanking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortlessAndSecureBanking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffortlessAndSecureBanking/Pods-EffortlessAndSecureBanking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */,
 				900107171C6BD41D009A5D2B /* LocalAuthentication.framework in Frameworks */,
 				17B17A088F75201396E63662 /* Pods_EffortlessAndSecureBanking.framework in Frameworks */,
 			);
@@ -131,6 +138,8 @@
 				9001070F1C6A4125009A5D2B /* HomeViewController.xib */,
 				900107121C6A4506009A5D2B /* PasswordViewController.swift */,
 				900107131C6A4506009A5D2B /* PasswordViewController.xib */,
+				901137B71CC847D20083C9D1 /* WelcomeViewController.swift */,
+				901137B81CC847D20083C9D1 /* WelcomeViewController.xib */,
 				900106E41C6A4015009A5D2B /* Main.storyboard */,
 				900106E71C6A4015009A5D2B /* Assets.xcassets */,
 				900106E91C6A4015009A5D2B /* LaunchScreen.storyboard */,
@@ -160,6 +169,7 @@
 		CF6EFD4A29939D307EB46352 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */,
 				880A56E8998E73A20323679A /* Pods_EffortlessAndSecureBanking.framework */,
 			);
 			name = Frameworks;
@@ -280,6 +290,7 @@
 				900106E61C6A4015009A5D2B /* Main.storyboard in Resources */,
 				900107111C6A4125009A5D2B /* HomeViewController.xib in Resources */,
 				900107151C6A4506009A5D2B /* PasswordViewController.xib in Resources */,
+				901137BA1CC847D20083C9D1 /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				900106E31C6A4015009A5D2B /* ViewController.swift in Sources */,
+				901137B91CC847D20083C9D1 /* WelcomeViewController.swift in Sources */,
 				900107141C6A4506009A5D2B /* PasswordViewController.swift in Sources */,
 				900106E11C6A4015009A5D2B /* AppDelegate.swift in Sources */,
 				900107101C6A4125009A5D2B /* HomeViewController.swift in Sources */,
@@ -499,7 +511,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jasminelu.EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ucl.advances.faculty.cs.EffortlessAndSecureBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/debug";
 			};
@@ -513,7 +525,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jasminelu.EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ucl.advances.faculty.cs.EffortlessAndSecureBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/release";
 			};
