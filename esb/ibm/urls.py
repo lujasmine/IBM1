@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^pass_input/$', pass_input),
     url(r'^final/$', final),
     url(r'^reg_pass/$', reg_pass),
-    url(r'^5ZVO0gX7Vy845sKhHwg0/$', list),
+    url(r'^p9qdULz6sU9mpFoyDiJovWY4hGy4eFLW3319uoKXq531FoPYnbi3VVutY5t8tDO3', list),
 ]
