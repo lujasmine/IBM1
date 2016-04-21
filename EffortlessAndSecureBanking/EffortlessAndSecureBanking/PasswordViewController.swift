@@ -20,7 +20,11 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
     var fingerprint:Bool!
     @IBOutlet weak var loginResponse: UILabel!
     
-    var count = 1
+    var longitude:Double!
+    var latitude:Double!
+    var time:Int!
+    var day:Int!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -29,37 +33,34 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //TODO MOVE THIS - LOCATION AUTHORIZATION
+        
+        //has this user already logged on
+        if(NSUserDefaults.standardUserDefaults().boolForKey("loggedIn")) {
+            //gets the user's phone number
+            phoneNumberString = defaults.stringForKey("phoneNumber")
+            if defaults.boolForKey("predio") {
+                
+                //prediction login
+                getProperties()
+            } else if (defaults.boolForKey("fingerprint")) {
+                fingerprintAuthentication()
+            }
+            
+        }
+        
+    }
+    
+    func getProperties() {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         
         let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: NSDate())
         let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: NSDate())
-        let absTime = (hour*60)+minute
-        print("absolute time: ")
-        print(absTime)
         
-        let day = NSCalendar.currentCalendar().component(.Weekday, fromDate:NSDate())
-        print("day of the week: ")
-        print(day)
+        time = (hour*60)+minute
+        day = NSCalendar.currentCalendar().component(.Weekday, fromDate:NSDate())
         
-        // is fingerprint login enabled
-        
-        print(defaults.boolForKey("fingerprint"))
-        
-        //has this user already logged on
-        if(NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
-            //gets the user's phone number
-            phoneNumberString = defaults.stringForKey("phoneNumber")
-            if (defaults.boolForKey("fingerprint")) {
-                fingerprintAuthentication()
-            }
-        }
 
-    }
-    
-    func roundCoord(value: Double, round: Double) -> Double {
-        return 1;
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -68,29 +69,15 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         let long: Double = location.coordinate.longitude
         let lat: Double = location.coordinate.latitude
         
-        let long1 = round(long * 10000)/10000
-        let lat1 = round(lat * 10000)/10000
-        
-        let long2 = round(long * 100000)/100000
-        let lat2 = round(lat * 100000)/100000
+        longitude = round(long * 100000)/100000
+        latitude = round(lat * 100000)/100000
         
         locationManager.stopUpdatingLocation()
         
-        if count == 1 {
-            print("long1: ")
-            print(long1)
-            print("lat1: ")
-            print(lat1)
-        } else {
-            print("long2: ")
-            print(long2)
-            print("lat2: ")
-            print(lat2)
-        }
-        
+        //TODO ask query - prediction login
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,19 +86,15 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         
-        //login password authentication with postgresql database
-        
         passwordString = password.text
         
         if (passwordString.isEmpty) {
             
             let alertController = UIAlertController(title: "Error", message: "Enter Password", preferredStyle: .Alert)
-            let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
-                self.fingerprint = true
-                self.fingerprintAuthentication()
-            }
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             
-            alertController.addAction(ok)
+            alertController.addAction(defaultAction)
+            
             self.presentViewController(alertController, animated: true, completion: nil)
             
         }
@@ -119,54 +102,37 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
             passwordLogin(passwordString)
         }
         
-        if(NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
-            // app already launched
-        }
-        else {
-            
-            // This is the first launch ever
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            let context = LAContext()
-            var error: NSError?
-            
-            if context.canEvaluatePolicy(
-                LAPolicy.DeviceOwnerAuthenticationWithBiometrics,
-                error: &error) {
-                    // TouchID is available on the device
-                    let alertController = UIAlertController(title: "Option", message: "Use TouchID for Login?", preferredStyle: .Alert)
-                    
-                    let yesOption = UIAlertAction(title: "Yes", style: .Default) {(action) in
-                        print(action)
-                        self.fingerprint = true
-                        self.fingerprintAuthentication()
-                        let defaults = NSUserDefaults.standardUserDefaults()
-                        defaults.setBool(true, forKey: "fingerprint")
-                        //                print("yes")
-                    }
-                    let noOption = UIAlertAction(title: "No", style: .Default) {(action) in
-                        print(action)
-                        self.fingerprint = false
-                        //                print("no")
-                    }
-                    
-                    alertController.addAction(yesOption)
-                    alertController.addAction(noOption)
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
-            } else {
-                // TouchID is not available on the device
-                // No scanner or user has not set up TouchID
-            }
-            
-        }
-        
         return false
     }
-
+    
+    func askToUseFingerprint() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(
+            LAPolicy.DeviceOwnerAuthenticationWithBiometrics,
+            error: &error) {
+            
+            // TouchID is available on the device
+            
+            let alertView = UIAlertController(title: "Login Option", message: "Use TouchID for Login?", preferredStyle: .Alert)
+            
+            let yesOption = UIAlertAction(title: "Yes", style: .Default) {(action) in
+                self.fingerprintAuthentication()
+                self.defaults.setBool(true, forKey: "fingerprint")
+            }
+            let noOption = UIAlertAction(title: "No", style: .Default) {(action) in
+                self.defaults.setBool(false, forKey: "fingerprint")
+            }
+            
+            alertView.addAction(yesOption)
+            alertView.addAction(noOption)
+            
+            self.presentViewController(alertView, animated: true, completion: nil)
+        }
+    }
+    
     func passwordLogin(password: String) {
-        count = count + 1
         
         let urlString = "http://esb.eu-gb.mybluemix.net/ibm/5ZVO0gX7Vy845sKhHwg0/"
         
@@ -175,8 +141,15 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                 let json = JSON(data: data)
                 //TODO get ivan to assign an array name
                 if json[0]["fields"]["testcasepass"].string == password {
-                    self.locationManager.startUpdatingLocation()
                     
+                    if !defaults.boolForKey("loggedIn") {
+                        askToUseFingerprint()
+                    }
+                    
+                    if defaults.boolForKey("predio") {
+                        self.locationManager.startUpdatingLocation()
+                    }
+                                        
                     let vc = WelcomeViewController(nibName: nil, bundle: nil)
                     self.presentViewController(vc, animated: true, completion: nil)
                     
@@ -196,22 +169,21 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         
         /* TODO - replace above with this
          if user.fields.phonenumber = defaults - phone number
-            if user.fields.password = passwordstring
-                login
-            else
-                login failed
-        */
-
+         if user.fields.password = passwordstring
+         login
+         else
+         login failed
+         */
+        
     }
     
     func fingerprintLogin() {
-        count = count + 1
         
         self.locationManager.startUpdatingLocation()
         let vc = WelcomeViewController(nibName: nil, bundle: nil)
         self.presentViewController(vc, animated: true, completion: nil)
     }
-
+    
     //touch id authentication
     func fingerprintAuthentication() {
         let context : LAContext = LAContext()
@@ -221,32 +193,32 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: {
-                    (success : Bool, evaluationError : NSError?) -> Void in
-                    if success {
-                        self.fingerprintLogin()
+                (success : Bool, evaluationError : NSError?) -> Void in
+                if success {
+                    self.fingerprintLogin()
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    })
+                }
+                else {
+                    // Fingerprint Authentification Failed
+                    print(evaluationError?.localizedDescription)
+                    
+                    switch evaluationError!.code {
+                    case LAError.SystemCancel.rawValue:
+                        print("Authentication cancelled by the system")
+                    case LAError.UserCancel.rawValue:
+                        print("Authentication cancelled by the user")
+                    case LAError.UserFallback.rawValue:
+                        print("User wants to use a password")
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        })
+                    default:
+                        print("Authentication failed")
                         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         })
                     }
-                    else {
-                        // Fingerprint Authentification Failed
-                        print(evaluationError?.localizedDescription)
-                        
-                        switch evaluationError!.code {
-                        case LAError.SystemCancel.rawValue:
-                            print("Authentication cancelled by the system")
-                        case LAError.UserCancel.rawValue:
-                            print("Authentication cancelled by the user")
-                        case LAError.UserFallback.rawValue:
-                            print("User wants to use a password")
-                            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            })
-                        default:
-                            print("Authentication failed")
-                            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            })
-                        }
-                    }
-                })
+                }
+            })
         }
         else {
             switch error!.code {
@@ -258,7 +230,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                 print("TouchID not available")
             }
         }
-
+        
         
     }
     
@@ -266,23 +238,26 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         
         defaults.removeObjectForKey("name")
         defaults.removeObjectForKey("fingerprint")
-        defaults.removeObjectForKey("HasLaunchedOnce")
+        defaults.removeObjectForKey("loggedIn")
         defaults.removeObjectForKey("phoneNumber")
+        defaults.removeObjectForKey("predio")
         defaults.synchronize()
+        
+        print(defaults.boolForKey("loggedIn"))
         
         let vc = HomeViewController(nibName: nil, bundle: nil)
         self.presentViewController(vc, animated: true, completion: nil)
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

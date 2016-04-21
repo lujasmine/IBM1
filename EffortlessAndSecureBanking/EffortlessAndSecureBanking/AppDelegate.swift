@@ -35,23 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-//        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
-//        
-//        if firstLaunch  {
-//            let defaults = NSUserDefaults.standardUserDefaults()
-//            print(defaults.stringForKey("phoneNumber"))
-//            let rootView: PasswordViewController = PasswordViewController()
-//            
-//            if let window = self.window{
-//                window.rootViewController = rootView
-//            }
-//        }
-//        else {
-//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
-//            
-//        }
-    
-        
         return true
     }
 

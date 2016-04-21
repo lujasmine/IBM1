@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var name: UILabel!
     let defaults = NSUserDefaults.standardUserDefaults()
+    
+    var longitude:Double!
+    var latitude:Double!
+    var time:Int!
+    var day:Int!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +27,30 @@ class WelcomeViewController: UIViewController {
         name.text = defaults.stringForKey("name")
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if !defaults.boolForKey("loggedIn") {
+            askToUsePrediction()
+            
+            defaults.setBool(true, forKey: "loggedIn")
+        }
+
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        let long: Double = location.coordinate.longitude
+        let lat: Double = location.coordinate.latitude
+        
+        longitude = round(long * 10000)/10000
+        latitude = round(lat * 10000)/10000
+        
+        locationManager.stopUpdatingLocation()
+        
+        //TODO send query - prediction login
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +62,45 @@ class WelcomeViewController: UIViewController {
         
         defaults.removeObjectForKey("name")
         defaults.removeObjectForKey("fingerprint")
-        defaults.removeObjectForKey("HasLaunchedOnce")
+        defaults.removeObjectForKey("loggedIn")
         defaults.removeObjectForKey("phoneNumber")
+        defaults.removeObjectForKey("predio")
         defaults.synchronize()
         
         let vc = HomeViewController(nibName: nil, bundle: nil)
         self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    func getProperties() {
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
+        let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: NSDate())
+        let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: NSDate())
+        
+        time = (hour*60)+minute
+        day = NSCalendar.currentCalendar().component(.Weekday, fromDate:NSDate())
+        
+    }
+    
+    func askToUsePrediction() {
+        let alertController = UIAlertController(title: "Login Option", message: "Use Prediction Engine for Login?", preferredStyle: .Alert)
+        
+        let yesOption = UIAlertAction(title: "Yes", style: .Default) {(action) in
+            self.defaults.setBool(true, forKey: "predio")
+            self.getProperties()
+        }
+        let noOption = UIAlertAction(title: "No", style: .Default) {(action) in
+            self.defaults.setBool(false, forKey: "predio")
+        }
+        
+        alertController.addAction(yesOption)
+        alertController.addAction(noOption)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
         
     }
 
