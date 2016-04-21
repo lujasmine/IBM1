@@ -1,20 +1,38 @@
-<html lang="en">
-<head> 
-</head>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Material Login Form</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/style.css' %}" />
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/reset.css' %}" /> 
+  </head>
 
-<body>
-<div align="center">
-<h1> Welcome to Effortless and Secure Banking </h1>
-<p>Please enter your phone number </p>
-<form method="POST" action="/ibm/final/">
-{% csrf_token %}
-<input type="text" name="textfield"><br><br/n>
+  <body>
 
-<button type="submit">OK</button>
-</form>
-
+<div class="pen-title">
+  <h1>Welcome to Effortless and Secure Banking</h1><span>
 </div>
-
-
-</body>
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Please enter your phone number</h1>
+    <form method="POST" action="/ibm/final/">
+    {% csrf_token %}
+      <div class="input-container">
+        <input type="text" name="textfield" required="required"/>
+        <label for="Phonenumber">Mobile Number</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>OK</span></button>
+      </div>
+    </form>
+  </div>
+  <div class="card alt">
+    <div class="toggle">  <img src="{% static "ibm/logo.png" %}" alt="logo" style="width:128px;height:128px;"/> </div>
+</div>  
+  </body>
 </html>

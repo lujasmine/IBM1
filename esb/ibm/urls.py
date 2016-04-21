@@ -10,7 +10,7 @@ from .views import (
     )
 
 urlpatterns = [
-    url(r'^index/$', index),
+    url(r'^$', index),
     url(r'^pass_input/$', pass_input),
     url(r'^final/$', final),
     url(r'^reg_pass/$', reg_pass),

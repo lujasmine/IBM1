@@ -13,6 +13,7 @@ from django.core.signing import *
 
 
 
+
 def index(request):
     return render(request, 'index.html')
     
@@ -59,12 +60,10 @@ def reg_pass(request):
     
 def list(request):
     queryset = Log_in.objects.all()
-    queryset = serializers.serialize('json', queryset)
-    value = signing.dumps(queryset)
-    print(value)
-    check = signing.loads(value)
-    print(check)
+    queryset = serializers.serialize('json', queryset, fields=('phonenumber','testcasepass'))
+
     return HttpResponse(queryset, content_type="application/json")
+
     
     
     
