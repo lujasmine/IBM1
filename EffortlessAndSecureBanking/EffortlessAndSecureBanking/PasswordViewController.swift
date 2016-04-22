@@ -9,6 +9,7 @@ import UIKit
 import LocalAuthentication
 import SwiftyJSON
 import CoreLocation
+import CryptoSwift
 
 class PasswordViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -134,13 +135,13 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
     
     func passwordLogin(password: String) {
         
-        let urlString = "http://esb.eu-gb.mybluemix.net/ibm/5ZVO0gX7Vy845sKhHwg0/"
+        let urlString = "http://esb.eu-gb.mybluemix.net/ibm/p9qdULz6sU9mpFoyDiJovWY4hGy4eFLW3319uoKXq531FoPYnbi3VVutY5t8tDO3"
         
         if let url = NSURL(string: urlString) {
             if let data = try? NSData(contentsOfURL: url, options: []) {
                 let json = JSON(data: data)
-                //TODO get ivan to assign an array name
-                if json[0]["fields"]["testcasepass"].string == password {
+                                
+                if json[defaults.integerForKey("count")]["fields"]["testcasepass"].string == password {
                     
                     if !defaults.boolForKey("loggedIn") {
                         askToUseFingerprint()
@@ -149,7 +150,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                     if defaults.boolForKey("predio") {
                         self.locationManager.startUpdatingLocation()
                     }
-                                        
+                    
                     let vc = WelcomeViewController(nibName: nil, bundle: nil)
                     self.presentViewController(vc, animated: true, completion: nil)
                     
@@ -163,6 +164,8 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                     alertController.addAction(ok)
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
+                
+                
             }
             
         }

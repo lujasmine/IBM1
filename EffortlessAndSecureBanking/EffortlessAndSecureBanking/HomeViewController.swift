@@ -71,33 +71,40 @@ class HomeViewController: UIViewController {
     
     func checkPhone(phone: String) {
         
-        let urlString = "http://esb.eu-gb.mybluemix.net/ibm/5ZVO0gX7Vy845sKhHwg0/"
+        let urlString = "http://esb.eu-gb.mybluemix.net/ibm/p9qdULz6sU9mpFoyDiJovWY4hGy4eFLW3319uoKXq531FoPYnbi3VVutY5t8tDO3"
         
         if let url = NSURL(string: urlString) {
             if let data = try? NSData(contentsOfURL: url, options: []) {
                 let json = JSON(data: data)
-                //TODO get ivan to assign an array name
-                if json[0]["fields"]["phonenumber"].string == phone {
+                
+                var count = 0
+                
+                for item in json.array! {
                     
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
-                    defaults.setValue(json[0]["fields"]["username"].string, forKey: "name")
-                    
-                    let vc = PasswordViewController(nibName: nil, bundle: nil)
-                    self.presentViewController(vc, animated: true, completion: nil)
-                    
-                    vc.phoneNumberString = self.phoneNumber.text
-                }
-                else {
-                    let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
-                    let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
-                        self.resignFirstResponder()
+                    if item["fields"]["phonenumber"].string == phone {
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
+                        defaults.setValue(json[0]["fields"]["username"].string, forKey: "name")
+                        defaults.setInteger(count, forKey: "count")
+                        
+                        let vc = PasswordViewController(nibName: nil, bundle: nil)
+                        self.presentViewController(vc, animated: true, completion: nil)
+                        
+                        vc.phoneNumberString = self.phoneNumber.text
+                    } else {
+                        count = count + 1
                     }
                     
-                    alertController.addAction(ok)
-                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
-//                print(json)
+                
+                let alertController = UIAlertController(title: "Phone Number Incorrect", message: "Please try again.", preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+                    self.resignFirstResponder()
+                }
+                
+                alertController.addAction(ok)
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
             }
             
         }

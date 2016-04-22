@@ -22,6 +22,9 @@
 		900107171C6BD41D009A5D2B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900107161C6BD41D009A5D2B /* LocalAuthentication.framework */; };
 		901137B91CC847D20083C9D1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901137B71CC847D20083C9D1 /* WelcomeViewController.swift */; };
 		901137BA1CC847D20083C9D1 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901137B81CC847D20083C9D1 /* WelcomeViewController.xib */; };
+		901137C41CC8851D0083C9D1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C31CC8851D0083C9D1 /* Alamofire.framework */; };
+		901137C61CC885220083C9D1 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C51CC885220083C9D1 /* CryptoSwift.framework */; };
+		901137C81CC885250083C9D1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C71CC885250083C9D1 /* SwiftyJSON.framework */; };
 		906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		900107161C6BD41D009A5D2B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		901137B71CC847D20083C9D1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		901137B81CC847D20083C9D1 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		901137C31CC8851D0083C9D1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/EffortlessAndSecureBanking-cxkpqkzgmvzrunfvpouhctbdjwbw/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		901137C51CC885220083C9D1 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/EffortlessAndSecureBanking-cxkpqkzgmvzrunfvpouhctbdjwbw/Build/Products/Debug-iphonesimulator/CryptoSwift.framework"; sourceTree = "<group>"; };
+		901137C71CC885250083C9D1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/EffortlessAndSecureBanking-cxkpqkzgmvzrunfvpouhctbdjwbw/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AEA0DFFBEF16C7E107FEF1FD /* Pods-EffortlessAndSecureBanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortlessAndSecureBanking.release.xcconfig"; path = "Pods/Target Support Files/Pods-EffortlessAndSecureBanking/Pods-EffortlessAndSecureBanking.release.xcconfig"; sourceTree = "<group>"; };
 		D544648B39177E9F77EFFF44 /* Pods-EffortlessAndSecureBanking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortlessAndSecureBanking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffortlessAndSecureBanking/Pods-EffortlessAndSecureBanking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901137C81CC885250083C9D1 /* SwiftyJSON.framework in Frameworks */,
+				901137C61CC885220083C9D1 /* CryptoSwift.framework in Frameworks */,
+				901137C41CC8851D0083C9D1 /* Alamofire.framework in Frameworks */,
 				906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */,
 				900107171C6BD41D009A5D2B /* LocalAuthentication.framework in Frameworks */,
 				17B17A088F75201396E63662 /* Pods_EffortlessAndSecureBanking.framework in Frameworks */,
@@ -169,6 +178,9 @@
 		CF6EFD4A29939D307EB46352 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				901137C71CC885250083C9D1 /* SwiftyJSON.framework */,
+				901137C51CC885220083C9D1 /* CryptoSwift.framework */,
+				901137C31CC8851D0083C9D1 /* Alamofire.framework */,
 				906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */,
 				880A56E8998E73A20323679A /* Pods_EffortlessAndSecureBanking.framework */,
 			);

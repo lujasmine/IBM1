@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D8B7F42938CA0CD6D1EB6425'
+               BlueprintIdentifier = '6A636E5F7DE334E969E2B504'
                BlueprintName = 'Pods-EffortlessAndSecureBanking'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_EffortlessAndSecureBanking.framework'>
