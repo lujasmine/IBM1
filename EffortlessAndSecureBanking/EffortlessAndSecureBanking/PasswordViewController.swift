@@ -9,11 +9,14 @@ import UIKit
 import LocalAuthentication
 import SwiftyJSON
 import CoreLocation
-import CryptoSwift
+import Alamofire
 
 class PasswordViewController: UIViewController, CLLocationManagerDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
+    
+    @IBOutlet weak var predictionResultLabel: UILabel!
+    
     
     @IBOutlet weak var password: UITextField!
     var phoneNumberString:String!
@@ -40,13 +43,12 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
             //gets the user's phone number
             phoneNumberString = defaults.stringForKey("phoneNumber")
             if defaults.boolForKey("predio") {
-                
-                //prediction login
                 getProperties()
-            } else if (defaults.boolForKey("fingerprint")) {
-                fingerprintAuthentication()
             }
             
+            if (defaults.boolForKey("fingerprint")) {
+                fingerprintAuthentication()
+            }
         }
         
     }
@@ -76,6 +78,20 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         
         //TODO ask query - prediction login
+        
+        Alamofire.request(.GET, "http://localhost/~jasminelu/ibm1/predict.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
+            
+            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
+            print(outputString)
+            
+            if outputString == "-1" {
+                self.predictionResultLabel.text = "Could not login with Prediction Engine"
+            } else {
+                let vc = WelcomeViewController(nibName: nil, bundle: nil)
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+            
+        }
         
     }
     
@@ -170,14 +186,6 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
             
         }
         
-        /* TODO - replace above with this
-         if user.fields.phonenumber = defaults - phone number
-         if user.fields.password = passwordstring
-         login
-         else
-         login failed
-         */
-        
     }
     
     func fingerprintLogin() {
@@ -244,6 +252,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         defaults.removeObjectForKey("loggedIn")
         defaults.removeObjectForKey("phoneNumber")
         defaults.removeObjectForKey("predio")
+        defaults.removeObjectForKey("count")
         defaults.synchronize()
         
         print(defaults.boolForKey("loggedIn"))

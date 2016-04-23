@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -26,12 +27,17 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         name.text = defaults.stringForKey("name")
         
+        if defaults.boolForKey("predio") {
+            getProperties()
+        }
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         if !defaults.boolForKey("loggedIn") {
             askToUsePrediction()
+            getProperties()
             
             defaults.setBool(true, forKey: "loggedIn")
         }
@@ -51,6 +57,10 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         //TODO send query - prediction login
         
+        Alamofire.request(.GET, "http://localhost/~jasminelu/ibm1/sendEvent.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +75,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         defaults.removeObjectForKey("loggedIn")
         defaults.removeObjectForKey("phoneNumber")
         defaults.removeObjectForKey("predio")
+        defaults.removeObjectForKey("count")
         defaults.synchronize()
         
         let vc = HomeViewController(nibName: nil, bundle: nil)
