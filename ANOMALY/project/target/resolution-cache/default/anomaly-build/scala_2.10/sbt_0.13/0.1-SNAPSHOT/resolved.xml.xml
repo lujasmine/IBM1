@@ -4,7 +4,7 @@
 		module="anomaly-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160415021812"
+		publication="20160423195438"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

@@ -76,7 +76,7 @@ public class Algorithm extends LJavaAlgorithm<PreparedData, Model, Query, Predic
     		return new PredictedResult(-1);
     	}
     	else {
-    		svm_node[] svm_query = new svm_node[4];
+    		svm_node[] svm_query = new svm_node[10];
 
             svm_query[0] = new svm_node();
             svm_query[0].index = 1;
@@ -86,21 +86,29 @@ public class Algorithm extends LJavaAlgorithm<PreparedData, Model, Query, Predic
 
             svm_query[1] = new svm_node();
             svm_query[1].index = 2;
-            svm_query[1].value = Math.round((-1 + 2 * (query.getDay() - params.getMinDay()) / params.getRangeDay()) * dg) / dg;
-            //svm_query[1].value = -1 + 2 * (query.getDay() - params.getMinDay()) / params.getRangeDay();
+            svm_query[1].value = Math.round((-1 + 2 * (query.getGpsLat() - params.getMinGpsLat()) / params.getRangeGpsLat()) * dg) / dg;
+            //svm_query[2].value = -1 + 2 * (query.getGpsLat() - params.getMinGpsLat()) / params.getRangeGpsLat();
             System.out.println(svm_query[1].value);
 
             svm_query[2] = new svm_node();
             svm_query[2].index = 3;
-            svm_query[2].value = Math.round((-1 + 2 * (query.getGpsLat() - params.getMinGpsLat()) / params.getRangeGpsLat()) * dg) / dg;
-            //svm_query[2].value = -1 + 2 * (query.getGpsLat() - params.getMinGpsLat()) / params.getRangeGpsLat();
+            svm_query[2].value = Math.round((-1 + 2 * (query.getGpsLong() - params.getMinGpsLong()) / params.getRangeGpsLong()) * dg) / dg;
+            //svm_query[3].value = -1 + 2 * (query.getGpsLong() - params.getMinGpsLong()) / params.getRangeGpsLong();
             System.out.println(svm_query[2].value);
 
-            svm_query[3] = new svm_node();
-            svm_query[3].index = 4;
-            svm_query[3].value = Math.round((-1 + 2 * (query.getGpsLong() - params.getMinGpsLong()) / params.getRangeGpsLong()) * dg) / dg;
-            //svm_query[3].value = -1 + 2 * (query.getGpsLong() - params.getMinGpsLong()) / params.getRangeGpsLong();
-            System.out.println(svm_query[3].value);
+            for (int i = 1; i <= 7; i++) {
+
+                svm_query[2 + i] = new svm_node();
+                svm_query[2 + i].index = 3 + i;
+                svm_query[2 + i].value = 0;
+            }
+            svm_query[2 + query.getDay()].value = 1;
+            for (int i = 3; i <= 9; i++) {
+
+                System.out.print(svm_query[i].value + " ");
+            }
+            System.out.println();
+
 
 	    	double allowed = svm.svm_predict(model.getModel(), svm_query);
 
