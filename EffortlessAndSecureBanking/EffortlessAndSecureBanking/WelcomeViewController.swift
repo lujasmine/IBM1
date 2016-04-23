@@ -20,12 +20,19 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     var time:Int!
     var day:Int!
     
+    @IBOutlet weak var predLoginLabel: UILabel!
+    var predLogin = false
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         name.text = defaults.stringForKey("name")
+        
+        if predLogin {
+            predLoginLabel.text = "You Logged in with Prediction Engine!"
+        }
         
         if defaults.boolForKey("predio") {
             getProperties()
@@ -55,9 +62,8 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         
-        //TODO send query - prediction login
-        
-        Alamofire.request(.GET, "http://localhost/~jasminelu/ibm1/sendEvent.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
+        //send login event to prediction engine
+        Alamofire.request(.GET, "http://esb-php.eu-gb.mybluemix.net/sendEvent.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
         }
 
         

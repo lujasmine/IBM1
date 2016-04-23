@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="EffortlessAndSecureBanking" customModuleProvider="target">
             <connections>
                 <outlet property="name" destination="Lqs-oT-vgr" id="Blk-6c-sse"/>
+                <outlet property="predLoginLabel" destination="E6W-gi-DLV" id="v0U-hR-bD7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,11 +39,23 @@
                         <action selector="signOut:" destination="-1" eventType="touchUpInside" id="3vm-oV-zMr"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-gi-DLV">
+                    <rect key="frame" x="22" y="244" width="330" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="dC8-vz-VSO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="E6W-gi-DLV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="De7-Y3-90a"/>
                 <constraint firstItem="nhA-Dq-FnS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="EzR-ML-koi"/>
                 <constraint firstItem="Lqs-oT-vgr" firstAttribute="centerX" secondItem="7zc-yP-8nS" secondAttribute="centerX" id="PVJ-ls-DsD"/>
+                <constraint firstItem="E6W-gi-DLV" firstAttribute="top" secondItem="Lqs-oT-vgr" secondAttribute="bottom" constant="29" id="Wok-59-hfA"/>
+                <constraint firstItem="E6W-gi-DLV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="WsJ-3f-e9d"/>
                 <constraint firstItem="nhA-Dq-FnS" firstAttribute="leading" secondItem="Lqs-oT-vgr" secondAttribute="leading" id="cLl-8B-Nnb"/>
                 <constraint firstItem="nhA-Dq-FnS" firstAttribute="trailing" secondItem="Lqs-oT-vgr" secondAttribute="trailing" id="czu-Ls-pvZ"/>
                 <constraint firstAttribute="trailing" secondItem="nhA-Dq-FnS" secondAttribute="trailing" constant="13" id="ifl-if-kYe"/>

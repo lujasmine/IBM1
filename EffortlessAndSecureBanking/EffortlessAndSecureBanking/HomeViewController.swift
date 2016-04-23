@@ -77,6 +77,8 @@ class HomeViewController: UIViewController {
             if let data = try? NSData(contentsOfURL: url, options: []) {
                 let json = JSON(data: data)
                 
+                print(json)
+                
                 var count = 0
                 
                 for item in json.array! {
@@ -84,7 +86,7 @@ class HomeViewController: UIViewController {
                     if item["fields"]["phonenumber"].string == phone {
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setValue(self.phoneNumber.text, forKey: "phoneNumber")
-                        defaults.setValue(json[0]["fields"]["username"].string, forKey: "name")
+                        defaults.setValue(item["fields"]["username"].string, forKey: "name")
                         defaults.setInteger(count, forKey: "count")
                         
                         let vc = PasswordViewController(nibName: nil, bundle: nil)

@@ -79,7 +79,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
         
         //TODO ask query - prediction login
         
-        Alamofire.request(.GET, "http://localhost/~jasminelu/ibm1/predict.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
+        Alamofire.request(.GET, "http://esb-php.eu-gb.mybluemix.net/predict.php?time=\(time)&day=\(day)&latitude=\(latitude)&longitude=\(longitude)").response { (req, res, data, error) -> Void in
             
             let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
             print(outputString)
@@ -88,6 +88,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                 self.predictionResultLabel.text = "Could not login with Prediction Engine"
             } else {
                 let vc = WelcomeViewController(nibName: nil, bundle: nil)
+                vc.predLogin = true
                 self.presentViewController(vc, animated: true, completion: nil)
             }
             
