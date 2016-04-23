@@ -1,0 +1,28 @@
+{
+  "id": "default",
+  "description": "Default settings",
+  "engineFactory": "ucl.team10.anomaly.AnomalyEngine",
+  "datasource": {
+    "params" : {
+      "appName": "ESB"
+    }
+  },
+  "algorithms": [
+    {
+      "name": "algo",
+      "params": {
+        "degree" : 3,
+        "gamma": 0.25,
+        "coef0": 0,
+        "nu": 0.5,
+        "cache_size": 100,
+        "eps": 1e-3, 
+        "C": 1,
+        "p": 0.1,
+        "shrinking": 1,
+        "probability": 0,
+        "nr_weight": 0
+      }
+    }
+  ]
+}

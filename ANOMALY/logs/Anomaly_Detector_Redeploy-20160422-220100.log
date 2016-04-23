@@ -1,0 +1,584 @@
+Deploy script started at Fri Apr 22 22:01:00 EEST 2016
+Running /Users/darian/PredictionIO-0.9.6//bin/pio train --verbose -v engine.json -- --executor-memory 16G --driver-memory 8G --total-executor-cores 4
+[INFO] [Console$] Using existing engine manifest JSON at /Users/darian/PredictionIO-0.9.6/templates/ANOMALY/manifest.json
+[DEBUG] [ConnectionPool$] Registered connection pool : ConnectionPool(url:jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb, user:sfaupawb) using factory : <default>
+[DEBUG] [ConnectionPool$] Registered singleton connection pool : ConnectionPool(url:jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb, user:sfaupawb)
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_enginemanifests ( id varchar(100) not null primary key, version text not null, engineName text not null, description text, files text not null, engineFactory text not null); (56 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineManifests$$anonfun$1.apply(JDBCEngineManifests.scala:37)
+    io.prediction.data.storage.jdbc.JDBCEngineManifests$$anonfun$1.apply(JDBCEngineManifests.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   SELECT id, version, engineName, description, files, engineFactory FROM pio_meta_enginemanifests WHERE id = 'ulP05G3N7mAwusAYQ5cN1hrLFaDS1xwp' AND version = 'd3b3dc43fd7f00c3c7d9ac56b2678b6ad6396624'; (68 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineManifests$$anonfun$3.apply(JDBCEngineManifests.scala:61)
+    io.prediction.data.storage.jdbc.JDBCEngineManifests$$anonfun$3.apply(JDBCEngineManifests.scala:51)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:305)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:274)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:303)
+    scalikejdbc.DB.localTx(DB.scala:60)
+    scalikejdbc.DB$.localTx(DB.scala:257)
+    io.prediction.data.storage.jdbc.JDBCEngineManifests.get(JDBCEngineManifests.scala:51)
+    io.prediction.tools.console.Console$.withRegisteredManifest(Console.scala:1214)
+    io.prediction.tools.console.Console$.train(Console.scala:839)
+    io.prediction.tools.console.Console$$anonfun$main$1.apply(Console.scala:713)
+    io.prediction.tools.console.Console$$anonfun$main$1.apply(Console.scala:693)
+    scala.Option.map(Option.scala:145)
+    io.prediction.tools.console.Console$.main(Console.scala:693)
+    io.prediction.tools.console.Console.main(Console.scala)
+    ...
+
+[INFO] [Runner$] Submission command: /Users/darian/PredictionIO-0.9.6/vendors/spark-1.5.1/bin/spark-submit --executor-memory 16G --driver-memory 8G --total-executor-cores 4 --class io.prediction.workflow.CreateWorkflow --jars file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template-assembly-0.1-SNAPSHOT-deps.jar,file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template_2.10-0.1-SNAPSHOT.jar --files file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties,file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml --driver-class-path /Users/darian/PredictionIO-0.9.6/conf:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf file:/Users/darian/PredictionIO-0.9.6/lib/pio-assembly-0.9.6.jar --engine-id ulP05G3N7mAwusAYQ5cN1hrLFaDS1xwp --engine-version d3b3dc43fd7f00c3c7d9ac56b2678b6ad6396624 --engine-variant file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/engine.json --verbosity 0 --verbose --json-extractor Both --env PIO_STORAGE_SOURCES_HBASE_TYPE=hbase,PIO_ENV_LOADED=1,PIO_STORAGE_REPOSITORIES_METADATA_NAME=pio_meta,PIO_FS_BASEDIR=/Users/darian/.pio_store,PIO_STORAGE_SOURCES_ELASTICSEARCH_HOSTS=localhost,PIO_STORAGE_SOURCES_HBASE_HOME=/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0,PIO_HOME=/Users/darian/PredictionIO-0.9.6,PIO_FS_ENGINESDIR=/Users/darian/.pio_store/engines,PIO_STORAGE_SOURCES_LOCALFS_PATH=/Users/darian/.pio_store/models,PIO_STORAGE_SOURCES_PGSQL_URL=jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb,PIO_STORAGE_SOURCES_HDFS_TYPE=hdfs,PIO_STORAGE_SOURCES_HDFS_PATH=/Users/darian/.pio_store/models,PIO_STORAGE_SOURCES_ELASTICSEARCH_TYPE=elasticsearch,PIO_STORAGE_REPOSITORIES_METADATA_SOURCE=PGSQL,PIO_STORAGE_REPOSITORIES_MODELDATA_SOURCE=PGSQL,PIO_STORAGE_REPOSITORIES_EVENTDATA_NAME=pio_event,PIO_STORAGE_SOURCES_PGSQL_PASSWORD=9-pVv4cOcih6kuZMmbDUZU32Qg-U6-eO,PIO_STORAGE_SOURCES_ELASTICSEARCH_HOME=/Users/darian/PredictionIO-0.9.6/vendors/elasticsearch-1.4.4,PIO_STORAGE_SOURCES_PGSQL_TYPE=jdbc,PIO_FS_TMPDIR=/Users/darian/.pio_store/tmp,PIO_STORAGE_SOURCES_PGSQL_USERNAME=sfaupawb,PIO_STORAGE_REPOSITORIES_MODELDATA_NAME=pio_model,PIO_STORAGE_REPOSITORIES_EVENTDATA_SOURCE=PGSQL,PIO_CONF_DIR=/Users/darian/PredictionIO-0.9.6/conf,PIO_STORAGE_SOURCES_ELASTICSEARCH_PORTS=9300,PIO_STORAGE_SOURCES_LOCALFS_TYPE=localfs --verbose
+Warning: Unknown option --verbose
+[DEBUG] [] address: Darians-MacBook.local/192.168.0.19 isLoopbackAddress: false, with host 192.168.0.19 Darians-MacBook.local
+[INFO] [Engine] Extracting datasource params...
+[INFO] [WorkflowUtils$] No 'name' is found. Default empty String will be used.
+[INFO] [Engine] Datasource params: (,ucl.team10.anomaly.DataSourceParams@3a4e343)
+[INFO] [Engine] Extracting preparator params...
+[INFO] [Engine] Preparator params: (,Empty)
+[INFO] [Engine] Extracting serving params...
+[INFO] [Engine] Serving params: (,Empty)
+[DEBUG] [ConnectionPool$] Registered connection pool : ConnectionPool(url:jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb, user:sfaupawb) using factory : <default>
+[DEBUG] [ConnectionPool$] Registered singleton connection pool : ConnectionPool(url:jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb, user:sfaupawb)
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_engineinstances ( id varchar(100) not null primary key, status text not null, startTime timestamp DEFAULT CURRENT_TIMESTAMP, endTime timestamp DEFAULT CURRENT_TIMESTAMP, engineId text not null, engineVersion text not null, engineVariant text not null, engineFactory text not null, batch text not null, env text not null, sparkConf text not null, datasourceParams text not null, preparatorParams text not null, algorithmsParams text not null, servingParams text not null); (55 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:46)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances.<init>(JDBCEngineInstances.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   INSERT INTO pio_meta_engineinstances VALUES( 'a82fa846-826b-4ac6-b781-59855fe8d1d5', 'INIT', '2016-04-22 22:01:06.469', '2016-04-22 22:01:06.472', 'ulP05G3N7mAwusAYQ5cN1hrLFaDS1xwp', 'd3b3dc43fd7f00c3c7d9ac56b2678b6ad6396624', 'default', 'ucl.team10.anomaly.AnomalyEngine', '', 'PIO_STORAGE_SOURCES_HBASE_TYPE=hbase,PIO_ENV_LOADED=1,PIO_STORAGE_REPOSITORIES_METADATA_NAME=pio_met... (1344)', 'spark.executor.extraClassPath=.', '{"":{"appName":"ESB"}}', '{"":{}}', '[{"algo":{"degree":3,"gamma":0.25,"coef0":0.0,"nu":0.5,"cache_size":100.0,"eps":0.001,"C":1.0,"p":0.... (148)', '{"":{}}'); (55 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$2.apply(JDBCEngineInstances.scala:67)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$2.apply(JDBCEngineInstances.scala:49)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:305)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:274)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:303)
+    scalikejdbc.DB.localTx(DB.scala:60)
+    scalikejdbc.DB$.localTx(DB.scala:257)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances.insert(JDBCEngineInstances.scala:49)
+    io.prediction.workflow.CreateWorkflow$.main(CreateWorkflow.scala:244)
+    io.prediction.workflow.CreateWorkflow.main(CreateWorkflow.scala)
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:483)
+    org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:672)
+    ...
+
+[DEBUG] [CoreWorkflow$] Starting SparkContext
+[DEBUG] [WorkflowContext$] Executor environment received: Map(PIO_STORAGE_SOURCES_HBASE_TYPE -> hbase, PIO_ENV_LOADED -> 1, PIO_STORAGE_REPOSITORIES_METADATA_NAME -> pio_meta, PIO_FS_BASEDIR -> /Users/darian/.pio_store, PIO_STORAGE_SOURCES_ELASTICSEARCH_HOSTS -> localhost, PIO_STORAGE_SOURCES_HBASE_HOME -> /Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0, PIO_HOME -> /Users/darian/PredictionIO-0.9.6, PIO_FS_ENGINESDIR -> /Users/darian/.pio_store/engines, PIO_STORAGE_SOURCES_LOCALFS_PATH -> /Users/darian/.pio_store/models, PIO_STORAGE_SOURCES_PGSQL_URL -> jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb, PIO_STORAGE_SOURCES_HDFS_TYPE -> hdfs, PIO_STORAGE_SOURCES_HDFS_PATH -> /Users/darian/.pio_store/models, PIO_STORAGE_SOURCES_ELASTICSEARCH_TYPE -> elasticsearch, PIO_STORAGE_REPOSITORIES_METADATA_SOURCE -> PGSQL, PIO_STORAGE_REPOSITORIES_MODELDATA_SOURCE -> PGSQL, PIO_STORAGE_REPOSITORIES_EVENTDATA_NAME -> pio_event, PIO_STORAGE_SOURCES_PGSQL_PASSWORD -> 9-pVv4cOcih6kuZMmbDUZU32Qg-U6-eO, PIO_STORAGE_SOURCES_ELASTICSEARCH_HOME -> /Users/darian/PredictionIO-0.9.6/vendors/elasticsearch-1.4.4, PIO_STORAGE_SOURCES_PGSQL_TYPE -> jdbc, PIO_FS_TMPDIR -> /Users/darian/.pio_store/tmp, PIO_STORAGE_SOURCES_PGSQL_USERNAME -> sfaupawb, PIO_STORAGE_REPOSITORIES_MODELDATA_NAME -> pio_model, PIO_STORAGE_REPOSITORIES_EVENTDATA_SOURCE -> PGSQL, PIO_CONF_DIR -> /Users/darian/PredictionIO-0.9.6/conf, PIO_STORAGE_SOURCES_ELASTICSEARCH_PORTS -> 9300, PIO_STORAGE_SOURCES_LOCALFS_TYPE -> localfs)
+[DEBUG] [WorkflowContext$] SparkConf executor environment: ArraySeq((PIO_STORAGE_REPOSITORIES_METADATA_NAME,pio_meta), (PIO_STORAGE_SOURCES_HBASE_HOME,/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0), (PIO_STORAGE_REPOSITORIES_EVENTDATA_NAME,pio_event), (PIO_STORAGE_SOURCES_HBASE_TYPE,hbase), (PIO_STORAGE_REPOSITORIES_METADATA_SOURCE,PGSQL), (PIO_STORAGE_SOURCES_PGSQL_TYPE,jdbc), (PIO_ENV_LOADED,1), (PIO_FS_TMPDIR,/Users/darian/.pio_store/tmp), (PIO_STORAGE_SOURCES_PGSQL_PASSWORD,9-pVv4cOcih6kuZMmbDUZU32Qg-U6-eO), (PIO_FS_ENGINESDIR,/Users/darian/.pio_store/engines), (PIO_STORAGE_SOURCES_LOCALFS_TYPE,localfs), (PIO_HOME,/Users/darian/PredictionIO-0.9.6), (PIO_STORAGE_SOURCES_ELASTICSEARCH_HOME,/Users/darian/PredictionIO-0.9.6/vendors/elasticsearch-1.4.4), (PIO_STORAGE_SOURCES_ELASTICSEARCH_TYPE,elasticsearch), (PIO_STORAGE_REPOSITORIES_EVENTDATA_SOURCE,PGSQL), (PIO_STORAGE_SOURCES_PGSQL_USERNAME,sfaupawb), (PIO_STORAGE_SOURCES_ELASTICSEARCH_PORTS,9300), (PIO_STORAGE_SOURCES_ELASTICSEARCH_HOSTS,localhost), (PIO_STORAGE_REPOSITORIES_MODELDATA_NAME,pio_model), (PIO_STORAGE_SOURCES_PGSQL_URL,jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb), (PIO_STORAGE_SOURCES_HDFS_TYPE,hdfs), (PIO_FS_BASEDIR,/Users/darian/.pio_store), (PIO_STORAGE_SOURCES_HDFS_PATH,/Users/darian/.pio_store/models), (PIO_STORAGE_REPOSITORIES_MODELDATA_SOURCE,PGSQL), (PIO_CONF_DIR,/Users/darian/PredictionIO-0.9.6/conf), (PIO_STORAGE_SOURCES_LOCALFS_PATH,/Users/darian/.pio_store/models))
+[DEBUG] [WorkflowContext$] Application environment received: Map(spark.executor.extraClassPath -> .)
+[DEBUG] [WorkflowContext$] SparkConf environment: WrappedArray((spark.executorEnv.PIO_STORAGE_REPOSITORIES_METADATA_NAME,pio_meta), (spark.executorEnv.PIO_STORAGE_SOURCES_HBASE_HOME,/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0), (spark.executorEnv.PIO_STORAGE_REPOSITORIES_EVENTDATA_NAME,pio_event), (spark.executorEnv.PIO_STORAGE_SOURCES_HBASE_TYPE,hbase), (spark.executor.extraClassPath,.), (spark.executorEnv.PIO_STORAGE_REPOSITORIES_METADATA_SOURCE,PGSQL), (spark.executorEnv.PIO_STORAGE_SOURCES_PGSQL_TYPE,jdbc), (spark.executorEnv.PIO_ENV_LOADED,1), (spark.files,file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties,file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml), (spark.app.name,PredictionIO Training: ucl.team10.anomaly.AnomalyEngine), (spark.master,local[*]), (spark.executorEnv.PIO_FS_TMPDIR,/Users/darian/.pio_store/tmp), (spark.executorEnv.PIO_STORAGE_SOURCES_PGSQL_PASSWORD,9-pVv4cOcih6kuZMmbDUZU32Qg-U6-eO), (spark.submit.deployMode,client), (spark.executorEnv.PIO_FS_ENGINESDIR,/Users/darian/.pio_store/engines), (spark.executorEnv.PIO_STORAGE_SOURCES_LOCALFS_TYPE,localfs), (spark.executorEnv.PIO_HOME,/Users/darian/PredictionIO-0.9.6), (spark.executorEnv.PIO_STORAGE_SOURCES_ELASTICSEARCH_HOME,/Users/darian/PredictionIO-0.9.6/vendors/elasticsearch-1.4.4), (spark.executorEnv.PIO_STORAGE_SOURCES_ELASTICSEARCH_TYPE,elasticsearch), (spark.executorEnv.PIO_STORAGE_REPOSITORIES_EVENTDATA_SOURCE,PGSQL), (spark.executorEnv.PIO_STORAGE_SOURCES_PGSQL_USERNAME,sfaupawb), (spark.driver.memory,8G), (spark.jars,file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template-assembly-0.1-SNAPSHOT-deps.jar,file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template_2.10-0.1-SNAPSHOT.jar,file:/Users/darian/PredictionIO-0.9.6/lib/pio-assembly-0.9.6.jar), (spark.executorEnv.PIO_STORAGE_SOURCES_ELASTICSEARCH_PORTS,9300), (spark.executorEnv.PIO_STORAGE_SOURCES_ELASTICSEARCH_HOSTS,localhost), (spark.executorEnv.PIO_STORAGE_REPOSITORIES_MODELDATA_NAME,pio_model), (spark.executorEnv.PIO_STORAGE_SOURCES_PGSQL_URL,jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb), (spark.executorEnv.PIO_STORAGE_SOURCES_HDFS_TYPE,hdfs), (spark.executorEnv.PIO_FS_BASEDIR,/Users/darian/.pio_store), (spark.executorEnv.PIO_STORAGE_SOURCES_HDFS_PATH,/Users/darian/.pio_store/models), (spark.executorEnv.PIO_STORAGE_REPOSITORIES_MODELDATA_SOURCE,PGSQL), (spark.driver.extraClassPath,/Users/darian/PredictionIO-0.9.6/conf:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf), (spark.executorEnv.PIO_CONF_DIR,/Users/darian/PredictionIO-0.9.6/conf), (spark.executorEnv.PIO_STORAGE_SOURCES_LOCALFS_PATH,/Users/darian/.pio_store/models))
+[INFO] [SparkContext] Running Spark version 1.5.1
+[INFO] [SecurityManager] Changing view acls to: darian
+[INFO] [SecurityManager] Changing modify acls to: darian
+[INFO] [SecurityManager] SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(darian); users with modify permissions: Set(darian)
+[INFO] [Slf4jLogger] Slf4jLogger started
+[INFO] [Remoting] Starting remoting
+[INFO] [Remoting] Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.0.19:59829]
+[INFO] [Utils] Successfully started service 'sparkDriver' on port 59829.
+[INFO] [SparkEnv] Registering MapOutputTracker
+[INFO] [SparkEnv] Registering BlockManagerMaster
+[INFO] [DiskBlockManager] Created local directory at /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/blockmgr-c3cfd130-ade2-4854-be0a-60de8609d96d
+[INFO] [MemoryStore] MemoryStore started with capacity 4.1 GB
+[INFO] [HttpFileServer] HTTP File server directory is /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/httpd-f797bde0-84ed-409c-b4c1-f3c91bb6e218
+[INFO] [HttpServer] Starting HTTP Server
+[INFO] [Utils] Successfully started service 'HTTP file server' on port 59830.
+[INFO] [SparkEnv] Registering OutputCommitCoordinator
+[INFO] [Utils] Successfully started service 'SparkUI' on port 4040.
+[INFO] [SparkUI] Started SparkUI at http://192.168.0.19:4040
+[INFO] [SparkContext] Added JAR file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template-assembly-0.1-SNAPSHOT-deps.jar at http://192.168.0.19:59830/jars/barebone-template-assembly-0.1-SNAPSHOT-deps.jar with timestamp 1461351668849
+[INFO] [SparkContext] Added JAR file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template_2.10-0.1-SNAPSHOT.jar at http://192.168.0.19:59830/jars/barebone-template_2.10-0.1-SNAPSHOT.jar with timestamp 1461351668855
+[INFO] [SparkContext] Added JAR file:/Users/darian/PredictionIO-0.9.6/lib/pio-assembly-0.9.6.jar at http://192.168.0.19:59830/jars/pio-assembly-0.9.6.jar with timestamp 1461351669480
+[INFO] [Utils] Copying /Users/darian/PredictionIO-0.9.6/conf/log4j.properties to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/log4j.properties
+[INFO] [SparkContext] Added file file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties at file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties with timestamp 1461351669487
+[INFO] [Utils] Copying /Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/hbase-site.xml
+[INFO] [SparkContext] Added file file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml at file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml with timestamp 1461351669504
+[WARN] [MetricsSystem] Using default name DAGScheduler for source because spark.app.id is not set.
+[INFO] [Executor] Starting executor ID driver on host localhost
+[DEBUG] [InternalLoggerFactory] Using SLF4J as the default logging framework
+[DEBUG] [PlatformDependent0] java.nio.Buffer.address: available
+[DEBUG] [PlatformDependent0] sun.misc.Unsafe.theUnsafe: available
+[DEBUG] [PlatformDependent0] sun.misc.Unsafe.copyMemory: available
+[DEBUG] [PlatformDependent0] java.nio.Bits.unaligned: true
+[DEBUG] [PlatformDependent] Java version: 8
+[DEBUG] [PlatformDependent] -Dio.netty.noUnsafe: false
+[DEBUG] [PlatformDependent] sun.misc.Unsafe: available
+[DEBUG] [PlatformDependent] -Dio.netty.noJavassist: false
+[DEBUG] [PlatformDependent] Javassist: unavailable
+[DEBUG] [PlatformDependent] You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+[DEBUG] [PlatformDependent] -Dio.netty.tmpdir: /var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T (java.io.tmpdir)
+[DEBUG] [PlatformDependent] -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[DEBUG] [PlatformDependent] -Dio.netty.noPreferDirect: false
+[DEBUG] [MultithreadEventLoopGroup] -Dio.netty.eventLoopThreads: 16
+[DEBUG] [NioEventLoop] -Dio.netty.noKeySetOptimization: false
+[DEBUG] [NioEventLoop] -Dio.netty.selectorAutoRebuildThreshold: 512
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@15efda6c
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@6056232d
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@33f2df51
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@107bfcb2
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@7bac686b
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@2ab26378
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@f9f3928
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@404eca05
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.numHeapArenas: 16
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.numDirectArenas: 16
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.pageSize: 8192
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.maxOrder: 11
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.chunkSize: 16777216
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.tinyCacheSize: 512
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.smallCacheSize: 256
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.normalCacheSize: 64
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[DEBUG] [PooledByteBufAllocator] -Dio.netty.allocator.cacheTrimInterval: 8192
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@135a8c6f
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@6419a0e1
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@280d4882
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@44af588b
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@3d19d85
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@2ae62bb6
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@68ed3f30
+[TRACE] [NioEventLoop] Instrumented an optimized java.util.Set into: sun.nio.ch.KQueueSelectorImpl@56b859a6
+[DEBUG] [ThreadLocalRandom] -Dio.netty.initialSeedUniquifier: 0x52a03da1a5934a95 (took 0 ms)
+[DEBUG] [ByteBufUtil] -Dio.netty.allocator.type: unpooled
+[DEBUG] [ByteBufUtil] -Dio.netty.threadLocalDirectBufferSize: 65536
+[DEBUG] [NetUtil] Loopback interface: lo0 (lo0, 0:0:0:0:0:0:0:1)
+[DEBUG] [NetUtil] /proc/sys/net/core/somaxconn: 128 (non-existent)
+[INFO] [Utils] Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59831.
+[INFO] [NettyBlockTransferService] Server created on 59831
+[INFO] [BlockManagerMaster] Trying to register BlockManager
+[INFO] [BlockManagerMasterEndpoint] Registering block manager localhost:59831 with 4.1 GB RAM, BlockManagerId(driver, localhost, 59831)
+[INFO] [BlockManagerMaster] Registered BlockManager
+[INFO] [Engine$] EngineWorkflow.train
+[INFO] [Engine$] DataSource: ucl.team10.anomaly.DataSource@5416f8db
+[INFO] [Engine$] Preparator: ucl.team10.anomaly.Preparator@92d1782
+[INFO] [Engine$] AlgorithmList: List(ucl.team10.anomaly.Algorithm@726934e2)
+[INFO] [Engine$] Data sanity check is on.
+[INFO] [Engine$] org.apache.spark.rdd.MapPartitionsRDD does not support data sanity check. Skipping check.
+[INFO] [Engine$] org.apache.spark.rdd.MapPartitionsRDD does not support data sanity check. Skipping check.
+[INFO] [Engine$] org.apache.spark.rdd.MapPartitionsRDD does not support data sanity check. Skipping check.
+[INFO] [Engine$] EngineWorkflow.train completed
+[INFO] [Engine] engineInstanceId=a82fa846-826b-4ac6-b781-59855fe8d1d5
+[INFO] [SparkContext] Starting job: first at LAlgorithm.scala:118
+[INFO] [DAGScheduler] Got job 0 (first at LAlgorithm.scala:118) with 1 output partitions
+[INFO] [DAGScheduler] Final stage: ResultStage 0(first at LAlgorithm.scala:118)
+[INFO] [DAGScheduler] Parents of final stage: List()
+[INFO] [DAGScheduler] Missing parents: List()
+[INFO] [DAGScheduler] Submitting ResultStage 0 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45), which has no missing parents
+[INFO] [MemoryStore] ensureFreeSpace(3800) called with curMem=0, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_0 stored as values in memory (estimated size 3.7 KB, free 4.1 GB)
+[INFO] [MemoryStore] ensureFreeSpace(2132) called with curMem=3800, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.1 KB, free 4.1 GB)
+[INFO] [BlockManagerInfo] Added broadcast_0_piece0 in memory on localhost:59831 (size: 2.1 KB, free: 4.1 GB)
+[INFO] [SparkContext] Created broadcast 0 from broadcast at DAGScheduler.scala:861
+[INFO] [DAGScheduler] Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45)
+[INFO] [TaskSchedulerImpl] Adding task set 0.0 with 1 tasks
+[INFO] [TaskSetManager] Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [Executor] Running task 0.0 in stage 0.0 (TID 0)
+[INFO] [Executor] Fetching file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml with timestamp 1461351669504
+[INFO] [Utils] /Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml has been previously copied to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/hbase-site.xml
+[INFO] [Executor] Fetching file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties with timestamp 1461351669487
+[INFO] [Utils] /Users/darian/PredictionIO-0.9.6/conf/log4j.properties has been previously copied to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/log4j.properties
+[INFO] [Executor] Fetching http://192.168.0.19:59830/jars/barebone-template_2.10-0.1-SNAPSHOT.jar with timestamp 1461351668855
+[INFO] [Utils] Fetching http://192.168.0.19:59830/jars/barebone-template_2.10-0.1-SNAPSHOT.jar to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/fetchFileTemp4155681571784531667.tmp
+[INFO] [Executor] Adding file:/private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/barebone-template_2.10-0.1-SNAPSHOT.jar to class loader
+[INFO] [Executor] Fetching http://192.168.0.19:59830/jars/barebone-template-assembly-0.1-SNAPSHOT-deps.jar with timestamp 1461351668849
+[INFO] [Utils] Fetching http://192.168.0.19:59830/jars/barebone-template-assembly-0.1-SNAPSHOT-deps.jar to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/fetchFileTemp5541506922833471152.tmp
+[INFO] [Executor] Adding file:/private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/barebone-template-assembly-0.1-SNAPSHOT-deps.jar to class loader
+[INFO] [Executor] Fetching http://192.168.0.19:59830/jars/pio-assembly-0.9.6.jar with timestamp 1461351669480
+[INFO] [Utils] Fetching http://192.168.0.19:59830/jars/pio-assembly-0.9.6.jar to /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/fetchFileTemp1995663478601491927.tmp
+[INFO] [Executor] Adding file:/private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0/userFiles-8b665de9-938f-4611-9c03-d57e898f1c09/pio-assembly-0.9.6.jar to class loader
+[INFO] [Executor] Finished task 0.0 in stage 0.0 (TID 0). 915 bytes result sent to driver
+[INFO] [TaskSetManager] Finished task 0.0 in stage 0.0 (TID 0) in 706 ms on localhost (1/1)
+[INFO] [TaskSchedulerImpl] Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[INFO] [DAGScheduler] ResultStage 0 (first at LAlgorithm.scala:118) finished in 0,728 s
+[INFO] [DAGScheduler] Job 0 finished: first at LAlgorithm.scala:118, took 0,902974 s
+[INFO] [SparkContext] Starting job: first at LAlgorithm.scala:118
+[INFO] [DAGScheduler] Got job 1 (first at LAlgorithm.scala:118) with 4 output partitions
+[INFO] [DAGScheduler] Final stage: ResultStage 1(first at LAlgorithm.scala:118)
+[INFO] [DAGScheduler] Parents of final stage: List()
+[INFO] [DAGScheduler] Missing parents: List()
+[INFO] [DAGScheduler] Submitting ResultStage 1 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45), which has no missing parents
+[INFO] [MemoryStore] ensureFreeSpace(3800) called with curMem=5932, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_1 stored as values in memory (estimated size 3.7 KB, free 4.1 GB)
+[INFO] [MemoryStore] ensureFreeSpace(2132) called with curMem=9732, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.1 KB, free 4.1 GB)
+[INFO] [BlockManagerInfo] Added broadcast_1_piece0 in memory on localhost:59831 (size: 2.1 KB, free: 4.1 GB)
+[INFO] [SparkContext] Created broadcast 1 from broadcast at DAGScheduler.scala:861
+[INFO] [DAGScheduler] Submitting 4 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45)
+[INFO] [TaskSchedulerImpl] Adding task set 1.0 with 4 tasks
+[INFO] [TaskSetManager] Starting task 0.0 in stage 1.0 (TID 1, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [TaskSetManager] Starting task 1.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [TaskSetManager] Starting task 2.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [TaskSetManager] Starting task 3.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [Executor] Running task 0.0 in stage 1.0 (TID 1)
+[INFO] [Executor] Running task 1.0 in stage 1.0 (TID 2)
+[INFO] [Executor] Running task 2.0 in stage 1.0 (TID 3)
+[INFO] [Executor] Running task 3.0 in stage 1.0 (TID 4)
+[INFO] [Executor] Finished task 0.0 in stage 1.0 (TID 1). 915 bytes result sent to driver
+[INFO] [Executor] Finished task 1.0 in stage 1.0 (TID 2). 915 bytes result sent to driver
+[INFO] [Executor] Finished task 2.0 in stage 1.0 (TID 3). 915 bytes result sent to driver
+[INFO] [Executor] Finished task 3.0 in stage 1.0 (TID 4). 915 bytes result sent to driver
+[INFO] [TaskSetManager] Finished task 0.0 in stage 1.0 (TID 1) in 11 ms on localhost (1/4)
+[INFO] [TaskSetManager] Finished task 1.0 in stage 1.0 (TID 2) in 12 ms on localhost (2/4)
+[INFO] [TaskSetManager] Finished task 2.0 in stage 1.0 (TID 3) in 11 ms on localhost (3/4)
+[INFO] [TaskSetManager] Finished task 3.0 in stage 1.0 (TID 4) in 11 ms on localhost (4/4)
+[INFO] [DAGScheduler] ResultStage 1 (first at LAlgorithm.scala:118) finished in 0,014 s
+[INFO] [TaskSchedulerImpl] Removed TaskSet 1.0, whose tasks have all completed, from pool 
+[INFO] [DAGScheduler] Job 1 finished: first at LAlgorithm.scala:118, took 0,024005 s
+[INFO] [SparkContext] Starting job: first at LAlgorithm.scala:118
+[INFO] [DAGScheduler] Got job 2 (first at LAlgorithm.scala:118) with 3 output partitions
+[INFO] [DAGScheduler] Final stage: ResultStage 2(first at LAlgorithm.scala:118)
+[INFO] [DAGScheduler] Parents of final stage: List()
+[INFO] [DAGScheduler] Missing parents: List()
+[INFO] [DAGScheduler] Submitting ResultStage 2 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45), which has no missing parents
+[INFO] [MemoryStore] ensureFreeSpace(3800) called with curMem=11864, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_2 stored as values in memory (estimated size 3.7 KB, free 4.1 GB)
+[INFO] [MemoryStore] ensureFreeSpace(2132) called with curMem=15664, maxMem=4445479895
+[INFO] [MemoryStore] Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.1 KB, free 4.1 GB)
+[INFO] [BlockManagerInfo] Added broadcast_2_piece0 in memory on localhost:59831 (size: 2.1 KB, free: 4.1 GB)
+[INFO] [SparkContext] Created broadcast 2 from broadcast at DAGScheduler.scala:861
+[INFO] [DAGScheduler] Submitting 3 missing tasks from ResultStage 2 (MapPartitionsRDD[3] at map at LAlgorithm.scala:45)
+[INFO] [TaskSchedulerImpl] Adding task set 2.0 with 3 tasks
+[INFO] [TaskSetManager] Starting task 0.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [TaskSetManager] Starting task 1.0 in stage 2.0 (TID 6, localhost, PROCESS_LOCAL, 2470 bytes)
+[INFO] [TaskSetManager] Starting task 2.0 in stage 2.0 (TID 7, localhost, PROCESS_LOCAL, 2475 bytes)
+[INFO] [Executor] Running task 1.0 in stage 2.0 (TID 6)
+[INFO] [Executor] Running task 0.0 in stage 2.0 (TID 5)
+[INFO] [Executor] Running task 2.0 in stage 2.0 (TID 7)
+[INFO] [Executor] Finished task 0.0 in stage 2.0 (TID 5). 915 bytes result sent to driver
+[INFO] [Executor] Finished task 1.0 in stage 2.0 (TID 6). 915 bytes result sent to driver
+[INFO] [TaskSetManager] Finished task 0.0 in stage 2.0 (TID 5) in 6 ms on localhost (1/3)
+[INFO] [TaskSetManager] Finished task 1.0 in stage 2.0 (TID 6) in 6 ms on localhost (2/3)
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_apps ( id serial not null primary key, name text not null, description text); (54 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCApps$$anonfun$1.apply(JDBCApps.scala:34)
+    io.prediction.data.storage.jdbc.JDBCApps$$anonfun$1.apply(JDBCApps.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCApps.<init>(JDBCApps.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   SELECT id, name, description FROM pio_meta_apps WHERE name = 'ESB'; (75 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCApps$$anonfun$5.apply(JDBCApps.scala:65)
+    io.prediction.data.storage.jdbc.JDBCApps$$anonfun$5.apply(JDBCApps.scala:59)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:191)
+    scalikejdbc.DB.readOnly(DB.scala:60)
+    scalikejdbc.DB$$anonfun$readOnly$1.apply(DB.scala:173)
+    scalikejdbc.DB$$anonfun$readOnly$1.apply(DB.scala:172)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.readOnly(DB.scala:172)
+    io.prediction.data.storage.jdbc.JDBCApps.getByName(JDBCApps.scala:59)
+    io.prediction.data.store.Common$.appNameToId(Common.scala:29)
+    io.prediction.data.store.LEventStore$.find(LEventStore.scala:127)
+    io.prediction.data.store.java.LJavaEventStore$.find(LJavaEventStore.scala:128)
+    io.prediction.data.store.java.LJavaEventStore.find(LJavaEventStore.scala)
+    ucl.team10.anomaly.DataSource.readTraining(DataSource.java:32)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_channels ( id serial not null primary key, name text not null, appid integer not null); (57 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCChannels$$anonfun$1.apply(JDBCChannels.scala:34)
+    io.prediction.data.storage.jdbc.JDBCChannels$$anonfun$1.apply(JDBCChannels.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCChannels.<init>(JDBCChannels.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   SELECT id, name, appid FROM pio_meta_channels WHERE appid = 1; (55 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCChannels$$anonfun$5.apply(JDBCChannels.scala:53)
+    io.prediction.data.storage.jdbc.JDBCChannels$$anonfun$5.apply(JDBCChannels.scala:51)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:305)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:274)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:303)
+    scalikejdbc.DB.localTx(DB.scala:60)
+    scalikejdbc.DB$.localTx(DB.scala:257)
+    io.prediction.data.storage.jdbc.JDBCChannels.getByAppid(JDBCChannels.scala:51)
+    io.prediction.data.store.Common$$anonfun$appNameToId$1.apply(Common.scala:32)
+    io.prediction.data.store.Common$$anonfun$appNameToId$1.apply(Common.scala:31)
+    scala.Option.map(Option.scala:145)
+    io.prediction.data.store.Common$.appNameToId(Common.scala:31)
+    io.prediction.data.store.LEventStore$.find(LEventStore.scala:127)
+    io.prediction.data.store.java.LJavaEventStore$.find(LJavaEventStore.scala:128)
+    io.prediction.data.store.java.LJavaEventStore.find(LJavaEventStore.scala)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   select id, event, entityType, entityId, targetEntityType, targetEntityId, properties, eventTime, eventTimeZone, tags, prId, creationTime, creationTimeZone from pio_event_1 where entityType = 'user' and event = 'login' order by eventTime asc; (56 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCLEvents$$anonfun$futureFind$1$$anonfun$8.apply(JDBCLEvents.scala:219)
+    io.prediction.data.storage.jdbc.JDBCLEvents$$anonfun$futureFind$1$$anonfun$8.apply(JDBCLEvents.scala:176)
+    scalikejdbc.DBConnection$class.readOnly(DBConnection.scala:191)
+    scalikejdbc.DB.readOnly(DB.scala:60)
+    scalikejdbc.DB$$anonfun$readOnly$1.apply(DB.scala:173)
+    scalikejdbc.DB$$anonfun$readOnly$1.apply(DB.scala:172)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.readOnly(DB.scala:172)
+    io.prediction.data.storage.jdbc.JDBCLEvents$$anonfun$futureFind$1.apply(JDBCLEvents.scala:176)
+    io.prediction.data.storage.jdbc.JDBCLEvents$$anonfun$futureFind$1.apply(JDBCLEvents.scala:176)
+    scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+    scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+    scala.concurrent.impl.ExecutionContextImpl$$anon$3.exec(ExecutionContextImpl.scala:107)
+    scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+    ...
+
+In algorithm
+0.0 1:1.0 2:-1.0 3:-1.0 4:-1.0 
+0.0 1:-1.0 2:-1.0 3:0.25 4:-0.555556 
+0.0 1:-0.6 2:-1.0 3:1.0 4:1.0 
+0.0 1:-0.2 2:-1.0 3:-0.5 4:0.111111 
+..*
+optimization finished, #iter = 9
+obj = 0.9836611301944371, rho = 0.9835864121891241
+nSV = 3, nBSV = 0
+[INFO] [Executor] Finished task 2.0 in stage 2.0 (TID 7). 2407 bytes result sent to driver
+[INFO] [TaskSetManager] Finished task 2.0 in stage 2.0 (TID 7) in 742 ms on localhost (3/3)
+[INFO] [DAGScheduler] ResultStage 2 (first at LAlgorithm.scala:118) finished in 0,743 s
+[INFO] [TaskSchedulerImpl] Removed TaskSet 2.0, whose tasks have all completed, from pool 
+[INFO] [DAGScheduler] Job 2 finished: first at LAlgorithm.scala:118, took 0,752278 s
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_engineinstances ( id varchar(100) not null primary key, status text not null, startTime timestamp DEFAULT CURRENT_TIMESTAMP, endTime timestamp DEFAULT CURRENT_TIMESTAMP, engineId text not null, engineVersion text not null, engineVariant text not null, engineFactory text not null, batch text not null, env text not null, sparkConf text not null, datasourceParams text not null, preparatorParams text not null, algorithmsParams text not null, servingParams text not null); (55 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:46)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances.<init>(JDBCEngineInstances.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[INFO] [CoreWorkflow$] Inserting persistent model
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_model_models ( id varchar(100) not null primary key, models bytea not null); (51 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCModels$$anonfun$1.apply(JDBCModels.scala:36)
+    io.prediction.data.storage.jdbc.JDBCModels$$anonfun$1.apply(JDBCModels.scala:32)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCModels.<init>(JDBCModels.scala:32)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor] The parameter([B@586495f1) is bound as an Object.
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   insert into pio_model_models values('a82fa846-826b-4ac6-b781-59855fe8d1d5', [B@586495f1); (54 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCModels$$anonfun$2.apply(JDBCModels.scala:40)
+    io.prediction.data.storage.jdbc.JDBCModels$$anonfun$2.apply(JDBCModels.scala:39)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:305)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:274)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:303)
+    scalikejdbc.DB.localTx(DB.scala:60)
+    scalikejdbc.DB$.localTx(DB.scala:257)
+    io.prediction.data.storage.jdbc.JDBCModels.insert(JDBCModels.scala:39)
+    io.prediction.workflow.CoreWorkflow$.runTrain(CoreWorkflow.scala:77)
+    io.prediction.workflow.CreateWorkflow$.main(CreateWorkflow.scala:247)
+    io.prediction.workflow.CreateWorkflow.main(CreateWorkflow.scala)
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:483)
+    ...
+
+[INFO] [CoreWorkflow$] Updating engine instance
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   create table if not exists pio_meta_engineinstances ( id varchar(100) not null primary key, status text not null, startTime timestamp DEFAULT CURRENT_TIMESTAMP, endTime timestamp DEFAULT CURRENT_TIMESTAMP, engineId text not null, engineVersion text not null, engineVariant text not null, engineFactory text not null, batch text not null, env text not null, sparkConf text not null, datasourceParams text not null, preparatorParams text not null, algorithmsParams text not null, servingParams text not null); (56 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:46)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$1.apply(JDBCEngineInstances.scala:29)
+    scalikejdbc.DBConnection$class.autoCommit(DBConnection.scala:222)
+    scalikejdbc.DB.autoCommit(DB.scala:60)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:215)
+    scalikejdbc.DB$$anonfun$autoCommit$1.apply(DB.scala:214)
+    scalikejdbc.LoanPattern$class.using(LoanPattern.scala:18)
+    scalikejdbc.DB$.using(DB.scala:138)
+    scalikejdbc.DB$.autoCommit(DB.scala:214)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances.<init>(JDBCEngineInstances.scala:29)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    io.prediction.data.storage.Storage$.getDataObject(Storage.scala:303)
+    ...
+
+[DEBUG] [StatementExecutor$$anon$1] SQL execution completed
+
+  [SQL Execution]
+   update pio_meta_engineinstances set status = 'COMPLETED', startTime = '2016-04-22 22:01:06.469', endTime = '2016-04-22 22:01:12.609', engineId = 'ulP05G3N7mAwusAYQ5cN1hrLFaDS1xwp', engineVersion = 'd3b3dc43fd7f00c3c7d9ac56b2678b6ad6396624', engineVariant = 'default', engineFactory = 'ucl.team10.anomaly.AnomalyEngine', batch = '', env = 'PIO_STORAGE_SOURCES_HBASE_TYPE=hbase,PIO_ENV_LOADED=1,PIO_STORAGE_REPOSITORIES_METADATA_NAME=pio_met... (1344)', sparkConf = 'spark.executor.extraClassPath=.', datasourceParams = '{"":{"appName":"ESB"}}', preparatorParams = '{"":{}}', algorithmsParams = '[{"algo":{"degree":3,"gamma":0.25,"coef0":0.0,"nu":0.5,"cache_size":100.0,"eps":0.001,"C":1.0,"p":0.... (148)', servingParams = '{"":{}}' where id = 'a82fa846-826b-4ac6-b781-59855fe8d1d5'; (55 ms)
+
+  [Stack Trace]
+    ...
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$9.apply(JDBCEngineInstances.scala:168)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances$$anonfun$9.apply(JDBCEngineInstances.scala:151)
+    scalikejdbc.DBConnection$$anonfun$3.apply(DBConnection.scala:305)
+    scalikejdbc.DBConnection$class.scalikejdbc$DBConnection$$rollbackIfThrowable(DBConnection.scala:274)
+    scalikejdbc.DBConnection$class.localTx(DBConnection.scala:303)
+    scalikejdbc.DB.localTx(DB.scala:60)
+    scalikejdbc.DB$.localTx(DB.scala:257)
+    io.prediction.data.storage.jdbc.JDBCEngineInstances.update(JDBCEngineInstances.scala:151)
+    io.prediction.workflow.CoreWorkflow$.runTrain(CoreWorkflow.scala:83)
+    io.prediction.workflow.CreateWorkflow$.main(CreateWorkflow.scala:247)
+    io.prediction.workflow.CreateWorkflow.main(CreateWorkflow.scala)
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:483)
+    ...
+
+[INFO] [CoreWorkflow$] Training completed successfully.
+[DEBUG] [CoreWorkflow$] Stopping SparkContext
+[INFO] [SparkUI] Stopped Spark web UI at http://192.168.0.19:4040
+[INFO] [DAGScheduler] Stopping DAGScheduler
+[INFO] [MapOutputTrackerMasterEndpoint] MapOutputTrackerMasterEndpoint stopped!
+[INFO] [MemoryStore] MemoryStore cleared
+[INFO] [BlockManager] BlockManager stopped
+[INFO] [BlockManagerMaster] BlockManagerMaster stopped
+[INFO] [OutputCommitCoordinator$OutputCommitCoordinatorEndpoint] OutputCommitCoordinator stopped!
+[INFO] [SparkContext] Successfully stopped SparkContext
+[INFO] [ShutdownHookManager] Shutdown hook called
+[INFO] [RemoteActorRefProvider$RemotingTerminator] Shutting down remote daemon.
+[INFO] [ShutdownHookManager] Deleting directory /private/var/folders/q8/2xqj5rx92x9gs2f39tr6jq8r0000gn/T/spark-9b4eb351-0955-4a9e-ba3e-6565f6b4dec0
+[INFO] [RemoteActorRefProvider$RemotingTerminator] Remote daemon shut down; proceeding with flushing remote transports.
+Training ended with return value 0 at Fri Apr 22 22:01:13 EEST 2016
+[INFO] [Runner$] Submission command: /Users/darian/PredictionIO-0.9.6/vendors/spark-1.5.1/bin/spark-submit --executor-memory 16G --driver-memory 8G --total-executor-cores 4 --class io.prediction.workflow.CreateServer --jars file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template-assembly-0.1-SNAPSHOT-deps.jar,file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/target/scala-2.10/barebone-template_2.10-0.1-SNAPSHOT.jar --files file:/Users/darian/PredictionIO-0.9.6/conf/log4j.properties,file:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf/hbase-site.xml --driver-class-path /Users/darian/PredictionIO-0.9.6/conf:/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0/conf file:/Users/darian/PredictionIO-0.9.6/lib/pio-assembly-0.9.6.jar --engineInstanceId a82fa846-826b-4ac6-b781-59855fe8d1d5 --engine-variant file:/Users/darian/PredictionIO-0.9.6/templates/ANOMALY/engine.json --ip 0.0.0.0 --port 8001 --event-server-ip 0.0.0.0 --event-server-port 7070 --accesskey t9FmFxWIERJyaF3XGY8LwFsFSCHsRqbP5Wh0jyeCJzKBs3MjDkzaFRAIX4E7FR5r --feedback --json-extractor Both --env PIO_STORAGE_SOURCES_HBASE_TYPE=hbase,PIO_ENV_LOADED=1,PIO_STORAGE_REPOSITORIES_METADATA_NAME=pio_meta,PIO_FS_BASEDIR=/Users/darian/.pio_store,PIO_STORAGE_SOURCES_ELASTICSEARCH_HOSTS=localhost,PIO_STORAGE_SOURCES_HBASE_HOME=/Users/darian/PredictionIO-0.9.6/vendors/hbase-1.0.0,PIO_HOME=/Users/darian/PredictionIO-0.9.6,PIO_FS_ENGINESDIR=/Users/darian/.pio_store/engines,PIO_STORAGE_SOURCES_LOCALFS_PATH=/Users/darian/.pio_store/models,PIO_STORAGE_SOURCES_PGSQL_URL=jdbc:postgresql://qdjjtnkv.db.elephantsql.com:5432/sfaupawb,PIO_STORAGE_SOURCES_HDFS_TYPE=hdfs,PIO_STORAGE_SOURCES_HDFS_PATH=/Users/darian/.pio_store/models,PIO_STORAGE_SOURCES_ELASTICSEARCH_TYPE=elasticsearch,PIO_STORAGE_REPOSITORIES_METADATA_SOURCE=PGSQL,PIO_STORAGE_REPOSITORIES_MODELDATA_SOURCE=PGSQL,PIO_STORAGE_REPOSITORIES_EVENTDATA_NAME=pio_event,PIO_STORAGE_SOURCES_PGSQL_PASSWORD=9-pVv4cOcih6kuZMmbDUZU32Qg-U6-eO,PIO_STORAGE_SOURCES_ELASTICSEARCH_HOME=/Users/darian/PredictionIO-0.9.6/vendors/elasticsearch-1.4.4,PIO_STORAGE_SOURCES_PGSQL_TYPE=jdbc,PIO_FS_TMPDIR=/Users/darian/.pio_store/tmp,PIO_STORAGE_SOURCES_PGSQL_USERNAME=sfaupawb,PIO_STORAGE_REPOSITORIES_MODELDATA_NAME=pio_model,PIO_STORAGE_REPOSITORIES_EVENTDATA_SOURCE=PGSQL,PIO_CONF_DIR=/Users/darian/PredictionIO-0.9.6/conf,PIO_STORAGE_SOURCES_ELASTICSEARCH_PORTS=9300,PIO_STORAGE_SOURCES_LOCALFS_TYPE=localfs
+[WARN] [WorkflowUtils$] Non-empty parameters supplied to ucl.team10.anomaly.Preparator, but its constructor does not accept any arguments. Stubbing with empty parameters.
+[WARN] [WorkflowUtils$] Non-empty parameters supplied to ucl.team10.anomaly.Serving, but its constructor does not accept any arguments. Stubbing with empty parameters.
+[INFO] [Remoting] Starting remoting
+[INFO] [Remoting] Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.0.19:59836]
+[WARN] [MetricsSystem] Using default name DAGScheduler for source because spark.app.id is not set.
+[INFO] [Engine] Using persisted model
+[INFO] [Engine] Loaded model ucl.team10.anomaly.Model for algorithm ucl.team10.anomaly.Algorithm
+[INFO] [MasterActor] Undeploying any existing engine instance at http://0.0.0.0:8001
+[WARN] [MasterActor] Nothing at http://0.0.0.0:8001
+[INFO] [HttpListener] Bound to /0.0.0.0:8001
+[INFO] [MasterActor] Engine is deployed and running. Engine API is live at http://0.0.0.0:8001.
+Deploy ended with return value 0 at Fri Apr 22 22:12:13 EEST 2016
