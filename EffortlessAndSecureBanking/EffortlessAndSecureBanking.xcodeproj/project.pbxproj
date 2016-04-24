@@ -23,7 +23,6 @@
 		901137B91CC847D20083C9D1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901137B71CC847D20083C9D1 /* WelcomeViewController.swift */; };
 		901137BA1CC847D20083C9D1 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901137B81CC847D20083C9D1 /* WelcomeViewController.xib */; };
 		901137C41CC8851D0083C9D1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C31CC8851D0083C9D1 /* Alamofire.framework */; };
-		901137C61CC885220083C9D1 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C51CC885220083C9D1 /* CryptoSwift.framework */; };
 		901137C81CC885250083C9D1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901137C71CC885250083C9D1 /* SwiftyJSON.framework */; };
 		906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906E7FA71CBFFBDC0014C911 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				901137C81CC885250083C9D1 /* SwiftyJSON.framework in Frameworks */,
-				901137C61CC885220083C9D1 /* CryptoSwift.framework in Frameworks */,
 				901137C41CC8851D0083C9D1 /* Alamofire.framework in Frameworks */,
 				906E7FA81CBFFBDC0014C911 /* CoreLocation.framework in Frameworks */,
 				900107171C6BD41D009A5D2B /* LocalAuthentication.framework in Frameworks */,
@@ -520,6 +518,7 @@
 			baseConfigurationReference = D544648B39177E9F77EFFF44 /* Pods-EffortlessAndSecureBanking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -534,6 +533,7 @@
 			baseConfigurationReference = AEA0DFFBEF16C7E107FEF1FD /* Pods-EffortlessAndSecureBanking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
