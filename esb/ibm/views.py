@@ -14,6 +14,8 @@ from django.http import Http404
 
 
 
+
+
 def index(request):
     return render(request, 'index.html')
     
@@ -68,9 +70,6 @@ def list(request):
 
     return HttpResponse(queryset, content_type="application/json")
 
-    
-    
-    
     
     
     

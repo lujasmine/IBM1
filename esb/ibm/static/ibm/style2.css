@@ -175,9 +175,9 @@ body {
 }
 .card:first-child {
   background: #fafafa;
-  height: 10px;
+  height: 0px;
   border-radius: 5px 5px 0 0;
-  margin: 0 10px;
+  margin: 0 0px;
   padding: 0;
 }
 .card .title {
