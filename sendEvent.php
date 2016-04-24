@@ -4,7 +4,7 @@
 
   	use predictionio\EventClient;
 
-  	$baseUrl = "http://134.168.36.17:7000/";
+  	$baseUrl = "http://134.168.34.68:7000/";
 
  	$accessKey = 't9FmFxWIERJyaF3XGY8LwFsFSCHsRqbP5Wh0jyeCJzKBs3MjDkzaFRAIX4E7FR5r';
  	$client = new EventClient($accessKey, $baseUrl);

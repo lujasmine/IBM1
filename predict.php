@@ -4,7 +4,7 @@
 
   use predictionio\EngineClient;
 
- 	$engineClient = new EngineClient('http://134.168.36.17:8000/');
+ 	$engineClient = new EngineClient('http://134.168.34.68:8000/');
   
   $time = (int)$_GET['time']; 
 	$day = (int)$_GET['day'];
