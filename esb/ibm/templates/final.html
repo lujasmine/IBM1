@@ -1,15 +1,41 @@
-<html lang="en">
-<head> 
-</head>
-<body>
-<div align = "center">
-<br/n>
-<h1> Hello, {{name}} </h1>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Authentication Options</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/style2.css' %}" />
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/reset2.css' %}" /> 
+  </head>
 
-<h2>A notification has been sent to your phone</h2>
+  <body>
 
-<p> Alternatively, you can log login via:</p>
-<p> 1. Text Message </p>
-<p> 2. <a href = "/ibm/reg_pass/">Password </a> </p> 
-</body>
+<div class="pen-title">
+  <h1>Select Your Authentication Process</h1><span>
+</div>
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title" align = "center"><font size ="6">Hello {{name}}!</font></h1>
+    <h1 class="title" align = "center"><font size ="6"> </font></h1>
+    <h1 class="title" align = "center"><font size ="6"> </font></h1>
+    <h1 class="title" align = "center"><font size ="6">A notification has been sent to your phone </font> </h1>
+    <h1 class="title" align = "center"><font size ="4" color = "grey"> Feel free to choose an alternative login method below </font></h1>
+    <form method="GET" action="/ibm/reg_pass/">
+    {% csrf_token %}
+      <div class="button-container">
+        <button>Password <a href = "/ibm/reg_pass/"></a></button>
+      </div>
+    </form>
+    {% csrf_token %}
+      <div class="button-container1">
+        <button>SMS</button>
+      </div>
+  </div>
+  <div class="card alt">
+    <div class="toggle">  <img src="{% static "ibm/logo.png" %}" alt="logo" style="width:128px;height:128px;"/> </div>
+</div>  
+  </body>
 </html>

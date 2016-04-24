@@ -1,10 +1,24 @@
-<html lang="en">
-<head> 
-</head>
-<body>
-{% load staticfiles %}
-<div align = "center">
-<p> Yoy have logged in </p>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Authentication Options</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/style3.css' %}" />
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'ibm/reset3.css' %}" /> 
+  </head>
+
+  <body>
+
+
+<div class="pen-title">
+  <h1>You Have Logged In</h1> 
 </div>
-</body>
+<div align = "center">
+<img src="{% static "ibm/logo.png" %}" alt="logo" style="width:512px;height:512px;"/> 
+</div>
+
+  </body>
 </html>

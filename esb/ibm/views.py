@@ -8,7 +8,7 @@ from django.template.response import TemplateResponse
 from .forms import LoginForm
 from django.core import serializers
 from django.core import signing
-
+from django.http import Http404
 
 
 
@@ -51,7 +51,7 @@ def pass_input(request):
         if auth == pass_entry:
             return TemplateResponse(request, 'pass_input.html')
         else:
-            return HttpResponse()
+            raise Http404  
     
         
 def reg_pass(request):
@@ -63,7 +63,7 @@ def list(request):
 
     
     queryset = Log_in.objects.all()
-    queryset = serializers.serialize('json', queryset, fields=('phonenumber','testcasepass'))
+    queryset = serializers.serialize('json', queryset, fields=('phonenumber','testcasepass','username'))
 
 
     return HttpResponse(queryset, content_type="application/json")
