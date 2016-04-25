@@ -11,6 +11,15 @@
   </head>
 
   <body>
+  <style type="text/css">
+    @font-face { 
+    font-family: 'Campton-LightDEMORegular'; 
+    src:local('Campton-LightDEMO Regular'),
+        local('Campton-LightDEMO'), 
+        url({% static 'ibm/Campton-LightDEMO.otf' %}) format('truetype');
+    } 
+    h1 { font-family: Campton-LightDEMORegular }
+</style>
 
 <div class="pen-title">
   <h1>Select Your Authentication Process</h1><span>
@@ -21,8 +30,10 @@
     <h1 class="title" align = "center"><font size ="6">Hello {{name}}!</font></h1>
     <h1 class="title" align = "center"><font size ="6"> </font></h1>
     <h1 class="title" align = "center"><font size ="6"> </font></h1>
-    <h1 class="title" align = "center"><font size ="6">A notification has been sent to your phone </font> </h1>
-    <h1 class="title" align = "center"><font size ="4" color = "grey"> Feel free to choose an alternative login method below </font></h1>
+    <h1 class="title" align = "center"><font size ="6"> </font></h1>
+    <h1 class="title" align = "center"><font size ="5">A notification has been sent to your phone </font> </h1>
+    <h1 class="title" align = "center"><font size ="6"> </font></h1>
+    <h1 class="title" align = "center"><font size ="3" color = "grey"> Feel free to choose an alternative login method below </font></h1>
     <form method="GET" action="/ibm/reg_pass/">
     {% csrf_token %}
       <div class="button-container">

@@ -36,9 +36,8 @@ def final(request):
         return TemplateResponse(request, 'final.html', context)
     except Log_in.DoesNotExist:
         print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~") #Testing
-        return TemplateResponse(request, 'index.html', phonenumber) 
+        return TemplateResponse(request, 'index.html', {'invalid': True }) 
 
-    return render(request, 'index.html', context, value)
         
         
 def pass_input(request):
@@ -50,11 +49,12 @@ def pass_input(request):
         x = Log_in.objects.get(phonenumber = value)
         auth = x.testcasepass
         print("~~~~~~~~~~~~~~~~~~" + value + "~~~~~~~~~~~~~~~~~~~~~~") #Testing
-        if auth == pass_entry:
-            return TemplateResponse(request, 'pass_input.html')
+        if auth != pass_entry:
+            return TemplateResponse(request, 'reg_pass.html', 
+                       {'invalid': True })
         else:
-            raise Http404  
-    
+            return TemplateResponse(request, 'pass_input.html')
+   
         
 def reg_pass(request):
     return render(request, 'reg_pass.html')

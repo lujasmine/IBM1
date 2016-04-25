@@ -11,9 +11,22 @@
   </head>
 
   <body>
+  
+{% load staticfiles %}
+
+<style type="text/css">
+    @font-face { 
+    font-family: 'Campton-LightDEMORegular'; 
+    src:local('Campton-LightDEMO Regular'),
+        local('Campton-LightDEMO'), 
+        url({% static 'ibm/Campton-LightDEMO.otf' %}) format('truetype');
+    } 
+    h1 { font-family: Campton-LightDEMORegular }
+</style>
 
 <div class="pen-title">
-  <h1>Welcome to Effortless and Secure Banking</h1><span>
+  
+  <h1>Welcome to Effortless and Secure Banking</h1>
 </div>
 <div class="container">
   <div class="card"></div>
@@ -23,6 +36,11 @@
     {% csrf_token %}
       <div class="input-container">
         <input type="text" name="textfield" required="required"/>
+          {% if invalid %}
+           <div class="input-container" align = "center">
+           <h1>Incorrect Number<h1>
+           </div>
+          {% endif %}
         <label for="Phonenumber">Mobile Number</label>
         <div class="bar"></div>
       </div>
