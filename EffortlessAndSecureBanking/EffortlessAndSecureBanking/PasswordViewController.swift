@@ -170,6 +170,7 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
                         self.locationManager.startUpdatingLocation()
                     }
                     
+                    defaults.setObject(json[defaults.integerForKey("count")]["fields"]["username"].string, forKey: "name")
                     let vc = WelcomeViewController(nibName: nil, bundle: nil)
                     self.presentViewController(vc, animated: true, completion: nil)
                     

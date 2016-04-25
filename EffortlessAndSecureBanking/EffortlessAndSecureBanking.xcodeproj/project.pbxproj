@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17B17A088F75201396E63662 /* Pods_EffortlessAndSecureBanking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880A56E8998E73A20323679A /* Pods_EffortlessAndSecureBanking.framework */; };
+		603FEC381CCEBE4400231768 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 603FEC371CCEBE4400231768 /* Settings.bundle */; };
 		900106E11C6A4015009A5D2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900106E01C6A4015009A5D2B /* AppDelegate.swift */; };
 		900106E31C6A4015009A5D2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900106E21C6A4015009A5D2B /* ViewController.swift */; };
 		900106E61C6A4015009A5D2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900106E41C6A4015009A5D2B /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		603FEC371CCEBE4400231768 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		880A56E8998E73A20323679A /* Pods_EffortlessAndSecureBanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EffortlessAndSecureBanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		900106DD1C6A4015009A5D2B /* EffortlessAndSecureBanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffortlessAndSecureBanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900106E01C6A4015009A5D2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				900106E71C6A4015009A5D2B /* Assets.xcassets */,
 				900106E91C6A4015009A5D2B /* LaunchScreen.storyboard */,
 				900106EC1C6A4015009A5D2B /* Info.plist */,
+				603FEC371CCEBE4400231768 /* Settings.bundle */,
 			);
 			path = EffortlessAndSecureBanking;
 			sourceTree = "<group>";
@@ -256,7 +259,7 @@
 				TargetAttributes = {
 					900106DC1C6A4015009A5D2B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 6TYAA8JLVM;
+						DevelopmentTeam = 523G3J4242;
 					};
 					900106F01C6A4015009A5D2B = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -301,6 +304,7 @@
 				900107111C6A4125009A5D2B /* HomeViewController.xib in Resources */,
 				900107151C6A4506009A5D2B /* PasswordViewController.xib in Resources */,
 				901137BA1CC847D20083C9D1 /* WelcomeViewController.xib in Resources */,
+				603FEC381CCEBE4400231768 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,12 +522,15 @@
 			baseConfigurationReference = D544648B39177E9F77EFFF44 /* Pods-EffortlessAndSecureBanking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ucl.advances.faculty.cs.EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = EffortlessAndSecureBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/debug";
 			};
 			name = Debug;
@@ -533,12 +540,15 @@
 			baseConfigurationReference = AEA0DFFBEF16C7E107FEF1FD /* Pods-EffortlessAndSecureBanking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ucl.advances.faculty.cs.EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = EffortlessAndSecureBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/release";
 			};
 			name = Release;
