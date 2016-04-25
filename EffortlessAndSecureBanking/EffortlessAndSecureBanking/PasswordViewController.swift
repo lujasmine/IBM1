@@ -141,6 +141,8 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
             }
             let noOption = UIAlertAction(title: "No", style: .Default) {(action) in
                 self.defaults.setBool(false, forKey: "fingerprint")
+                let vc = WelcomeViewController(nibName: nil, bundle: nil)
+                self.presentViewController(vc, animated: true, completion: nil)
             }
             
             alertView.addAction(yesOption)
