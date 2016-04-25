@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +36,8 @@ FERNET_KEYS = [
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'esb.eu-gb.mybluemix.net']
+
+
 
 
 # Application definition
@@ -151,8 +155,11 @@ PWD = os.path.dirname(os.path.realpath(__file__ ))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../esb/static')
-STATIC_URL = '/static/'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT ='staticfiles'
+STATIC_URL ='/static/' 
+STATICFILES_DIRS = (
+   os.path.join(BASE_DIR,'static'),
+   )
 
 

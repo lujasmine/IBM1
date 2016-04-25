@@ -1,5 +1,9 @@
 from django.conf.urls import url, include
+from django.conf import settings
+from django.contrib.staticfiles import views
 from ibm import views
+from django.conf.urls.static import static
+
 
 from .views import (
     index,
@@ -15,4 +19,5 @@ urlpatterns = [
     url(r'^final/$', final),
     url(r'^reg_pass/$', reg_pass),
     url(r'^p9qdULz6sU9mpFoyDiJovWY4hGy4eFLW3319uoKXq531FoPYnbi3VVutY5t8tDO3', list),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
