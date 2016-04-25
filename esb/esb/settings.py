@@ -33,7 +33,7 @@ FERNET_KEYS = [
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'esb.eu-gb.mybluemix.net']
 
 
 # Application definition
