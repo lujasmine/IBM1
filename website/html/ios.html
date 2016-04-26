@@ -156,6 +156,81 @@
                 <li>Alamofire - used for REST calls to PHP file server to communicate with prediction engine and event server.</li>
                 <li>PredictionIO PHP client - installed as a dependency for the PHP files to query from the prediction engine and event server.</li>
             </ul>
+            <h3>Testing</h3>
+             <p>To test the iOS app, manual testing was used, by executing the test cases as per the end user’s point of view. The iOS emulators were used to test the app during the early stages, but once more functionality was added, such as connection with the PostgreSQL database and sending in login data to the prediction engine, a real device was used to test the app, which also meant that any usability issues were brought up and fixed. </p>
+             <p>In order to make sure that all test cases were tested, we used the decision table below to cover all scenarios.</p>
+             <table class="tg">
+                <tr>
+                    <th>Conditions (enabled)</th>
+                    <th>TC1</th>
+                    <th>TC2</th>
+                    <th>TC3</th>
+                    <th>TC4</th>
+                </tr>
+                <tr>
+                    <td>Prediction Login</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">N</td>
+                    <td style="text-align: center;">N</td>
+                </tr>
+                <tr>
+                    <td>Fingerprint Login</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">N</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">N</td>
+                </tr>
+                <tr>
+                    <td>Password Login</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">Y</td>
+                    <td style="text-align: center;">Y</td>
+                </tr>
+                <tr>
+                    <th>Actions (should occur)</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Try in order: Prediction Login, Fingerprint Login, Password Login</td>
+                    <td style="text-align: center;">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Try in order: Prediction Login, Password Login</td>
+                    <td></td>
+                    <td style="text-align: center;">X</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Try in order: Fingerprint Login, Password Login</td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center;">X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Password Login</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: center;">X</td>
+                </tr>
+                <tr>
+                    <th>Test Result</th>
+                    <th style="text-align: center;">Pass</th>
+                    <th style="text-align: center;">Pass</th>
+                    <th style="text-align: center;">Pass</th>
+                    <th style="text-align: center;">Pass</th>
+                </tr>
+            </table>
         </div>
     </div>
 

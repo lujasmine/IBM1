@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IBM1 - Manuals</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/clean-blog.css" rel="stylesheet">
+
+    <link href="../css/stylesheet.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">IBM1</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="dropdown">
+
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Project
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="requirements.html">Requirements</a></li>
+                          <li><a href="research.html">Research</a></li>
+                          <li><a href="testing.html">Testing</a></li>
+                          <li><a href="further.html">Further Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Implementation
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="ios.html">iOS</a></li>
+                          <li><a href="web.html">Web App</a></li>
+                          <li><a href="pred.html">Prediction Engine</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="project_management.html">Management</a>
+                    </li>
+                    <li>
+                        <a href=#>Forum</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Manuals</h1>
+                        <hr class="small">
+                        <span class="subheading">System and User Manuals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="row">
+            <h1>System Manual</h1>
+            <h3>iOS (installed dependencies)</h3>
+            <p>All external frameworks used in the iOS App (SwiftyJSON and Alamofire) were installed using Cocoapods. If any other frameworks are to be added, the Podfile will need to be edited, and then using terminal:</p>
+            <code>pod update</code>
+            <p>Import the frameworks to the required classes and in order to prevent any erros, go to Target -> Build Phases -> Link Binary With Libraries and add the pod installed frameworks.</p>
+            <p>It is also important to use the .workspace file in Xcode rather than the .xcodeproj file.</p>
+            <h3>PredictionIO PHP client SDK</h3>
+            <p>The PredictionIO PHP client must be installed as a dependency, this has already been done, via Composer.</p>
+            <p>Composer has created all the necessary files in the directory as well as a ‘vendor’ folder - this must not be deleted/edited, or the dependency will not work correctly.</p>
+            <p>If extra PHP files are to be created, the following line must be added to the top of the PHP file:</p>
+            <code>require_once(“vendor/autoload.php”);</code>
+            <h1>User Manual</h1>
+            <h3>iOS - Changing Login Options</h3>
+            <p>Note: An active internet connection is required to use the app.</p>
+            <h4>To enable/disable Fingerprint Login Option:</h4>
+            <p>To use the fingerprint login option, Touch ID must be available on your device (iPhone 5S or newer) and it is enabled, a fingering already set up.</p>
+            <p>If you previously selected to not enable Touch ID login and would like to change this setting, you can enable this option in the Settings app on your phone.</p>
+            <p>Settings —>  E&S Banking —> Use Touch ID Login —> ON/OFF</p>
+            <h4>To enable/disable Prediction Login Option:</h4>
+            <p>The prediction engine requires two things to be enabled, firstly ‘Location Services’ must be turned on and the ‘Prediction Login’ option must be enabled.</p>
+            <p>To turn on ‘Location Services’ for this app, go to Settings —> E&S Banking —> Location —> While Using the App (select).</p>
+            <p>To enable Prediction Login, there are two ways:</p>
+            <ul>
+                <li>Logging in with the user for the first time on the device</li>
+                <li>Go to Settings —> E&S Banking —> Use Prediction Login —> ON/OFF</li>
+            </ul>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://github.com/lujasmine/IBM1" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
