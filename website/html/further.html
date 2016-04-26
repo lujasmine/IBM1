@@ -117,7 +117,10 @@
             <h2>iOS and Web App Further Development</h2>
             <p>More development time would be required to implement features that we had initially stated in our requirements list. However, in the last meeting with our client, we came up with a list of priorities to complete for the project, and concluded that the integration of the prediction engine with the iOS app was to be implemented as higher priority than the SMS and Push Notification logins for the web app.</p>
             <h4>SMS Login</h4>
-            <p>...</p>
+            <p>In order to implement the SMS authentication, first step would be to implement "django-smsish" a specific Django API that uses Twilio backend for sms communication between the phone and web application. This functionality would also require extensive use of jQuery for error handling and data transfer.</p>
+            <p align = "center">Our main constraint is that services provided by Twilio come at a price which you can see below: </p>
+            <center><img src="../img/Pricing.png"></center>
+            
             <h4>Push Notification Login</h4>
             <p>In order for this to be implemented, we would need to firstly, configure credentials with the Apple Push Notification Service (APNs), by acquiring a Development and Distribution APNs SSL certificate and also Development and Distribution Provisioning Profiles - this can be done by contacting UCL Advances and being part of the UCL Advances Apple Development Team.</p>
             <p>We would use IBM Bluemix’s Push Notification Service to configure, subscribe, send and monitor push notifications being sent to the iOS device. IBM Push Notification Service dependencies would need to be installed into the iOS app, which can be done with the use of Cocoapods.</p>
