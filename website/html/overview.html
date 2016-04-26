@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="index.html">IBM1</a>
+                <a class="navbar-brand" href="../index.html">IBM1</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,7 +86,7 @@
                         <a href="project_management.html">Management</a>
                     </li>
                     <li>
-                        <a href="http://ucl-esb.boards.net/">Forum</a>
+                        <a href="http://ucl-esb.boards.net/" target="_blank">Forum</a>
                     </li>
                 </ul>
             </div>
@@ -115,67 +115,92 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="row">
             <h2>Final Requirements</h2>
-            <p>We have compiled a list of final requirements for the Final Proof of Concept, chosen from the MoSCoW Requirements List and additional requirements .</p>
+            <p>We have compiled a list of final requirements for the Final Proof of Concept, some of which are taken from the Initial MoSCoW Requirements List.</p>
             <table align = "center" cellspacing="10" border=1 class="requirements">
                 <tr class="titles">
                     <td style=min-width:50px>Description</td>
                     <td style=min-width:50px>Type</td>
                     <td style=min-width:50px>Category</td>
                     <td style=min-width:50px>Priority</td>
+                    <td style=min-width:50px>Completed</td>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>E & S Banking system shall be accessible from any device that supports internet conection</td>
+                    <td style=min-width:50px>E&S Banking system shall be accessible from any device that supports internet conection</td>
                     <td style=min-width:50px>Non-Functional</td>
                     <td style=min-width:50px>General</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
+                </tr>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>E & S Banking system shall use secure encryption methods</td>
+                    <td style=min-width:50px>E&S Banking system shall use secure encryption methods</td>
                     <td style=min-width:50px>Non-Functional</td>
                     <td style=min-width:50px>Security</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>E & S Banking system shall adapt to it's users behaviour by using machine learning algorithms</td>
+                    <td style=min-width:50px>E&S Banking system shall adapt to it's users behaviour by using machine learning algorithms</td>
                     <td style=min-width:50px>Non-Functional</td>
                     <td style=min-width:50px>General</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>E & S Banking system shall have all parts of the system deployed onto IBM Bluemix</td>
+                    <td style=min-width:50px>E&S Banking system shall have all server side components of the system deployed onto IBM Bluemix</td>
                     <td style=min-width:50px>Non-Functional</td>
                     <td style=min-width:50px>Development</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>E & S Banking system shall have both web and native mobile apps</td>
+                    <td style=min-width:50px>E&S Banking system shall have both web and native mobile apps</td>
                     <td style=min-width:50px>Non-Functional</td>
                     <td style=min-width:50px>General</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
                     <td style=min-width:50px>Mobile App shall automatically provide instant access to users who satisfy the machine learning algorithm conditions</td>
                     <td style=min-width:50px>Functional</td>
                     <td style=min-width:50px>Authentication</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
                     <td style=min-width:50px>Mobile App shall authenticate users via fingerprint scanner</td>
                     <td style=min-width:50px>Functional</td>
                     <td style=min-width:50px>Authentication</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Web Application shall send out a text message with authentication code during the login attempt</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Authentication</td>
+                    <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>No</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E&S Banking system shall send out a notification to the user's mobile phone app which, once opened will allow the user to log in automatically on the web</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>General</td>
+                    <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>No</td>
                 </tr>
                 <tr>
                     <td style=min-width:50px>Machine learning algorithm shall collect data from both mobile login attempts and store them in a database</td>
                     <td style=min-width:50px>Functional</td>
                     <td style=min-width:50px>Development</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
-                    <td style=min-width:50px>Failsafe login method shall allow users to access their bank account by using default authentication procedure set by the bank(i.e. password login)</td>
+                    <td style=min-width:50px>Failsafe login method shall allow users to access their bank account by using default authentication procedure set by the bank (i.e. password login)</td>
                     <td style=min-width:50px>Functional</td>
                     <td style=min-width:50px>Authentication</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
                 </tr>
                 <tr>
                     
@@ -183,8 +208,30 @@
                     <td style=min-width:50px>Functional</td>
                     <td style=min-width:50px>Development</td>
                     <td style=min-width:50px>Must Have</td>
+                    <td style=min-width:50px>Yes</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Step-by-step introduction to the application</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>User Experience</td>
+                    <td style=min-width:50px>Could Have</td>
+                    <td style=min-width:50px>No</td>
                 </tr>
             </table>
+            <h2>Development Plan</h2>
+            <p>Following gathering all the requirements in Term 1, we created a Gantt Chart for the plan of development in Term 2 (this can be found on the Management section).</p>
+            <p>The plan for development was split into the stages, which can be seen below:</p>
+            <ul>
+                <li>Implement the PredictionIO engine and train with data throughout the course of the term</li>
+                <li>Complete front-end of iOS app and the Touch ID implementation before other functionality is added.</li>
+                <li>Set up Django web app with working PostgreSQL user database, which will be the backend for both iOS and web apps.</li>
+                <li>Integrate the iOS app with the web app so that the iOS app can access the shared PostgreSQL database and implement the password login functionality for both apps.</li>
+                <li>Complete tuning and training of PredictionIO engine.</li>
+                <li>Integrate the PredictionIO engine and event server with the iOS app, so that prediction queries can be made and login data can be sent to the event server every time there is a successful login.</li>
+                <li>Deploy all server side components of the system onto Bluemix (i.e. PredictionIO engine, Django web app etc.).</li>
+                <li>Implement Push Notification Login system on the iOS and web app (using APNs and IBM Bluemix Push Notification Service).</li>
+                <li>Implement SMS Login System on the iOS and web app (using web sockets and an external SMS API).</li>
+            </ul>
             <h2>Iterations</h2>
 
             <h3>Iteration 1</h3>

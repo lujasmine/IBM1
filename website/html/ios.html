@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="index.html">IBM1</a>
+                <a class="navbar-brand" href="../index.html">IBM1</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,7 +86,7 @@
                         <a href="project_management.html">Management</a>
                     </li>
                     <li>
-                        <a href="http://ucl-esb.boards.net/">Forum</a>
+                        <a href="http://ucl-esb.boards.net/" target="_blank">Forum</a>
                     </li>
                 </ul>
             </div>
@@ -102,7 +102,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Native iOS Mobile App</h1>
+                        <h1>Native iOS App</h1>
                         <hr class="small">
                         <span class="subheading">Technical Achievements and Implementation Details</span>
                     </div>
@@ -142,9 +142,11 @@
              <p>The GET request will also send over, from the iOS app to the PHP, data that is collected from the iOS app - time, day and location (longitude/latitude coordinates).</p>
              <img src="../img/pred_ios.png">
              <p>If the prediction result is ‘1’, the user will successfully login, and will be directed to the ‘Welcome’ screen. On the other hand, if the prediction result is ‘-1’, the next authentication process will be attempted.</p>
+             <img src="../img/pred_login.png" style="width:30%; margin-left: 35%;">
              <p>In order for the prediction engine to collect login data, every time the user successfully logs in to the app (i.e. gets directed to the ‘Welcome’ screen), the event data is sent to an ‘Event Server’ that stores every instance of when the user has logged in.</p>
              <h3>Fingerprint Login Implementation</h3>
-             <p>The fingerprint login uses the ‘Local Authentication’ framework, to enable TouchID to be implemented into the app. It will check that the fingerprint of the person authenticating is the device owner.</p>
+             <p>The fingerprint login uses the ‘Local Authentication’ framework to enable TouchID to be implemented into the app. It will check that the fingerprint of the person authenticating is the device owner.</p>
+             <img src="../img/fingerprint.png" style="width: 30%; margin-left: 35%;">
              <p>Error checking has been implemented using LAContext, which is part of the ‘Local Authentication’ framework, if the fingerprint login fails for any reason. 5 specific contexts are evaluated:</p>
              <ul>
                 <li>LAError.SystemCancel</li>

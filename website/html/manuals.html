@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="index.html">IBM1</a>
+                <a class="navbar-brand" href="../index.html">IBM1</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,7 +86,7 @@
                         <a href="project_management.html">Management</a>
                     </li>
                     <li>
-                        <a href="http://ucl-esb.boards.net/">Forum</a>
+                        <a href="http://ucl-esb.boards.net/" target="_blank">Forum</a>
                     </li>
                 </ul>
             </div>
@@ -113,17 +113,17 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="row">
+        <div class="row" id="ios">
             <h1>System Manual</h1>
             <h3>iOS (installed dependencies)</h3>
             <p>All external frameworks used in the iOS App (SwiftyJSON and Alamofire) were installed using Cocoapods. If any other frameworks are to be added, the Podfile will need to be edited, and then using terminal:</p>
-            <code>pod update</code>
+            <code>pod install</code>
             <p>Import the frameworks to the required classes and in order to prevent any erros, go to Target -> Build Phases -> Link Binary With Libraries and add the pod installed frameworks.</p>
             <p>It is also important to use the .workspace file in Xcode rather than the .xcodeproj file.</p>
             <h3>PredictionIO PHP client SDK</h3>
             <p>The PredictionIO PHP client must be installed as a dependency, this has already been done, via Composer.</p>
             <p>Composer has created all the necessary files in the directory as well as a ‘vendor’ folder - this must not be deleted/edited, or the dependency will not work correctly.</p>
-            <p>If extra PHP files are to be created, the following line must be added to the top of the PHP file:</p>
+            <p>If extra PHP files are to be created, the following line must be added to the top of the PHP file to ensure that the dependency is added to the respective file:</p>
             <code>require_once(“vendor/autoload.php”);</code>
             <h1>User Manual</h1>
             <h3>iOS - Changing Login Options</h3>
@@ -135,6 +135,7 @@
             <h4>To enable/disable Prediction Login Option:</h4>
             <p>The prediction engine requires two things to be enabled, firstly ‘Location Services’ must be turned on and the ‘Prediction Login’ option must be enabled.</p>
             <p>To turn on ‘Location Services’ for this app, go to Settings —> E&S Banking —> Location —> While Using the App (select).</p>
+            <img src="../img/settings.jpg">
             <p>To enable Prediction Login, there are two ways:</p>
             <ul>
                 <li>Logging in with the user for the first time on the device</li>
