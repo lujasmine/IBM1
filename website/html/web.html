@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IBM1 - iOS</title>
+    <title>IBM1 - Django</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -75,7 +75,7 @@
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                           <li><a href="ios.html">iOS</a></li>
-                          <li><a href="web.html">Web App</a></li>
+                          <li><a href="web.html">Web Application</a></li>
                           <li><a href="pred.html">Prediction Engine</a></li>
                         </ul>
                     </li>
@@ -94,14 +94,13 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/about-bg.jpg')">
+    <header class="intro-header" style="background-image: url('../img/django2.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Web App</h1>
+                        <h1>Web Application</h1>
                         <hr class="small">
-                        <span class="subheading">Subheading</span>
                     </div>
                 </div>
             </div>
@@ -110,8 +109,34 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="row" id="video">
-            <h1>Development</h1><br>
+        <div class="row" id="vido">
+            <h2 align = "left">Overview</h2>
+            <p>Web application was implemented in Python 3.5.1 using Django 1.9.4 Web framework. Initially Web App was intended to provide the Prediction Engine features. However, its purpose has gradually shifted during the development cycle in order to provide the necessary functionality for the system. 
+Django web application is using a custom built Log In system instead of the default Django authentication system. It loses some of the functionality provided by the standard Django authentication libraries, however this trades off for improved compatibility with native application and provides a simpler framework for working with large data sets without having to worry about user registration. All the account information is stored in a PostgreSQL database, which is hosted by IBM Bluemix and is also used by our iOS application. PostgreSQL stores names, phone numbers and passwords of users.
+            </p>
+            <p>
+            <img src="../img/Webapp.png" width = "1000">
+            </p>
+            
+            <h2 align = "left">Data Protection</h2>
+            <p>
+            Passwords are stored using symmetric AES encryption in block cipher mode with URL safe 128 bit key. Custom Initialisation Vector is also generated during encryption and used for decrypting the data. As AES encryption only supports data strings with a length multiple of 16 it also required PKCS7 padding. The data fields are then changed to SHA256 HMAC using the URL safe key value. Once these stages are complete the fields are concatenated and encoded to the base 64. Thus, producing a fernet token. Only the Django Web Application can decrypt tokens, during user log in process. Access to the database through the web app is also restricted by Django Admin account, which acts as an additional layer of security.
+            </p>
+             <h2 align = "left">Integration</h2>
+            <p>
+            Web application is used for data management and handles user accounts. It therefore sends all the necessary information to iOS application in a form of JSON string. We have used a REST API that queries the database for user account details, serializes the data to produce a JSON string and outputs it to the URL, which is restricted by a token access.
+            </p>
+             <h2 align = "left">Resources</h2>
+            <p>
+            Frontend for the Django Application was built from an open source HTML\CSS template, all the static files are stored in a secure directory and are served with the “DJ-Static” – an open source middleware utility. Django Fernet Fields and Django REST framework were also installed in order to design features that have already been described.
+            </p>
+            <h2 align = "left">Testing</h2>
+            <p>
+            In order to test the Web Application's security we have used Netsparker - a Web Application Security Scanner. The results provided by Nesparker were rather positive with 0 critical vulnerabilites. In total it has found 6 low threats which will have no effect on sensitive data. Although our web application is fully compilant by the Payment Card Industry Data Security Standard (PCI). Our next steps would be to resolve these minor issues in order to ommit any attempts to disrupt services that we provide.
+            </p>
+            <center><img src="../img/vulnerability.png" width = "370"></center>
+            <h1> User Manual </h1>
+            <p> Simply enter your mobile phone number, this will launch a database query which will identify the user. System will then display the next screen with a small menu with authentication options. Currently Web Application uses only the password option as a failsafe mechanism. We had to stop developing other authentication methods due to time constraints and prediction engine development prioritisation. Adding push notifications and SMS functionality is planned to be included in further development.
         </div>
     </div>
 
@@ -123,23 +148,6 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
