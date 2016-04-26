@@ -110,8 +110,52 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="row" id="video">
-            <h1>Development</h1><br>
+        <div class="row" id="ios">
+            <h2>iOS App Overview</h2>
+            <p>The iOS app consists of a login authentication system for mobile users. There are 3 methods that a user can login with:</p>
+            <ul>
+                <li>Prediction Login</li>
+                <li>Fingerprint Login (Touch ID)</li>
+                <li>Password Login (Failsafe Option)</li>
+            </ul>
+            <p>The backend user database used for the mobile app is the same one created from the Django web app, using PostgreSQL.</p>
+            <h3>First-time Login</h3>
+            <p>When the user logs in to the app for the first time, they must enter their phone number, which is used to identify them. The phone number is verified by checking if it exists in the PostgreSQL user database. This is done by making use of the SwiftyJSON package available for iOS. The mobile app accesses a url from the web app, that is hidden, and uses the JSON data to verify the user logging in with the password.</p>
+            <img src="../img/ios1.jpg">
+            <p>Once the user has logged in, they will be asked whether they would like to use TouchID, if it is set up and available on their device. If the user has opted in, their fingerprint associated with the device will be verified.</p>
+            <p>The user will then be directed to the ‘Welcome’ screen if login has been successful. They will be asked whether they want to enable prediction login, and ‘Location Services’ which must be enabled in order for the prediction engine to be used.</p>
+            <img src="../img/ios2.jpg">
+            <h3>Login after 1st time</h3>
+            <p>The user will immediately be directed to the password screen (they no longer have to enter their phone number). The order of precedence of the 3 authentication processes will occur in the following order, if enabled:</p>
+            <ol>
+                <li>Prediction Login</li>
+                <li>Fingerprint Login</li>
+                <li>Password Login</li>
+            </ol>
+             <img src="../img/flow.png">
+             <p>If one authentication process is successful, the user will progress to the ‘Welcome’ screen. If not, the app will try the next authentication process in order, with the password login being the last resort.</p>
+             <h3>Prediction Login Implementation</h3>
+             <p>The prediction login system will use the prediction engine that was created with PredictionIO. The HTTP networking library, Alamofire is used to call a GET request to PHP files that will return either a ‘1’ or ‘-1’, depending on the result of the prediction. The PHP files are currently on an IBM Bluemix server.</p>
+             <p>The GET request will also send over, from the iOS app to the PHP, data that is collected from the iOS app - time, day and location (longitude/latitude coordinates).</p>
+             <img src="../img/pred_ios.png">
+             <p>If the prediction result is ‘1’, the user will successfully login, and will be directed to the ‘Welcome’ screen. On the other hand, if the prediction result is ‘-1’, the next authentication process will be attempted.</p>
+             <p>In order for the prediction engine to collect login data, every time the user successfully logs in to the app (i.e. gets directed to the ‘Welcome’ screen), the event data is sent to an ‘Event Server’ that stores every instance of when the user has logged in.</p>
+             <h3>Fingerprint Login Implementation</h3>
+             <p>The fingerprint login uses the ‘Local Authentication’ framework, to enable TouchID to be implemented into the app. It will check that the fingerprint of the person authenticating is the device owner.</p>
+             <p>Error checking has been implemented using LAContext, which is part of the ‘Local Authentication’ framework, if the fingerprint login fails for any reason. 5 specific contexts are evaluated:</p>
+             <ul>
+                <li>LAError.SystemCancel</li>
+                <li>LAError.UserCancel</li>
+                <li>LAError.UserFallback</li>
+                <li>LAError.TouchIDNotEnrolled</li>
+                <li>LAError.PasscodeNotSet</li>
+            </ul>
+            <h3>External Libraries Used</h3>
+            <ul>
+                <li>SwiftyJSON - used for parsing JSON data from the PostgreSQL user database to enable the user to log in.</li>
+                <li>Alamofire - used for REST calls to PHP file server to communicate with prediction engine and event server.</li>
+                <li>PredictionIO PHP client - installed as a dependency for the PHP files to query from the prediction engine and event server.</li>
+            </ul>
         </div>
     </div>
 
@@ -124,23 +168,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="https://github.com/lujasmine/IBM1/tree/ios" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -148,7 +176,6 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
         </div>

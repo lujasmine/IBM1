@@ -122,6 +122,11 @@ table {
     text-align: center;
 }
 
+#ios img {
+    width: 80%;
+    margin-left: 10%;
+}
+
 video#bgvid { 						
     position: fixed;
     top: 50%;
