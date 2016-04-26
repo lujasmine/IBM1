@@ -136,7 +136,6 @@ class PasswordViewController: UIViewController, CLLocationManagerDelegate {
             let alertView = UIAlertController(title: "Login Option", message: "Use TouchID for Login?", preferredStyle: .Alert)
             
             let yesOption = UIAlertAction(title: "Yes", style: .Default) {(action) in
-                self.fingerprintAuthentication()
                 self.defaults.setBool(true, forKey: "fingerprint")
             }
             let noOption = UIAlertAction(title: "No", style: .Default) {(action) in
