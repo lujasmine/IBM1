@@ -2,6 +2,12 @@ p {
     text-align: justify;
 }
 
+hr {
+    color: #404040;
+    height: 6px;
+    border: none;
+}
+
 #side {
 	margin-left: 2%;
 	margin-top: 2%;
@@ -18,6 +24,67 @@ p {
 
 .logo {
 	margin-left: auto;
+}
+
+#features-align {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#features-1 {
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(64,64,64,0.1);
+    padding: 2%;
+}
+
+#features-2 {
+    float: right;
+    border-radius: 10px;
+    background-color: rgba(64,64,64,0.1);
+    padding: 2%;
+}
+
+#features-ml {
+    width: 97%;
+    margin-left: 1.5%;
+    border-radius: 10px;
+    font-size: 100%;
+    background-color: rgba(64,64,64,0.1);
+    padding: 2%;
+}
+
+#features-1 p, #features-2 p, #features-ml p{
+    text-align: center;
+    word-wrap: break-word;
+    width: 90%;
+    margin-left: 5%;
+    font-weight: 4%;
+}
+
+#features-ml {
+    vertical-align: center;
+}
+
+#landing-container {
+    width: 70%;
+    margin-left: 15%;
+}
+
+#video-1 {
+    width: 49.5%;
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+#video-2 {
+    width: 49.5%;
+    float: right;
+    border-radius: 10px;
+    padding: 2%;
 }
 
 footer .container ul{
@@ -68,7 +135,6 @@ video#bgvid {
     transform: translateX(-50%) translateY(-50%);
     background: url(../img/start.jpg) no-repeat;
     background-size: cover;
-    background-color: rgba(64,64,64,0.6); 
 }
 
 #background {						
@@ -83,7 +149,7 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
-    background-color: rgba(255,255,255,0.3); 
+    background-color: rgba(64,64,64,0.6); 
 }
 
 #architecture {
