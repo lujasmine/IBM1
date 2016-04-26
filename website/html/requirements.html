@@ -100,8 +100,8 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
                         <h1>Requirements and Scope</h1>
-                        <!-- <hr class="small">
-                        <span class="subheading">Subheading</span> -->
+                        <hr class="small">
+                        <span class="subheading">Initial Requirements, MoSCoW Requirements and Use Cases</span>
                     </div>
                 </div>
             </div>
@@ -115,123 +115,113 @@
             <p>In our initial meeting with the client, we discussed the idea behind Effortless and Secure Banking and the possibilities of the project.</p>
             <p>Following this, the client requested that in the second meeting, we would present our outlook on the project title and ideas for the solution.Below is the presentation that we presented:</p>
             <div align = "center">
-            <iframe src="https://docs.google.com/presentation/d/1Kl5JoR_nrNhUwGdEPe8Gai2Xs_u2JUQYOC5Augi-pSw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <iframe src="https://docs.google.com/presentation/d/1Kl5JoR_nrNhUwGdEPe8Gai2Xs_u2JUQYOC5Augi-pSw/embed?start=false&loop=false&delayms=3000" frameborder="0" width=95% height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>
         </div>
         <div class="row">
-            <h1>Requirements</h1>
+            <h1>MoSCoW Requirements</h1>
+            <p>The checklist in the right column displays the final requirements that we have completed.</p>
 			<div>
-		<hr>
-            <table align = "center" cellspacing="10" border=1 class="requirements">
-                <tr class="titles">
-				    <td style=min-width:50px>Description</td>
-                    <td style=min-width:50px>Type</td>
-                    <td style=min-width:50px>Category</td>
-                    <td style=min-width:50px>Priority</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall be accessible from any device that supports internet conection</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>General</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall use secure encryption
-methods</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>Security</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall adapt to it's users behaviour by using machine learning algorithms</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>General</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall be available in multiple
-languages</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>Localization</td>
-                    <td style=min-width:50px>Could Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall have database backup</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>General</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>E & S Banking system shall have both web and native mobile apps</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>General</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Mobile App shall automatically provide instant
-access to users who satisfy the machine learning
-algorithm conditions</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Authentication</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Mobile App shall authenticate users via
-fingerprint scanner</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Authentication</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Web Application shall send out a text message
-with authentication code during the login attempt</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Authentication</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Machine learning algorithm shall collect data
-from both mobile and web login attempts and store them in a database</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Development</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>System shall display a map of transaction locations</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Development</td>
-                    <td style=min-width:50px>Could Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>System for temporary transaction locks and limitations shall be implemented</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Development</td>
-                    <td style=min-width:50px>Should Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Failsafe login method shall allow users to access
-their bank account by using default authentication procedure set by the bank</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Authentication</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    
-                    <td style=min-width:50px>Machine learning algorithm shall model user's
-behaviour by analysing geolocation and time</td>
-                    <td style=min-width:50px>Functional</td>
-                    <td style=min-width:50px>Development</td>
-                    <td style=min-width:50px>Must Have</td>
-                </tr>
-                <tr>
-                    <td style=min-width:50px>Step-by-step introduction to the application</td>
-                    <td style=min-width:50px>Non-Functional</td>
-                    <td style=min-width:50px>User Experience</td>
-                    <td style=min-width:50px>Could Have</td>
-                </tr>
-            </table>
-            <hr>
-    </div>
+                <table align = "center" cellspacing="10" border=1 class="requirements">
+                    <tr class="titles">
+    				    <td style=min-width:50px>Description</td>
+                        <td style=min-width:50px>Type</td>
+                        <td style=min-width:50px>Category</td>
+                        <td style=min-width:50px>Priority</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall be accessible from any device that supports internet conection</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>General</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall use secure encryption methods</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>Security</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall adapt to it's users behaviour by using machine learning algorithms</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>General</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall have database backup</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>General</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall have both web and native mobile apps</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>General</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Mobile App shall automatically provide instant access to users who satisfy the machine learning algorithm conditions</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Authentication</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Mobile App shall authenticate users via fingerprint scanner</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Authentication</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Web Application shall send out a text message with authentication code during the login attempt</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Authentication</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Machine learning algorithm shall collect data from both mobile and web login attempts and store them in a database</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Development</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Failsafe login method shall allow users to access their bank account by using default authentication procedure set by the bank</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Authentication</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        
+                        <td style=min-width:50px>Machine learning algorithm shall model user's behaviour by analysing geolocation and time</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Development</td>
+                        <td style=min-width:50px>Must Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>System for temporary transaction locks and limitations shall be implemented</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Development</td>
+                        <td style=min-width:50px>Should Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>System shall display a map of transaction locations</td>
+                        <td style=min-width:50px>Functional</td>
+                        <td style=min-width:50px>Development</td>
+                        <td style=min-width:50px>Could Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>E & S Banking system shall be available in multiple languages</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>Localization</td>
+                        <td style=min-width:50px>Could Have</td>
+                    </tr>
+                    <tr>
+                        <td style=min-width:50px>Step-by-step introduction to the application</td>
+                        <td style=min-width:50px>Non-Functional</td>
+                        <td style=min-width:50px>User Experience</td>
+                        <td style=min-width:50px>Could Have</td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div class="row">
             <h1>Use cases</h1>

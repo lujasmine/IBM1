@@ -101,7 +101,7 @@
                     <div class="page-heading">
                         <h1>Overview</h1>
                         <hr class="small">
-                        <span class="subheading">Development Plan, Iterations</span>
+                        <span class="subheading">Final Requirements For Final PoC, Development Plan and Iterations</span>
                     </div>
                 </div>
             </div>
@@ -111,13 +111,85 @@
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="row">
+            <h2>Final Requirements</h2>
+            <p>We have compiled a list of final requirements for the Final Proof of Concept, chosen from the MoSCoW Requirements List and additional requirements .</p>
+            <table align = "center" cellspacing="10" border=1 class="requirements">
+                <tr class="titles">
+                    <td style=min-width:50px>Description</td>
+                    <td style=min-width:50px>Type</td>
+                    <td style=min-width:50px>Category</td>
+                    <td style=min-width:50px>Priority</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E & S Banking system shall be accessible from any device that supports internet conection</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>General</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E & S Banking system shall use secure encryption methods</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>Security</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E & S Banking system shall adapt to it's users behaviour by using machine learning algorithms</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>General</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E & S Banking system shall have all parts of the system deployed onto IBM Bluemix</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>Development</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>E & S Banking system shall have both web and native mobile apps</td>
+                    <td style=min-width:50px>Non-Functional</td>
+                    <td style=min-width:50px>General</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Mobile App shall automatically provide instant access to users who satisfy the machine learning algorithm conditions</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Authentication</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Mobile App shall authenticate users via fingerprint scanner</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Authentication</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Machine learning algorithm shall collect data from both mobile login attempts and store them in a database</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Development</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    <td style=min-width:50px>Failsafe login method shall allow users to access their bank account by using default authentication procedure set by the bank(i.e. password login)</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Authentication</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+                <tr>
+                    
+                    <td style=min-width:50px>Machine learning algorithm shall model user's behaviour by analysing geolocation and time</td>
+                    <td style=min-width:50px>Functional</td>
+                    <td style=min-width:50px>Development</td>
+                    <td style=min-width:50px>Must Have</td>
+                </tr>
+            </table>
+            <h2>Iterations</h2>
+
             <h3>Iteration 1</h3>
             <h4>iOS App</h4>
             <ul>
                 <li>iOS app front end was implemented (i.e. 2 screens - phone number screen and password screen)</li>                
             </ul>
             <h4>Web App</h4>
-            <h4>Prediction Engine</h4>
             <h3>Iteration 2</h3>
             <h4>iOS App</h4>
             <ul>
@@ -125,7 +197,6 @@
                 <li>Touch ID (fingerprint) login was implemented at this stage, this consisted of asking the user for permission and implementing error checking for different contexts for when the Touch ID login failed (for example, the user cancels Touch ID login).</li>
             </ul>
             <h4>Web App</h4>
-            <h4>Prediction Engine</h4>
             <h3>Iteration 3</h3>
             <h4>iOS App</h4>
             <ul>
@@ -133,7 +204,6 @@
                 <li>Welcome screen was added to the front end of the app to act as feedback for the user.</li>            
             </ul>
             <h4>Web App</h4>
-            <h4>Prediction Engine</h4>
             <h3>Iteration 4</h3>
             <h4>iOS App</h4>
             <ul>
@@ -142,7 +212,6 @@
                 <li>A settings bundle was added so that the user is able to enable/disable the different login options</li>
             </ul>
             <h4>Web App</h4>
-            <h4>Prediction Engine</h4>
         </div>
     </div>
 
