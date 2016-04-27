@@ -17,13 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44f-3w-UZG">
-                    <rect key="frame" x="78" y="363" width="218" height="21"/>
+                    <rect key="frame" x="78" y="298" width="218" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Jti-kO-ADp">
-                    <rect key="frame" x="86" y="400" width="207" height="30"/>
+                    <rect key="frame" x="86" y="335" width="207" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                     <connections>
@@ -31,9 +31,9 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure and Effortless Banking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvW-2I-p3j">
-                    <rect key="frame" x="83" y="137" width="213" height="162"/>
+                    <rect key="frame" x="83" y="72" width="213" height="162"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="162" id="bYY-uj-aly"/>
+                        <constraint firstAttribute="height" constant="162" id="YYZ-r3-0aA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,15 +42,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="AvW-2I-p3j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="137" id="Cdy-Bt-K7J"/>
-                <constraint firstItem="AvW-2I-p3j" firstAttribute="centerX" secondItem="Jti-kO-ADp" secondAttribute="centerX" id="DdM-fM-zUV"/>
-                <constraint firstItem="44f-3w-UZG" firstAttribute="top" secondItem="AvW-2I-p3j" secondAttribute="bottom" constant="64" id="ER8-ku-KXf"/>
-                <constraint firstItem="44f-3w-UZG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="78" id="Ra5-oa-PCt"/>
-                <constraint firstItem="AvW-2I-p3j" firstAttribute="trailing" secondItem="44f-3w-UZG" secondAttribute="trailing" id="Yel-mo-ecz"/>
-                <constraint firstItem="Jti-kO-ADp" firstAttribute="top" secondItem="44f-3w-UZG" secondAttribute="bottom" constant="16" id="cXs-f9-kY0"/>
-                <constraint firstItem="AvW-2I-p3j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="83" id="jAa-Ec-x8R"/>
-                <constraint firstItem="44f-3w-UZG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mHq-er-gPC"/>
-                <constraint firstItem="Jti-kO-ADp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="86" id="thi-i9-QAy"/>
+                <constraint firstItem="44f-3w-UZG" firstAttribute="top" secondItem="AvW-2I-p3j" secondAttribute="bottom" constant="64" id="9E3-1D-Sl0"/>
+                <constraint firstItem="AvW-2I-p3j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="83" id="9bj-OP-22V"/>
+                <constraint firstItem="44f-3w-UZG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="78" id="MQS-3R-UfO"/>
+                <constraint firstItem="AvW-2I-p3j" firstAttribute="trailing" secondItem="44f-3w-UZG" secondAttribute="trailing" id="Wjv-zH-7cN"/>
+                <constraint firstItem="Jti-kO-ADp" firstAttribute="top" secondItem="44f-3w-UZG" secondAttribute="bottom" constant="16" id="aG0-zG-MUb"/>
+                <constraint firstItem="Jti-kO-ADp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="86" id="iwl-yq-Bsd"/>
+                <constraint firstItem="44f-3w-UZG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mrv-I5-sUC"/>
+                <constraint firstItem="AvW-2I-p3j" firstAttribute="centerX" secondItem="Jti-kO-ADp" secondAttribute="centerX" id="qzq-Zx-32b"/>
+                <constraint firstItem="AvW-2I-p3j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="t7G-S7-xD1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="352.5" y="366.5"/>

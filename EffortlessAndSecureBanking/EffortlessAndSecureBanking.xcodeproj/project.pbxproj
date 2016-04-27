@@ -259,7 +259,7 @@
 				TargetAttributes = {
 					900106DC1C6A4015009A5D2B = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 523G3J4242;
+						DevelopmentTeam = 6TYAA8JLVM;
 					};
 					900106F01C6A4015009A5D2B = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -528,7 +528,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = ESBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/debug";
@@ -546,7 +546,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = EffortlessAndSecureBanking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = EffortlessAndSecureBanking;
+				PRODUCT_BUNDLE_IDENTIFIER = ESBanking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/release";
