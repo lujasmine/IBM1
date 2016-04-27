@@ -140,6 +140,7 @@ video#bgvid {
     transform: translateX(-50%) translateY(-50%);
     background: url(../img/start.jpg) no-repeat;
     background-size: cover;
+    background-color: rgba(64,64,64,0.6);
 }
 
 #background {						
@@ -154,7 +155,7 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
-    background-color: rgba(64,64,64,0.3); 
+    background-color: rgba(64,64,64,0.7); 
 }
 
 #architecture {
