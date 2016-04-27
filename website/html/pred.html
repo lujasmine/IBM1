@@ -103,9 +103,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Prediction Engine</h1>
-                        <hr class="small">
-                        <span class="subheading">Features and Implementation</span>
+                        <h1>Prediction Algorithm</h1>
+                        <!-- <hr class="small">
+                        <span class="subheading">Subheading</span> -->
                     </div>
                 </div>
             </div>
@@ -114,8 +114,207 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="row" id="video">
-            <h1>Development</h1><br>
+        <div class="row">
+            <h1>The Algorithm</h1>
+            <p>In order to ensure a high correlation between what was asked of us and what we will deliver, we decided to take a methodic approach to solving the problem we were confronted with. Our implementation follows the CRISP-DM ‘99, which is a data mining process model widely used in the industry to identify business uses for collected data.</p>
+            <img src="../img/pred_alg.png" style="width:40%; margin-left:30%">
+            <h2>Business Understanding</h2>
+            <p>The reasoning that led to our algorithm and platform choices follows a hidden-in-plain-sight idea. We were asked to devise an “effortless” way for our users to log in. We then thought that the most straightforward way for them to do so was to not enter their credentials at all.</p>
+            <p>The next conclusion was that we need to find a way to gather relevant information about the user that would allow us to learn their behaviour. Following that we started thinking of how we can make sense of the data, such that we are certain that we allow the right actor to log in our system.</p>
+            <h2>Data Understanding</h2>
+            <p>This phase consisted of observing the behaviour of people that use mobile banking apps and determining what characteristics were prevalent. The most reasonable parameters of a login action were considered to be:</p>
+            <table class="tg">
+                <tr>
+                    <th style="text-align: center; width: 33%; border-width: 0; font-size: 20px;">Time</th>
+                    <th style="text-align: center; width: 33%; border-width: 0; font-size: 20px;">Day of the week</th>
+                    <th style="text-align: center; width: 33%; border-width: 0; font-size: 20px;">Location</th>
+                </tr>
+                <tr>
+                    <th style="text-align: center; border-width: 0;"><i class="fa fa-clock-o fa-5x" id="feature-icon"></i></th>
+                    <th style="text-align: center; border-width: 0;"><i class="fa fa-calendar fa-5x" id="feature-icon"></th>
+                    <th style="text-align: center; border-width: 0;"><i class="fa fa-location-arrow fa-5x" id="feature-icon"></th>
+                </tr>
+            </table>
+            <p>Data quality is not a problem in our case, because we do some preprocessing before we store it. Namely, the time and day of week are read, formatted and sent by the app. Ideally these would be stored by the event server upon receiving the POST request, but for the purpose of demonstrating the functionality we assigned this responsibility to the mobile app. Also we will not store any entries that do not contain all the information, such as when the location services are turned off.</p>
+            <h2>Data Preparation</h2>
+            <p>Proper preprocessing is standard for PredictionIO’s DASE architecture, and it is being carried out in concordance with the recommended practices for our chosen algorithm. We are currently normalising the data with the formula</p>
+            <p style="text-align: center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mrow><mi>s</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>d</mi><mo>&#x000A0;</mo></mrow></msub><mo>=</mo><mo>-</mo><mn>1</mn><mo>+</mo><mn>2</mn><mfrac><mrow><mo>&#x000A0;</mo><mi>X</mi><mo>-</mo><msub><mi>X</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mrow><msub><mi>X</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>-</mo><msub><mi>X</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow></mfrac></math></p>
+            <p>in order to ensure that every feature has mean 0 and unit variance. The main advantage of scaling is to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges. Another advantage is to avoid numerical difficulties during the calculation. The scaling parameters are stored and used on the training data when the query is being sent.</p>
+            <p>The day characteristic is a categorical feature. By testing we have discovered that we are better of if we encode it as 7 binary features, instead of just one, and it results in more stable results.</p>
+            <p>We have also identified this as the stage where multi-tenancy could be implemented in the future, as the server that we are using does not support this as of the current version. More details are available in the [Further developments] section.</p>
+            <h2>Modelling | SVM</h2>
+            <p>SVMs (Support Vector Machines) are a data classification technique that can be used for various use cases and that are effective even when the number of dimensions are higher than the number of sample points (training data). Another advantage is that the they use a subset of training points (support vectors) in the decision function, so they are memory efficient.</p>
+            <p>Typically, the SVM algorithm is given a set of training examples labeled as belonging to one of two classes. The SVM constructs a hyper-plane or set of hyper-planes in a high or infinite dimensional space, which can be used for classification, regression or other tasks. Intuitively, a good separation is achieved by the hyper-plane that has the largest distance to the nearest training data points of any class (so-called functional margin), since in general the larger the margin the lower the generalization error of the classifier. New examples are mapped into that same space and predicted to belong to one category or another, based on which side of the gap they fall on.</p>
+            <iframe width=80% height="400"src="https://www.youtube.com/embed/3liCbRZPrZA?modestbranding=1&controls=0&iv_load_policy=3&loop=1&rel=0&showinfo=0&disablekb=1&start=9" frameborder="0" style="margin-left: 10%;"></iframe>
+            <p>Because we store only the characteristics of successful logins, our data is said to belong to only one class, and the algorithm that we need must be a form of supervised learning. Therefore, in one-class SVM, the novelty detector (we called it “anomaly detector”) creates a model of existing entries, or “events”, and checks whether the test data novelty belongs to acceptable boundaries according to some predefined parameters. If it is too different, it is labeled out-of-class and it won’t be accepted as a legitimate login.</p>
+            <p>The SVM method by Schölkopf[1] et al. is marginally different to the original SVM formulation:</p>
+            <img src="../img/novelty_detection.png" style="width: 70%; margin-left: 15%;">
+            <p>where the nu parameter replaces C in controlling the upper bound of the number of outliers (training examples regarded out-of-class). The engine’s API makes it easy to tweak this value,</p>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munder>
+    <mo lspace="0" rspace="0" movablelimits="true">min</mo>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>w</mi>
+      <mo>,</mo>
+      <mtext>&#xA0;</mtext>
+      <msub>
+        <mi>&#x03BE;<!-- ξ --></mi>
+        <mi>i</mi>
+      </msub>
+      <mo>,</mo>
+      <mtext>&#xA0;</mtext>
+      <mi>&#x03C1;<!-- ρ --></mi>
+    </mrow>
+  </munder>
+  <mo>&#x2061;<!-- ⁡ --></mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mo>&#x2225;<!-- ∥ --></mo>
+  <mi>w</mi>
+  <msup>
+    <mo>&#x2225;<!-- ∥ --></mo>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mi>&#x03BD;<!-- ν --></mi>
+      <mi>n</mi>
+    </mrow>
+  </mfrac>
+  <munderover>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>1</mn>
+    </mrow>
+    <mi>n</mi>
+  </munderover>
+  <msub>
+    <mi>&#x03BE;<!-- ξ --></mi>
+    <mi>i</mi>
+  </msub>
+  <mo>&#x2212;<!-- − --></mo>
+  <mi>&#x03C1;<!-- ρ --></mi>
+  <mspace linebreak="newline" />
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mtext>&#xA0;subject to:&#xA0;</mtext>
+  </mstyle>
+  <mspace linebreak="newline" />
+  <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mi>w</mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>&#x03D5;<!-- ϕ --></mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mi>i</mi>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2265;<!-- ≥ --></mo>
+      </mtd>
+      <mtd>
+        <mi>&#x03C1;<!-- ρ --></mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <msub>
+          <mi>&#x03BE;<!-- ξ --></mi>
+          <mi>i</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mtext>&#xA0;for all&#xA0;</mtext>
+        </mstyle>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>&#x2026;<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd />
+      <mtd>
+        <msub>
+          <mi>&#x03BE;<!-- ξ --></mi>
+          <mi>i</mi>
+        </msub>
+        <mo>&#x2265;<!-- ≥ --></mo>
+        <mn>0</mn>
+      </mtd>
+      <mtd>
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mtext>&#xA0;for all&#xA0;</mtext>
+        </mstyle>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>&#x2026;<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+            <p>among others. The non-linearity of the decision boundary is achieved by using the Gaussian kernel (also knows as the Radial Basis Function, or RBF), as the decision function:</p>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>K</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <msup>
+    <mi>x</mi>
+    <mo>&#x2032;</mo>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>exp</mi>
+  <mo>&#x2061;<!-- ⁡ --></mo>
+  <mrow>
+    <mo>(</mo>
+    <mo>&#x2212;<!-- − --></mo>
+    <mfrac>
+      <mrow>
+        <mo fence="false" stretchy="false">&#x2225;<!-- ∥ --></mo>
+        <mi>x</mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <msup>
+          <mi>x</mi>
+          <mo>&#x2032;</mo>
+        </msup>
+        <msup>
+          <mo fence="false" stretchy="false">&#x2225;<!-- ∥ --></mo>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <msup>
+          <mi>&#x03C3;<!-- σ --></mi>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </mfrac>
+    <mo>)</mo>
+  </mrow>
+</math>
+            <h2>Evaluation</h2>
+            <p>We have manually constructed a training set (~50 data points) because we needed to include events that formed a predictable boundary. We successfully tested the model with queries that were expected to yield both positive and negative results. At this point we have reevaluated the engine’s DASE implementation to ensure that the business objective is achieved. To ensure that the positive predictions do not represent a security issue for the user we have compared our method to several other Novelty detection approaches and concluded that our choice achieves the best fit to the training data.</p>
+            <h2>Deployment</h2>
+            <p>Following testing, we have successfully deployed the algorithm on IBM’s Bluemix platform in the form of a Docker container. It is now integrated with the mobile app in terms of both collecting data and receiving queries for prediction. Training with new events is scheduled every day at 0:00 AM server time in order for the model to reflect the most recent user entries.</p>
+            <h3>References</h3>
+            <p>[1] Schölkopf, R.C. Williamson, A.J. Smola, J. Shawe-Taylor, and J. Platt. Support vector method for novelty detection. in Advances in Neural Information Processing Systems 12: Proceedings of the 1999 Conference, Sara A. Solla, Todd K. Leen and Klaus-Robert Muller eds., 2000.</p>
         </div>
     </div>
 
@@ -150,6 +349,11 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/clean-blog.min.js"></script>
+
+    <!-- MathJax -->
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
 </body>
 
