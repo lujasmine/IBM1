@@ -160,21 +160,21 @@
             </ol>
             <p>Note: The Event server will be deployed at localhost:7070 and the prediction engine will be deployed at localhost:8000.</p>
             <h3>II. Install from the Docker image</h3>
-            <p>Install Docker from <a href="https://www.docker.com">docker.com</a></p>
-            <p>Start a docker terminal. </p>
-            <p>Issue <code>docker run -P --name esb darianss/anomaly_detector</code>.</p>
-            <p>The IP that docker runs on is the VM’s. We can get it with <code>docker-machine ip</code></p>
-            <p>Issue <code>docker start -i -a esb</code> to start the container. </p>
-            <p>Note: Starting the container will NOT work while connected to eduroam. </p>
-            <p>Note 2: You can change files with the nano file editor.</p>
-            <p>The ports of the container will not map out to the original ones. To get them we do: </p>
-            <p> <code>docker port esb</code></p>
-            <p>So in the end, the address of the Event server and of the deployed engine will look similar to 192.168.99.100:49155 (mapped from the container’s internal 0.0.0.0:7000). </p>
-            <p>The entire server can be started by simply issuing, while inside the container: </p>
-            <p><code>./run.sh</code></p>
-            <p>You now have your own containerised anomaly detector running on your local machine! </p>
+            <ol>
+                <li><p>Install Docker from <a href="https://www.docker.com">docker.com</a></p></li>
+                <li><p>Start a docker terminal. </p></li>
+                <li><p>Issue <code>docker run -P --name esb darianss/anomaly_detector</code>.</p></li>
+                <li><p>The IP that docker runs on is the VM’s. We can get it with <code>docker-machine ip</code></p></li>
+                <li><p>Issue <code>docker start -i -a esb</code> to start the container. </p></li>
+                <p>Note: Starting the container will NOT work while connected to eduroam. </p>
+                <p>Note 2: You can change files with the nano file editor.</p>
+                <li><p>The ports of the container will not map out to the original ones. To get them we do: <code>docker port esb</code></p></li>
+                <li><p>So in the end, the address of the Event server and of the deployed engine will look similar to 192.168.99.100:49155 (mapped from the container’s internal 0.0.0.0:7000). </p></li>
+                <li><p>The entire server can be started by simply issuing, while inside the container: <code>./run.sh</code></p></li>
+                <p>You now have your own containerised anomaly detector running on your local machine! </p>
+            </ol>
             <h3>API</h3>
-            <p>It is easy to send data to the event server via either HTTP requests or from multiple supported SDKs (available at <a href="https://docs.prediction.io/sdk/" target="_blank">https://docs.prediction.io/sdk/</a>). One such a request made with curl will look like:</p>
+            <p>It is easy to send data to the event server via either HTTP requests or from multiple supported SDKs (available at <a href="https://docs.prediction.io/sdk/" target="_blank">https://docs.prediction.io/sdk/</a>). One such request made with curl will look like:</p>
             <pre><code>curl -i -X POST http://IP:PORT/events.json?accessKey=t9FmFxWIERJyaF3XGY8LwFsFSCHsRqbP5Wh0jyeCJzKBs3MjDkzaFRAIX4E7FR5r \
 -H "Content-Type: application/json" \
 -d '{
@@ -214,7 +214,7 @@ It can be modified from engine.json which is in the root of the folder. </p>
 It can be modified from engine.json which is in the root of the folder. </p>
 
                 <h3>Database access</h3>
-                <p>Troubleshooting: in case the db client won't connect or the console returns a jdbc error, it is because the maximum of 5 concurrent connections to it has been reached. To close everything down, either run [pio-stop] (in container) / stop the Event server (if the installation is local), or go online at: </p>
+                <p>Troubleshooting: in case the db client won't connect or the console returns a jdbc error, it is because the maximum of 5 concurrent connections to it has been reached. To close everything down, either run <code>pio-stop</code> (in container) / stop the Event server (if the installation is local), or go online at: </p>
 
 <p><a href="https://www.elephantsql.com" target="_blank">elephantsql.com</a></p>
 
@@ -223,7 +223,7 @@ It can be modified from engine.json which is in the root of the folder. </p>
 <pre style="border-color: red;"><code>email: team10@ucl.ac.uk
 password: ibm1</code></pre>
 
-<p>Press the connections button and terminate as many connections are needed. </p>
+<p>Press the connections button and terminate as many connections as needed. </p>
 
 
 <p style="font-weight: bold;">You can also connect to the db using a client to manipulate the event data stored in the pio_event_1 table.</p>
