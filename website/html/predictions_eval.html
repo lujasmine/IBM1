@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IBM1 - Manuals</title>
+    <title>IBM1 - Predictions Evaluation</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -98,14 +98,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/manuals.jpg')">
+    <header class="intro-header" style="background-image: url('../img/maths-blackboard.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Manuals</h1>
+                        <h1>Prediction Engine</h1>
                         <hr class="small">
-                        <span class="subheading">System and User Manuals</span>
+                        <span class="subheading">Evaluation</span>
                     </div>
                 </div>
             </div>
@@ -114,41 +114,19 @@
 
     <!-- Main Content -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="row" id="ios">
-            <h1>System Manual</h1>
-            <h3>iOS (installed dependencies)</h3>
-            <p>All external frameworks used in the iOS App (SwiftyJSON and Alamofire) were installed using Cocoapods. If any other frameworks are to be added, the Podfile will need to be edited, and then using terminal:</p>
-            <code>pod install</code>
-            <p>Import the frameworks to the required classes and in order to prevent any erros, go to Target -> Build Phases -> Link Binary With Libraries and add the pod installed frameworks.</p>
-            <p>It is also important to use the .workspace file in Xcode rather than the .xcodeproj file.</p>
-            <h3>PredictionIO PHP client SDK</h3>
-            <p>The PredictionIO PHP client must be installed as a dependency, this has already been done, via Composer.</p>
-            <p>Composer has created all the necessary files in the directory as well as a ‘vendor’ folder - this must not be deleted/edited, or the dependency will not work correctly.</p>
-            <p>If additional PHP files are to be created to perform other queries to the prediction engine or event server, there is full documentation on the <a href="https://docs.prediction.io/appintegration/" target="_blank">website</a> and the following line must be added to the top of the PHP file to ensure that the dependency is added to the respective file:</p>
-            <code>require_once(“vendor/autoload.php”);</code>
-            <h1>User Manual</h1>
-            <h3>iOS - Changing Login Options</h3>
-            <p>Note: An active internet connection is required to use the app.</p>
-            <h4>To enable/disable Fingerprint Login Option:</h4>
-            <p>To use the fingerprint login option, Touch ID must be available on your device (iPhone 5S or newer) and it is enabled, with a fingerprint already set up.</p>
-            <p>If you did not selected to enable Touch ID login furing the first time login and would like to change this setting, you can enable this option in the Settings app on your phone.</p>
-            <p>Settings —>  E&S Banking —> Use Touch ID Login —> ON/OFF</p>
-            <h4>To enable/disable Prediction Login Option:</h4>
-            <p>The prediction engine requires two things to be enabled, firstly ‘Location Services’ must be turned on and the ‘Prediction Login’ option must be enabled.</p>
-            <p>To turn on ‘Location Services’ for this app, go to Settings —> E&S Banking —> Location —> While Using the App (select).</p>
-            <img src="../img/settings.jpg">
-            <p>To enable Prediction Login, there are two ways:</p>
-            <ul>
-                <li>Logging in with the user for the first time on the device</li>
-                <li>Go to Settings —> E&S Banking —> Use Prediction Login —> ON/OFF</li>
-            </ul>
+        <div class="row">
+            <h2>Evaluation</h2><br>
+            <img src="../img/4.png" style="width: 60%; margin-left: 20%;">
+            <p>We created a dataset with 50 training examples to evaluate the accuracy of our predictions. Among the data points there were also the 3 locations represented by the 3 red dots above. These entries were all mapped to logins made on Thursdays, at times 12:00, 12:47 and 12:23 respectively.</p>
+            <p>Our query corresponded to a login made at the location of the blue dot, on a Thursday at 12:30. Our assumption was that this should be accepted as a legitimate attempt, because its characteristics follow the pattern set by user behaviour previously recorded, represented by the 3 red dots. Our model successfully authenticated our attempt, and stored the entry as another event.</p>
+            <p>The margin with which the location accuracy is being calculated is defined by two distinct approaches. The location longitude and latitude coordinate numbers that are being stored contain 4 decimal places, which leads to an accuracy of up to 11 meters, and the location numbers in the query have 5 decimal places, which represents an accuracy of 1 meter. This leads to a slightly bigger area that will accept logins. The second criteria is the nu parameter, set in engine.json, that  dictates the ratio of outliers to support vectors.</p>
         </div>
     </div>
 
     <hr>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background-color: rgb(255,255,255)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,8 +143,8 @@
                 </div>
             </div>
         </div>
-    </footer>>
     </footer>
+
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>

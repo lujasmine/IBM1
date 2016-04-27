@@ -3430,6 +3430,7 @@ tbody.collapse.in {
 }
 .navbar-nav > li > .dropdown-menu { 
   background-color: #555; 
+  color: white;
 }
 .dropdown-menu {
   position: absolute;
@@ -3476,14 +3477,14 @@ tbody.collapse.in {
 .dropdown-menu > li > a:focus {
   color: white;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #404040;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   color: white;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: white;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -3518,7 +3519,7 @@ tbody.collapse.in {
   padding: 3px 20px;
   font-size: 12px;
   line-height: 1.42857143;
-  color: #777;
+  color: white;
   white-space: nowrap;
 }
 .dropdown-backdrop {
@@ -4459,19 +4460,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
+    color: white;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555;
+    color: white;
     background-color: #e7e7e7;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
+    color: white;
     background-color: transparent;
   }
 }
@@ -4561,7 +4562,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #fff;
+    color: #404040;
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
