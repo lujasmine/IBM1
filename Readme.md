@@ -2,7 +2,7 @@
 
 Assuming you are using Linux or OS X:
 
-Issue ```bash -c "$(curl -s https://install.prediction.io/install.sh)"``` and choose PostgreSQL as the data storage option.
+Issue ```bash -c "$(curl -s https://install.prediction.io/install.sh)"``` and choose PostgreSQL as the data storage option. When asked about the linux distribution, choose Debian/Ubuntu.
 
 [Download this](https://goo.gl/ue3udW) and put it in PredictionIO-0.9.6/conf. The ANOMALY folder can simply be placed inside the PredictionIO folder. 
 
