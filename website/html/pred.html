@@ -110,8 +110,8 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
                         <h1>Prediction Algorithm</h1>
-                        <!-- <hr class="small">
-                        <span class="subheading">Subheading</span> -->
+                        <hr class="small">
+                        <span class="subheading">Algorithm Overview</span>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
             <p style="text-align: center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mrow><mi>s</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>d</mi><mo>&#x000A0;</mo></mrow></msub><mo>=</mo><mo>-</mo><mn>1</mn><mo>+</mo><mn>2</mn><mfrac><mrow><mo>&#x000A0;</mo><mi>X</mi><mo>-</mo><msub><mi>X</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mrow><msub><mi>X</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>-</mo><msub><mi>X</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow></mfrac></math></p>
             <p>in order to ensure that every feature has mean 0 and unit variance. The main advantage of scaling is to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges. Another advantage is to avoid numerical difficulties during the calculation. The scaling parameters are stored and used on the training data when the query is being sent.</p>
             <p>The day characteristic is a categorical feature. By testing we have discovered that we are better of if we encode it as 7 binary features, instead of just one, and it results in more stable results.</p>
-            <p>We have also identified this as the stage where multi-tenancy could be implemented in the future, as the server that we are using does not support this as of the current version. More details are available in the [Further developments] section.</p>
+            <p>We have also identified this as the stage where multi-tenancy could be implemented in the future, as the server that we are using does not support this as of the current version. More details are available in the <a href="further.html">Further developments</a> section.</p>
             <h2>Modelling | SVM</h2>
             <p>SVMs (Support Vector Machines) are a data classification technique that can be used for various use cases and that are effective even when the number of dimensions are higher than the number of sample points (training data). Another advantage is that the they use a subset of training points (support vectors) in the decision function, so they are memory efficient.</p>
             <p>Typically, the SVM algorithm is given a set of training examples labeled as belonging to one of two classes. The SVM constructs a hyper-plane or set of hyper-planes in a high or infinite dimensional space, which can be used for classification, regression or other tasks. Intuitively, a good separation is achieved by the hyper-plane that has the largest distance to the nearest training data points of any class (so-called functional margin), since in general the larger the margin the lower the generalization error of the classifier. New examples are mapped into that same space and predicted to belong to one category or another, based on which side of the gap they fall on.</p>
@@ -319,7 +319,7 @@
             <p>We have manually constructed a training set (~50 data points) because we needed to include events that formed a predictable boundary. We successfully tested the model with queries that were expected to yield both positive and negative results. At this point we have reevaluated the engine’s DASE implementation to ensure that the business objective is achieved. To ensure that the positive predictions do not represent a security issue for the user we have compared our method to several other Novelty detection approaches and concluded that our choice achieves the best fit to the training data.</p>
             <h2>Deployment</h2>
             <p>Following testing, we have successfully deployed the algorithm on IBM’s Bluemix platform in the form of a Docker container. It is now integrated with the mobile app in terms of both collecting data and receiving queries for prediction. Training with new events is scheduled every day at 0:00 AM server time in order for the model to reflect the most recent user entries.</p>
-            <h3>References</h3>
+            <h3>REFERENCES</h3>
             <p>[1] Schölkopf, R.C. Williamson, A.J. Smola, J. Shawe-Taylor, and J. Platt. Support vector method for novelty detection. in Advances in Neural Information Processing Systems 12: Proceedings of the 1999 Conference, Sara A. Solla, Todd K. Leen and Klaus-Robert Muller eds., 2000.</p>
         </div>
     </div>

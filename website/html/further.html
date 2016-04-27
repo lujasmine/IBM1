@@ -111,7 +111,7 @@
                     <div class="page-heading">
                         <h1>Further Development</h1>
                         <hr class="small">
-                        <span class="subheading">SDK Collaborations For Further Development</span>
+                        <span class="subheading">SDK/Collaborations For Further Development</span>
                     </div>
                 </div>
             </div>
@@ -123,15 +123,47 @@
         <div class="row">
             <h2>iOS and Web App Further Development</h2>
             <p>More development time would be required to implement features that we had initially stated in our requirements list. However, in the last meeting with our client, we came up with a list of priorities to complete for the project, and concluded that the integration of the prediction engine with the iOS app was to be implemented as higher priority than the SMS and Push Notification logins for the web app.</p>
-            <h4>SMS Login</h4>
+            <h3>SMS Login</h3>
             <p>In order to implement the SMS authentication, first step would be to implement "django-smsish" a specific Django API that uses Twilio backend for sms communication between the phone and web application. This functionality would also require extensive use of jQuery for error handling and data transfer.</p>
             <p align = "center">Our main constraint is that services provided by Twilio come at a price which you can see below: </p>
             <center><img src="../img/Pricing.png"></center>
             <br>
-            <h4>Push Notification Login</h4>
+            <h3>Push Notification Login</h3>
             <p>In order for this to be implemented, we would need to firstly, configure credentials with the Apple Push Notification Service (APNs), by acquiring a Development and Distribution APNs SSL certificate and also Development and Distribution Provisioning Profiles - this can be done by contacting UCL Advances and being part of the UCL Advances Apple Development Team.</p>
             <p>We would use IBM Bluemix’s Push Notification Service to configure, subscribe, send and monitor push notifications being sent to the iOS device. IBM Push Notification Service dependencies would need to be installed into the iOS app, which can be done with the use of Cocoapods.</p>
             <p>By using Push REST API filters and tags, we would be able to send the Push notification to the correct device (i.e the same user attempting login on the web app).</p>
+            <h2>PredictionIO Further Development</h2>
+            <h3>Multi-tenancy</h3>
+            <p>The way PredictionIO stores event data is that for each “app” created inside it a table is created in the database, forming a one to one relationship. Each such app corresponds to an engine that the server builds, trains, and deploys. By definition, the server cannot have more than one engine deployed on the same address (including port). This translates into the fact that, at the moment, the server cannot serve more than one user.</p>
+            <p>As we implemented our business logic into the engine, we have identified a potential way to enable serving predictions to multiple app users. We would generate a unique app key for each installation of the mobile app, and send that together with the login data. During the data preparation we would separate the PreparedData according to the ID, and create multiple Model objects that could be published by only one instance of the prediction server. These could be stored inside a HashMap, so that accessing the relevant model would be achieved in O(1).</p>
+            <h3>Server time data</h3>
+            <p>In order to showcase the algorithm, we had to delegate the responsibility of providing the date and time to the mobile app, instead of the server. We’ve done this because it is easier to change the properties of an event that is being sent, for example this curl terminal command,</p>
+            <pre><code>
+curl -i -X POST http://134.168.34.68:7000/events.json?accessKey=t9FmFxWIERJyaF3XGY8LwFsFSCHsRqbP5Wh0jyeCJzKBs3MjDkzaFRAIX4E7FR5r \
+-H "Content-Type: application/json" \
+-d '{
+  "event" : "login",
+  "entityType" : "user",
+  "entityId" : "u0",
+  "properties" : {
+     "time" : 700,
+     "day" : 4,
+     "gpsLat" : 51.5247,
+     "gpsLong" : -0.1342
+    }
+}'
+            </code></pre>
+            <p>than to alter an existing entry in the database. Prior to production deployment we would do this inside the DataSource class, to ensure that the collected events are not susceptible altering the data when changing the device’s time or date.</p>
+            <h3>Event data expiration</h3>
+            <p>We might also be interested in calculating a form of correlation between the users’ more recent, and past login activity. If, for example, the user would change homes, we would not be interested in authenticating them from their old location, because this change would also be reflected in the events the app sends for them to the server.</p>
+            <h3>Batch login detection</h3>
+            <p>If an user would authenticate too many times in a row, it would skew the data and the boundary will aggressively fit the new-formed cluster. Ideally we would average the events into a single one if too many of them are registered in a predefined amount of time.</p>
+            <h3>Parallelization</h3>
+            <p>Spark MLlib’s SVM implementation does not support the Radial Basis Function as the kernel, due to performance concerns over large data sets.[1](See When to use LIBLINEAR but not LIBSVM) Because of this, we had to eliminate the use of Spark’s RDDs, and choose the local configuration for our engine, instead of being able to scale the it on a Spark distributed cluster. One possible way to circumvent this may be to add synthetic features to our training set, by multiplying the features between themselves. This would allow us to use MLlib SVM with the linear kernel[2][3] and get similar results to a using a RBF kernel. At this stage in our development process, we deemed it perfectly acceptable to run the cluster as a local installation.</p>
+            <h3>REFERENCES</h3>
+            <p>[1] http://www.csie.ntu.edu.tw/~cjlin/liblinear/index.html</p>
+            <p>[2] http://www.eecs.berkeley.edu/~brecht/papers/07.rah.rec.nips.pdf</p>
+            <p>[3] http://arxiv.org/pdf/1109.4603.pdf</p>
         </div>
     </div>
 

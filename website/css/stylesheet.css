@@ -16,6 +16,11 @@ hr {
 
 .team {
 	text-align: center;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.team p {
+    text-align: center;
 }
 
 #client {
@@ -44,6 +49,7 @@ hr {
     border-radius: 10px;
     background-color: rgba(64,64,64,0.1);
     padding: 2%;
+    overflow: auto;
 }
 
 #features-ml {
@@ -53,6 +59,7 @@ hr {
     font-size: 100%;
     background-color: rgba(64,64,64,0.1);
     padding: 2%;
+    overflow: auto;
 }
 
 #features-1 p, #features-2 p, #features-ml p{
@@ -65,11 +72,13 @@ hr {
 
 #features-ml {
     vertical-align: center;
+    margin-bottom: 5%;
 }
 
 #landing-container {
     width: 70%;
     margin-left: 15%;
+
 }
 
 #video-1 {
