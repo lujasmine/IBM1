@@ -117,11 +117,11 @@ hr.small {
     color: #0085a1;
   }
   .navbar-custom.is-fixed .nav li a {
-    color: #404040;
+    color: white;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #404040;
+    color: white;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
